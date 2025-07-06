@@ -1,0 +1,167 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #0f172a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+header nav a {
+  margin-left: 1rem;
+  color: #f1f5f9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #f97316;
+}
+.hero .profile-photo {
+  width: 200px;           
+  height: 200px;          
+  border-radius: 50%;     
+  object-fit: cover;      
+  border: 4px solid #f97316; 
+  display: block;         
+  margin: 0 auto 1rem;    
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero span {
+  color: #f97316;
+}
+
+.hero h2 {
+  margin-top: 1rem;
+  font-weight: normal;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  text-decoration: none;
+  margin-right: 1rem;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+  background: #f97316;
+  color: #0f172a;
+}
+
+.btn-primary:hover {
+  background: #fb923c;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #f97316;
+  color: #f97316;
+}
+
+.btn-secondary:hover {
+  background: #f97316;
+  color: #0f172a;
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about .stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.about .stats div {
+  margin: 1rem;
+  text-align: center;
+}
+
+.skills ul, .projects ul {
+  list-style: disc inside;
+  padding: 0;
+}
+
+.skills li, .projects li {
+  margin-bottom: 0.5rem;
+}
+
+.contact a {
+  color: #f97316;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #0f172a;
+  border-top: 1px solid #334155;
+  font-size: 0.9rem;
+}
+
+/* Responsive menu */
+#menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+    flex-direction: column;
+    background: #0f172a;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    border: 1px solid #334155;
+  }
+
+  header nav.show {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+    color: #f1f5f9;
+  }
+}
