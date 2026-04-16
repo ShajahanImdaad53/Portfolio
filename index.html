@@ -3,77 +3,654 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shajahan Imdaad | Portfolio</title>
+  <title>Imdaad Shajahan | Data Scientist Portfolio</title>
   <link rel="stylesheet" href="style.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="logo">Shajahan Imdaad</div>
-    <nav id="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div id="menu-toggle">&#9776;</div>
-  </header>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span>Imdaad</span>
+      </div>
+      <div class="nav-menu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
 
-  <section id="home" class="hero">
-    <img src="git.jpg" alt="Shajahan Imdaad" class="profile-photo" />
-    <h1>Hello, I'm <span>Shajahan Imdaad</span></h1>
-    <h2>Undergraduate Student </h2>
-    <h2>BSc in Computing & Information Systems(R)</h2>
-    <h2>Bsc in Financial Engineering(R)</h2>
-    <div class="cta-buttons">
-      <a href="#contact" class="btn-primary">Got a project?</a>
-      <a href="Imdaad CV.pdf" download class="btn-secondary">Download CV</a>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight">Imdaad Shajahan</span>
+          </h1>
+          <div class="hero-subtitle">
+            <span class="typing-text"></span>
+            <span class="cursor">|</span>
+          </div>
+          <p class="hero-description">
+            A passionate Data Scientist specializing in machine learning, predictive analytics,
+            and turning complex data into actionable business insights. I craft intelligent
+            solutions that drive innovation and optimize performance.
+          </p>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">4+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years Learning</span>
+            </div>
+          </div>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fas fa-eye"></i> View My Work
+            </a>
+            <a href="Imdaad CV.pdf" download class="btn btn-secondary">
+              <i class="fas fa-download"></i> Download CV
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="image-container">
+            <img src="git.jpg" alt="Imdaad Shajahan" class="profile-image" />
+            <div class="image-overlay"></div>
+          </div>
+          <div class="floating-elements">
+            <div class="floating-card card-1">
+              <i class="fas fa-chart-line"></i>
+              <span>Data Analysis</span>
+            </div>
+            <div class="floating-card card-2">
+              <i class="fas fa-brain"></i>
+              <span>Machine Learning</span>
+            </div>
+            <div class="floating-card card-3">
+              <i class="fas fa-code"></i>
+              <span>Python Expert</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll Down</span>
+      </div>
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>Dedicated and self-motivated undergraduate in Computing and Information Systems at Sabaragamuwa University of Sri Lanka with a growing foundation in Financial Engineering (University of Colombo). Seeking an internship or data entry opportunity to apply academic knowledge, develop industry experience, and contribute to organizational efficiency through accurate and reliable work.</p>
-
-    <div class="stats">
-      <div><strong>2+</strong><br>Years of Study</div>
-      <div><strong>3</strong><br>Key Projects</div>
-      <div><strong>120+</strong><br>Typing WPM (3 Languages)</div>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Get to know more about my background and expertise</p>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I'm a dedicated and ambitious Data Scientist with a strong foundation in both
+            Computing and Financial Engineering. Currently pursuing my degrees at Sabaragamuwa
+            University of Sri Lanka and University of Colombo, I combine technical expertise
+            with analytical thinking to solve complex business problems.
+          </p>
+          <p>
+            My journey in data science began with a curiosity about patterns and insights
+            hidden in data. Today, I specialize in machine learning algorithms, statistical
+            modeling, and data visualization, using tools like Python, R, SQL, and Power BI
+            to transform raw data into meaningful business intelligence.
+          </p>
+          <p>
+            When I'm not working with data, you'll find me exploring new technologies,
+            contributing to open-source projects, or sharing knowledge with the developer
+            community. I believe in continuous learning and staying updated with the latest
+            trends in AI and data science.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <h4>Dual Degree Student</h4>
+                <p>BSc Computing & Information Systems & BSc Financial Engineering</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-certificate"></i>
+              <div>
+                <h4>15+ Certifications</h4>
+                <p>Google Data Analytics, Machine Learning, and more</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-project-diagram"></i>
+              <div>
+                <h4>4 Major Projects</h4>
+                <p>Real-world applications in data science and web development</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <div class="image-wrapper">
+            <img src="git.jpg" alt="Imdaad Shajahan" />
+            <div class="image-decoration">
+              <div class="decoration-circle"></div>
+              <div class="decoration-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Skills Section -->
   <section id="skills" class="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Programming:</strong> Python, Java, HTML/CSS</li>
-      <li><strong>Databases:</strong> MySQL, SQLite</li>
-      <li><strong>Software:</strong> MS Excel, Word, PowerPoint, VS Code</li>
-      <li><strong>Typing:</strong> Sinhala, Tamil & English (High Accuracy, ~20 WPM)</li>
-      <li><strong>Other:</strong> Data Entry, Report Formatting, Analytical Thinking</li>
-    </ul>
-  </section>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">My Tech Stack</h2>
+        <p class="section-subtitle">Technologies and tools I work with</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="category-header">
+            <i class="fas fa-code"></i>
+            <h3>Programming & Data Science</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%233776AB' d='M50 2.5C23.8 2.5 2.5 23.8 2.5 50s21.3 47.5 47.5 47.5 47.5-21.3 47.5-47.5S76.2 2.5 50 2.5zm22.5 35H55V15c0-2.8-2.2-5-5-5s-5 2.2-5 5v22.5H27.5c-2.8 0-5 2.2-5 5s2.2 5 5 5H45V70c0 2.8 2.2 5 5 5s5-2.2 5-5V47.5h17.5c2.8 0 5-2.2 5-5s-2.2-5-5-5z'/%3e%3c/svg%3e" alt="Python" />
+              <span>Python</span>
+            </div>
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%232763EB' d='M50 2.5C23.8 2.5 2.5 23.8 2.5 50s21.3 47.5 47.5 47.5 47.5-21.3 47.5-47.5S76.2 2.5 50 2.5zm0 85c-21.5 0-39-17.5-39-39s17.5-39 39-39 39 17.5 39 39-17.5 39-39 39z'/%3e%3ctext x='50' y='58' text-anchor='middle' fill='white' font-size='40' font-weight='bold'%3eR%3c/text%3e%3c/svg%3e" alt="R" />
+              <span>R</span>
+            </div>
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%23F29111' d='M50 2.5C23.8 2.5 2.5 23.8 2.5 50s21.3 47.5 47.5 47.5 47.5-21.3 47.5-47.5S76.2 2.5 50 2.5zm0 85c-21.5 0-39-17.5-39-39s17.5-39 39-39 39 17.5 39 39-17.5 39-39 39z'/%3e%3ctext x='50' y='58' text-anchor='middle' fill='white' font-size='35' font-weight='bold'%3eSQL%3c/text%3e%3c/svg%3e" alt="SQL" />
+              <span>SQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%2361DAFB' d='M50.307 58.817a8.816 8.816 0 1 0 0-17.632 8.816 8.816 0 0 0 0 17.632'/%3e%3cpath stroke='%2361DAFB' stroke-width='5' d='M50.307 68.063c26.126 0 47.306-8.087 47.306-18.062s-21.18-18.063-47.306-18.063C24.18 31.938 3 40.025 3 50.001s21.18 18.062 47.307 18.062z'/%3e%3c/svg%3e" alt="React.js" />
+              <span>React.js</span>
+            </div>
+          </div>
+        </div>
 
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Student Attendance System:</strong> Java + MySQL GUI app to manage attendance.</li>
-      <li><strong>Basic Finance Calculator:</strong> Python tool to calculate NPV, ROI, and interest.</li>
-      <li><strong>Retail Database:</strong> Designed and implemented a normalized database using SQL for a fictional retail system.</li>
-    </ul>
-  </section>
+        <div class="skill-category">
+          <div class="category-header">
+            <i class="fas fa-chart-bar"></i>
+            <h3>Data Science & ML</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%23F7931E' d='M50 2.5C23.8 2.5 2.5 23.8 2.5 50s21.3 47.5 47.5 47.5 47.5-21.3 47.5-47.5S76.2 2.5 50 2.5zm0 85c-21.5 0-39-17.5-39-39s17.5-39 39-39 39 17.5 39 39-17.5 39-39 39z'/%3e%3ctext x='50' y='58' text-anchor='middle' fill='white' font-size='30' font-weight='bold'%3ePandas%3c/text%3e%3c/svg%3e" alt="Pandas" />
+              <span>Pandas</span>
+            </div>
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%2300599C' d='M50 2.5C23.8 2.5 2.5 23.8 2.5 50s21.3 47.5 47.5 47.5 47.5-21.3 47.5-47.5S76.2 2.5 50 2.5zm0 85c-21.5 0-39-17.5-39-39s17.5-39 39-39 39 17.5 39 39-17.5 39-39 39z'/%3e%3ctext x='50' y='58' text-anchor='middle' fill='white' font-size='30' font-weight='bold'%3eNumPy%3c/text%3e%3c/svg%3e" alt="NumPy" />
+              <span>NumPy</span>
+            </div>
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%23F7931E' d='M50 2.5C23.8 2.5 2.5 23.8 2.5 50s21.3 47.5 47.5 47.5 47.5-21.3 47.5-47.5S76.2 2.5 50 2.5zm0 85c-21.5 0-39-17.5-39-39s17.5-39 39-39 39 17.5 39 39-17.5 39-39 39z'/%3e%3ctext x='50' y='58' text-anchor='middle' fill='white' font-size='25' font-weight='bold'%3eScikit-learn%3c/text%3e%3c/svg%3e" alt="Scikit-learn" />
+              <span>Scikit-learn</span>
+            </div>
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%23F29111' d='M50 2.5C23.8 2.5 2.5 23.8 2.5 50s21.3 47.5 47.5 47.5 47.5-21.3 47.5-47.5S76.2 2.5 50 2.5zm0 85c-21.5 0-39-17.5-39-39s17.5-39 39-39 39 17.5 39 39-17.5 39-39 39z'/%3e%3ctext x='50' y='58' text-anchor='middle' fill='white' font-size='30' font-weight='bold'%3eTensorFlow%3c/text%3e%3c/svg%3e" alt="TensorFlow" />
+              <span>TensorFlow</span>
+            </div>
+          </div>
+        </div>
 
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p><strong>Phone:</strong> <a href="tel:+94754738475">+94 754 738 475</a></p>
-    <p><strong>Email:</strong> <a href="mailto:shajahanimdaad22@gmail.com">shajahanimdaad22@gmail.com</a></p>
-    <p><strong>Address:</strong> 476, Mashoor Moulana Road, Maruthamunai</p>
-    <div class="socials">
-      <p><strong>Languages:</strong> Tamil (native), English, Sinhala (Read & Write)</p>
+        <div class="skill-category">
+          <div class="category-header">
+            <i class="fas fa-database"></i>
+            <h3>Databases & Tools</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%234479A1' d='M50 2.5C23.8 2.5 2.5 23.8 2.5 50s21.3 47.5 47.5 47.5 47.5-21.3 47.5-47.5S76.2 2.5 50 2.5zm0 85c-21.5 0-39-17.5-39-39s17.5-39 39-39 39 17.5 39 39-17.5 39-39 39z'/%3e%3ctext x='50' y='58' text-anchor='middle' fill='white' font-size='30' font-weight='bold'%3eMySQL%3c/text%3e%3c/svg%3e" alt="MySQL" />
+              <span>MySQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%23336791' d='M50 2.5C23.8 2.5 2.5 23.8 2.5 50s21.3 47.5 47.5 47.5 47.5-21.3 47.5-47.5S76.2 2.5 50 2.5zm0 85c-21.5 0-39-17.5-39-39s17.5-39 39-39 39 17.5 39 39-17.5 39-39 39z'/%3e%3ctext x='50' y='58' text-anchor='middle' fill='white' font-size='25' font-weight='bold'%3ePostgreSQL%3c/text%3e%3c/svg%3e" alt="PostgreSQL" />
+              <span>PostgreSQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%2347A248' d='m50.146.274 2.668 5.012c.6.925 1.25 1.743 2.016 2.506a70 70 0 0 1 6.262 7.08c4.521 5.938 7.57 12.53 9.749 19.661 1.306 4.356 2.015 8.825 2.069 13.343.218 13.509-4.413 25.108-13.75 34.748a40 40 0 0 1-4.905 4.193c-.925 0-1.363-.71-1.744-1.362a40 40 0 0 1-2.669-4.905c-2.669-5.938-5.938-11.876-11.876-15.938-2.669-1.85-5.938-2.669-9.207-2.669s-6.538.819-9.207 2.669c-5.938 4.062-9.207 9.999-11.876 15.938a40 40 0 0 1-2.669 4.905c-.381.652-.819 1.362-1.744 1.362a40 40 0 0 1-4.905-4.193C21.663 60.086 17.45 48.487 17.668 34.978c.054-4.518.763-8.987 2.069-13.343C22.916 14.504 25.965 7.912 30.486.832a70 70 0 0 1 6.262-7.08c.766-.763 1.416-1.581 2.016-2.506L41.432.274a5 5 0 0 1 8.708 0z'/%3e%3c/svg%3e" alt="MongoDB" />
+              <span>MongoDB</span>
+            </div>
+            <div class="skill-item">
+              <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 100 100'%3e%3cpath fill='%23F2C811' d='M50 2.5C23.8 2.5 2.5 23.8 2.5 50s21.3 47.5 47.5 47.5 47.5-21.3 47.5-47.5S76.2 2.5 50 2.5zm0 85c-21.5 0-39-17.5-39-39s17.5-39 39-39 39 17.5 39 39-17.5 39-39 39z'/%3e%3ctext x='50' y='58' text-anchor='middle' fill='white' font-size='35' font-weight='bold'%3eBI%3c/text%3e%3c/svg%3e" alt="Power BI" />
+              <span>Power BI</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Shajahan Imdaad</p>
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Showcasing my work in data science and web development</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 400 300'%3e%3crect width='400' height='300' fill='%23f3f4f6'/%3e%3ctext x='200' y='150' text-anchor='middle' fill='%236b7280' font-size='24'%3eProject Image%3c/text%3e%3c/svg%3e" alt="Blinkit Sales Dashboard" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Data Analytics</div>
+            <h3 class="project-title">Blinkit Sales Performance Dashboard</h3>
+            <p class="project-description">
+              Designed and developed an interactive Power BI dashboard to analyze and visualize
+              key performance metrics of the Blinkit delivery app. Cleaned and transformed raw
+              sales data using advanced Excel formulas and pivot tables.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">Excel</span>
+              <span class="tech-tag">DAX</span>
+              <span class="tech-tag">Data Visualization</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 400 300'%3e%3crect width='400' height='300' fill='%23f3f4f6'/%3e%3ctext x='200' y='150' text-anchor='middle' fill='%236b7280' font-size='24'%3eProject Image%3c/text%3e%3c/svg%3e" alt="Unveil App" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Full-Stack Development</div>
+            <h3 class="project-title">Unveil – Web & Mobile Application</h3>
+            <p class="project-description">
+              Cross-platform web and mobile application designed to enhance user engagement
+              and digital experience. Integrated Firebase for real-time database management,
+              authentication, and cloud storage across platforms.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Node.js</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 400 300'%3e%3crect width='400' height='300' fill='%23f3f4f6'/%3e%3ctext x='200' y='150' text-anchor='middle' fill='%236b7280' font-size='24'%3eProject Image%3c/text%3e%3c/svg%3e" alt="Canteen Management" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Web Development</div>
+            <h3 class="project-title">University Canteen Management System</h3>
+            <p class="project-description">
+              Web-based system designed to manage daily menus and orders for university canteens.
+              Implemented error handling and improved user experience with intuitive navigation
+              and smooth functionality across all user operations.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">PHP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 400 300'%3e%3crect width='400' height='300' fill='%23f3f4f6'/%3e%3ctext x='200' y='150' text-anchor='middle' fill='%236b7280' font-size='24'%3eProject Image%3c/text%3e%3c/svg%3e" alt="CLREM App" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Mobile Development</div>
+            <h3 class="project-title">CLREM – Rubbish Management Complaint App</h3>
+            <p class="project-description">
+              Mobile and web application enabling users to report and manage garbage complaints
+              efficiently. Focused on improving user accessibility and environmental awareness
+              through digital innovation and streamlined complaint tracking.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Experience & Education</h2>
+        <p class="section-subtitle">My professional journey and academic background</p>
+      </div>
+      <div class="experience-content">
+        <div class="experience-timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Data Scientist Intern</h3>
+                <span class="timeline-date">2025 - Present</span>
+              </div>
+              <div class="timeline-company">Various Organizations</div>
+              <p class="timeline-description">
+                Applying data science skills to real-world problems, developing machine learning
+                models, and creating data-driven solutions for business optimization.
+              </p>
+              <div class="timeline-skills">
+                <span>Python</span>
+                <span>Machine Learning</span>
+                <span>Data Analysis</span>
+                <span>Power BI</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>BSc in Computing & Information Systems</h3>
+                <span class="timeline-date">2023 - Present</span>
+              </div>
+              <div class="timeline-company">Sabaragamuwa University of Sri Lanka</div>
+              <p class="timeline-description">
+                Comprehensive study of computer science fundamentals, software engineering,
+                data structures, algorithms, and information systems management.
+              </p>
+              <div class="timeline-skills">
+                <span>Software Engineering</span>
+                <span>Data Structures</span>
+                <span>Algorithms</span>
+                <span>Database Design</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>BSc in Financial Engineering</h3>
+                <span class="timeline-date">2022 - Present</span>
+              </div>
+              <div class="timeline-company">University of Colombo</div>
+              <p class="timeline-description">
+                Advanced study of financial mathematics, quantitative methods, risk management,
+                and financial modeling techniques.
+              </p>
+              <div class="timeline-skills">
+                <span>Financial Mathematics</span>
+                <span>Risk Management</span>
+                <span>Quantitative Analysis</span>
+                <span>Financial Modeling</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Advanced Level (Physical Science)</h3>
+                <span class="timeline-date">Completed</span>
+              </div>
+              <div class="timeline-company">Km/Shams National School</div>
+              <p class="timeline-description">
+                Strong foundation in mathematics, physics, and chemistry, providing the analytical
+                and problem-solving skills essential for data science and engineering.
+              </p>
+              <div class="timeline-skills">
+                <span>Mathematics</span>
+                <span>Physics</span>
+                <span>Chemistry</span>
+                <span>Analytical Thinking</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="certifications-section">
+          <h3>Certifications & Achievements</h3>
+          <div class="certifications-grid">
+            <div class="certification-item">
+              <div class="certification-icon">
+                <i class="fab fa-google"></i>
+              </div>
+              <div class="certification-content">
+                <h4>Google Data Analytics Professional</h4>
+                <p>8-course certification program covering data analysis fundamentals</p>
+              </div>
+            </div>
+            <div class="certification-item">
+              <i class="fas fa-certificate"></i>
+              <div class="certification-content">
+                <h4>Machine Learning using Python</h4>
+                <p>Simplilearn certification in ML algorithms and Python implementation</p>
+              </div>
+            </div>
+            <div class="certification-item">
+              <i class="fas fa-code"></i>
+              <div class="certification-content">
+                <h4>Python for Beginners</h4>
+                <p>University of Moratuwa certification in Python programming</p>
+              </div>
+            </div>
+            <div class="certification-item">
+              <i class="fas fa-brain"></i>
+              <div class="certification-content">
+                <h4>Elements of AI</h4>
+                <p>University of Helsinki certification in artificial intelligence</p>
+              </div>
+            </div>
+            <div class="certification-item">
+              <i class="fas fa-shield-alt"></i>
+              <div class="certification-content">
+                <h4>Cybersecurity Fundamentals</h4>
+                <p>Asian Development Bank certification in cybersecurity</p>
+              </div>
+            </div>
+            <div class="certification-item">
+              <i class="fas fa-bullhorn"></i>
+              <div class="certification-content">
+                <h4>Digital Marketing</h4>
+                <p>Simplilearn certification in digital marketing strategies</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Let's discuss your next project or opportunity</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <a href="mailto:shajahanimdaad20@gmail.com">shajahanimdaad20@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Phone</h3>
+              <a href="tel:+94754738475">+94 754 738 475</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Location</h3>
+              <p>Colombo, Sri Lanka</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="contact-details">
+              <h3>LinkedIn</h3>
+              <a href="https://linkedin.com/in/imdaad-shajahan" target="_blank">linkedin.com/in/imdaad-shajahan</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Imdaad Shajahan</h3>
+          <p>Data Scientist & Full-Stack Developer</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/imdaad-shajahan" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/imdaadshajahan" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="mailto:shajahanimdaad20@gmail.com">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Imdaad Shajahan. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart"></i> using modern web technologies</p>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
