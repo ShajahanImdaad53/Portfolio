@@ -12,6 +12,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // ===== Theme Toggle =====
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const currentTheme = localStorage.getItem('theme');
+
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'light') {
+      themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      let theme = document.documentElement.getAttribute('data-theme');
+      let newTheme = theme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      if (newTheme === 'light') {
+        themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    });
+  }
+
   // ===== Smooth Scrolling for Navigation Links =====
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function(e) {

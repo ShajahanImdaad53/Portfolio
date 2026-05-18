@@ -35,6 +35,9 @@
         <span></span>
         <span></span>
       </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
     </div>
   </nav>
 

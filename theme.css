@@ -15,6 +15,25 @@
   --gradient-secondary: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
   --shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
   --shadow-hover: 0 20px 40px rgba(0, 242, 254, 0.4);
+  --nav-bg: rgba(5, 5, 5, 0.8);
+}
+
+[data-theme="light"] {
+  --primary-color: #0072ff;
+  --secondary-color: #00c6ff;
+  --accent-color: #ff0844;
+  --dark-bg: #f8fafc;
+  --darker-bg: #ffffff;
+  --light-bg: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-light: rgba(0, 0, 0, 0.2);
+  --gradient: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%);
+  --shadow: 0 10px 30px rgba(0, 114, 255, 0.15);
+  --shadow-hover: 0 20px 40px rgba(0, 114, 255, 0.3);
+  --nav-bg: rgba(255, 255, 255, 0.9);
 }
 
 body {
@@ -23,13 +42,39 @@ body {
     radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.08), transparent 25%),
     radial-gradient(circle at 85% 30%, rgba(255, 8, 68, 0.08), transparent 25%);
   background-attachment: fixed;
+  color: var(--text-primary);
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 /* Enhancing Navbar */
 .navbar {
-  background: rgba(5, 5, 5, 0.8) !important;
+  background: var(--nav-bg) !important;
   backdrop-filter: blur(20px) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.theme-toggle:hover {
+  background: var(--border-color);
+  transform: rotate(15deg);
 }
 
 /* Glassmorphism Cards */
