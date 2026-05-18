@@ -26,8 +26,8 @@
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#education" class="nav-link">Education</a>
-        <a href="certifications.php" class="nav-link">Certifications</a>
-        <a href="achievements.php" class="nav-link">Achievements</a>
+        <a href="certifications.html" class="nav-link">Certifications</a>
+        <a href="achievements.html" class="nav-link">Achievements</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
       <div class="nav-toggle">
@@ -304,11 +304,11 @@
           </div>
         </div>
         <div class="preview-actions">
-          <a href="certifications.php" class="view-all-btn">
+          <a href="certifications.html" class="view-all-btn">
             <span>View Certifications</span>
             <i class="fas fa-certificate"></i>
           </a>
-          <a href="achievements.php" class="view-all-btn secondary">
+          <a href="achievements.html" class="view-all-btn secondary">
             <span>View Achievements</span>
             <i class="fas fa-trophy"></i>
           </a>
@@ -385,7 +385,7 @@
           </div>
         </div>
         <div class="contact-form">
-          <form action="contact.php" method="post">
+          <form action="contact.html" method="post">
             <div class="form-group">
               <input type="text" name="name" placeholder="Your Name" required>
             </div>

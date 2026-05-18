@@ -20,7 +20,7 @@
         <span><?php echo explode(' ', $profile['name'])[0]; ?></span>
       </div>
       <div class="nav-menu">
-        <a href="index.php" class="nav-link">← Back to Portfolio</a>
+        <a href="index.html" class="nav-link">← Back to Portfolio</a>
         <a href="#all-certs" class="nav-link active">All Certificates</a>
       </div>
       <div class="nav-toggle">
@@ -101,8 +101,8 @@
           <span><?php echo explode(' ', $profile['name'])[0]; ?></span>
         </div>
         <div class="footer-links">
-          <a href="index.php">Portfolio</a>
-          <a href="certifications.php">Certifications</a>
+          <a href="index.html">Portfolio</a>
+          <a href="certifications.html">Certifications</a>
         </div>
       </div>
       <div class="footer-bottom">
