@@ -331,24 +331,36 @@
       <div class="contact-content">
         <div class="contact-info">
           <div class="contact-card">
-            <i class="fas fa-envelope"></i>
-            <h3>Email</h3>
-            <p><?php echo $profile['email']; ?></p>
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <p style="margin-bottom: 0.5rem;"><?php echo $profile['email']; ?></p>
+              <a href="mailto:<?php echo $profile['email']; ?>" class="btn btn-primary" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; border-radius: 50px; display: inline-block;">Send Email</a>
+            </div>
           </div>
           <div class="contact-card">
-            <i class="fab fa-linkedin"></i>
-            <h3>LinkedIn</h3>
-            <a href="<?php echo $profile['linkedin']; ?>" target="_blank">Connect with me</a>
+            <div class="contact-icon" style="background: #0077b5;"><i class="fab fa-linkedin"></i></div>
+            <div class="contact-details">
+              <h3>LinkedIn</h3>
+              <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Let's connect professionally.</p>
+              <a href="<?php echo $profile['linkedin']; ?>" target="_blank" class="btn btn-primary" style="background: #0077b5; padding: 0.4rem 1.2rem; font-size: 0.85rem; border-radius: 50px; display: inline-block;">Connect Now</a>
+            </div>
           </div>
           <div class="contact-card">
-            <i class="fab fa-whatsapp"></i>
-            <h3>WhatsApp</h3>
-            <a href="<?php echo $profile['whatsapp']; ?>" target="_blank">Chat with me</a>
+            <div class="contact-icon" style="background: #25d366;"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-details">
+              <h3>WhatsApp</h3>
+              <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Reach out for quick replies.</p>
+              <a href="<?php echo $profile['whatsapp']; ?>" target="_blank" class="btn btn-primary" style="background: #25d366; padding: 0.4rem 1.2rem; font-size: 0.85rem; border-radius: 50px; display: inline-block;">Chat Now</a>
+            </div>
           </div>
           <div class="contact-card">
-            <i class="fas fa-phone"></i>
-            <h3>Phone</h3>
-            <p><?php echo $profile['phone']; ?></p>
+            <div class="contact-icon" style="background: var(--gradient);"><i class="fas fa-phone"></i></div>
+            <div class="contact-details">
+              <h3>Phone</h3>
+              <p style="margin-bottom: 0.5rem;"><?php echo $profile['phone']; ?></p>
+              <a href="tel:<?php echo str_replace(' ', '', $profile['phone']); ?>" class="btn btn-secondary" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; border-radius: 50px; display: inline-block;">Call Now</a>
+            </div>
           </div>
         </div>
         <div class="contact-form">
