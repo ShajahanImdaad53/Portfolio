@@ -74,6 +74,11 @@
             <a href="<?php echo $profile['linkedin']; ?>" target="_blank" class="btn btn-secondary">
               <i class="fab fa-linkedin"></i> LinkedIn Profile
             </a>
+            <?php if (isset($profile['github'])): ?>
+            <a href="<?php echo $profile['github']; ?>" target="_blank" class="btn btn-secondary" style="margin-top: 10px;">
+              <i class="fab fa-github"></i> GitHub Profile
+            </a>
+            <?php endif; ?>
           </div>
         </div>
         <div class="hero-image">
@@ -367,6 +372,11 @@
             <a href="<?php echo $profile['linkedin']; ?>" target="_blank">Connect with me</a>
           </div>
           <div class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <h3>WhatsApp</h3>
+            <a href="<?php echo $profile['whatsapp']; ?>" target="_blank">Chat with me</a>
+          </div>
+          <div class="contact-card">
             <i class="fas fa-phone"></i>
             <h3>Phone</h3>
             <p><?php echo $profile['phone']; ?></p>
@@ -407,6 +417,9 @@
           <a href="<?php echo $profile['linkedin']; ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
           <?php if (isset($profile['github'])): ?>
           <a href="<?php echo $profile['github']; ?>" target="_blank"><i class="fab fa-github"></i></a>
+          <?php endif; ?>
+          <?php if (isset($profile['whatsapp'])): ?>
+          <a href="<?php echo $profile['whatsapp']; ?>" target="_blank"><i class="fab fa-whatsapp"></i></a>
           <?php endif; ?>
         </div>
       </div>
