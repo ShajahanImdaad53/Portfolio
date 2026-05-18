@@ -157,10 +157,8 @@
       <div class="skills-grid">
         <?php foreach ($skills as $skill): ?>
         <div class="skill-item">
-          <span class="skill-name"><?php echo $skill; ?></span>
-          <div class="skill-bar">
-            <div class="skill-progress" style="width: 85%"></div>
-          </div>
+          <i class="<?php echo $skill['icon']; ?>" style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
+          <span class="skill-name"><?php echo $skill['name']; ?></span>
         </div>
         <?php endforeach; ?>
       </div>
@@ -176,8 +174,12 @@
       </div>
         <?php foreach ($projects as $project): ?>
         <div class="project-card">
-          <div class="project-image">
-            <img src="<?php echo isset($project['image']) ? $project['image'] : 'project-placeholder.jpg'; ?>" alt="<?php echo $project['title']; ?>" />
+          <div class="project-image" style="background: var(--gradient); display: flex; align-items: center; justify-content: center; min-height: 220px;">
+            <?php if (isset($project['image']) && $project['image'] !== 'project-placeholder.jpg'): ?>
+            <img src="<?php echo $project['image']; ?>" alt="<?php echo $project['title']; ?>" style="width: 100%; height: 100%; object-fit: cover;" />
+            <?php else: ?>
+            <i class="<?php echo isset($project['icon']) ? $project['icon'] : 'fas fa-project-diagram'; ?>" style="font-size: 6rem; color: rgba(255,255,255,0.8);"></i>
+            <?php endif; ?>
             <div class="project-overlay">
               <div class="project-links">
                 <?php if (isset($project['demo'])): ?>

@@ -44,7 +44,18 @@ $education = [
 ];
 
 $skills = [
-    'Python', 'R', 'SQL', 'React.js', 'Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow', 'MySQL', 'PostgreSQL', 'MongoDB', 'Power BI'
+    ['name' => 'Python', 'icon' => 'fab fa-python'],
+    ['name' => 'R', 'icon' => 'fas fa-chart-bar'],
+    ['name' => 'SQL', 'icon' => 'fas fa-database'],
+    ['name' => 'React.js', 'icon' => 'fab fa-react'],
+    ['name' => 'Pandas', 'icon' => 'fas fa-table'],
+    ['name' => 'NumPy', 'icon' => 'fas fa-square-root-alt'],
+    ['name' => 'Scikit-learn', 'icon' => 'fas fa-brain'],
+    ['name' => 'TensorFlow', 'icon' => 'fas fa-network-wired'],
+    ['name' => 'MySQL', 'icon' => 'fas fa-database'],
+    ['name' => 'PostgreSQL', 'icon' => 'fas fa-database'],
+    ['name' => 'MongoDB', 'icon' => 'fas fa-leaf'],
+    ['name' => 'Power BI', 'icon' => 'fas fa-chart-pie']
 ];
 
 $projects = [
@@ -52,7 +63,7 @@ $projects = [
         'title' => 'Blinkit Sales Performance Dashboard',
         'description' => 'Designed and developed an interactive Power BI dashboard to analyze and visualize key performance metrics of the Blinkit delivery app. Cleaned and transformed raw sales data using advanced Excel formulas and pivot tables.',
         'technologies' => ['Power BI', 'Excel', 'DAX', 'Data Visualization'],
-        'image' => 'project-placeholder.jpg',
+        'icon' => 'fas fa-chart-line',
         'github' => 'https://github.com/ShajahanImdaad53',
         'demo' => '#'
     ],
@@ -60,7 +71,7 @@ $projects = [
         'title' => 'Unveil – Web & Mobile Application',
         'description' => 'Cross-platform web and mobile application designed to enhance user engagement and digital experience. Integrated Firebase for real-time database management, authentication, and cloud storage across platforms.',
         'technologies' => ['React.js', 'React Native', 'Firebase', 'Node.js'],
-        'image' => 'project-placeholder.jpg',
+        'icon' => 'fas fa-mobile-alt',
         'github' => 'https://github.com/ShajahanImdaad53',
         'demo' => '#'
     ],
@@ -68,7 +79,7 @@ $projects = [
         'title' => 'University Canteen Management System',
         'description' => 'Web-based system designed to manage daily menus and orders for university canteens. Implemented error handling and improved user experience with intuitive navigation and smooth functionality across all user operations.',
         'technologies' => ['HTML', 'CSS', 'JavaScript', 'PHP'],
-        'image' => 'project-placeholder.jpg',
+        'icon' => 'fas fa-utensils',
         'github' => 'https://github.com/ShajahanImdaad53',
         'demo' => '#'
     ],
@@ -76,7 +87,7 @@ $projects = [
         'title' => 'CLREM – Rubbish Management Complaint App',
         'description' => 'Mobile and web application enabling users to report and manage garbage complaints efficiently. Focused on improving user accessibility and environmental awareness through digital innovation and streamlined complaint tracking.',
         'technologies' => ['React Native', 'Firebase', 'HTML', 'CSS'],
-        'image' => 'project-placeholder.jpg',
+        'icon' => 'fas fa-recycle',
         'github' => 'https://github.com/ShajahanImdaad53',
         'demo' => '#'
     ]
