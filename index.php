@@ -287,57 +287,21 @@
       </div>
 
       <!-- Certifications & Achievements Preview -->
-      <div class="certifications-preview">
-        <div class="preview-header">
-          <h3>Professional Credentials</h3>
+      <div class="certifications-preview" style="margin-top: 5rem; text-align: center; background: var(--card-bg); padding: 3rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(15px);">
+        <div class="preview-header" style="margin-bottom: 2rem;">
+          <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 1rem;">Professional Credentials</h2>
+          <p class="section-subtitle">Explore my complete collection of verified certifications and notable achievements.</p>
         </div>
-        <div class="preview-stats">
-          <div class="preview-stat">
-            <div class="stat-number"><?php echo count($certifications); ?>+</div>
-            <div class="stat-label">Certifications</div>
-          </div>
-          <div class="preview-stat">
-            <div class="stat-number"><?php echo count($achievements); ?>+</div>
-            <div class="stat-label">Achievements</div>
-          </div>
-          <div class="preview-stat">
-            <div class="stat-number">5</div>
-            <div class="stat-label">Categories</div>
-          </div>
-        </div>
-        <div class="preview-actions">
-          <a href="certifications.html" class="view-all-btn">
-            <span>View Certifications</span>
-            <i class="fas fa-certificate"></i>
+        <div class="preview-actions" style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+          <a href="certifications.html" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem; border-radius: 50px;">
+            <i class="fas fa-certificate"></i> View All Certifications
           </a>
-          <a href="achievements.html" class="view-all-btn secondary">
-            <span>View Achievements</span>
-            <i class="fas fa-trophy"></i>
-          </a>
-        </div>
-        <div class="preview-categories">
-          <div class="category-preview">
-            <i class="fas fa-cloud"></i>
-            <span>Cloud & DevOps (<?php echo count(array_filter($certifications, function($c) { return $c['category'] === 'cloud' || $c['category'] === 'devops'; })); ?>)</span>
-          </div>
-          <div class="category-preview">
-            <i class="fas fa-brain"></i>
-            <span>Data Science & AI (<?php echo count(array_filter($certifications, function($c) { return $c['category'] === 'data'; })); ?>)</span>
-          </div>
-          <div class="category-preview">
-            <i class="fas fa-code"></i>
-            <span>Programming & Tools (<?php echo count(array_filter($achievements, function($a) { return $a['category'] === 'programming'; })); ?>)</span>
-          </div>
-          <div class="category-preview">
-            <i class="fas fa-shield-alt"></i>
-            <span>Security & Management (<?php echo count(array_filter($certifications, function($c) { return $c['category'] === 'security'; })) + count(array_filter($achievements, function($a) { return $a['category'] === 'management'; })); ?>)</span>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LinkedIn Posts Section -->
+  <!-- LinkedIn Posts Section (Hidden)
   <section id="linkedin-posts" class="linkedin-posts">
     <div class="container">
       <div class="section-header">
@@ -355,6 +319,7 @@
       </div>
     </div>
   </section>
+  -->
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
