@@ -1,0 +1,160 @@
+/* Premium Theme Enhancements */
+:root {
+  --primary-color: #00f2fe;
+  --secondary-color: #4facfe;
+  --accent-color: #ff0844;
+  --dark-bg: #050505;
+  --darker-bg: #000000;
+  --light-bg: #111111;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-light: rgba(255, 255, 255, 0.2);
+  --gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  --gradient-secondary: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+  --shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
+  --shadow-hover: 0 20px 40px rgba(0, 242, 254, 0.4);
+}
+
+body {
+  background: var(--dark-bg);
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(255, 8, 68, 0.08), transparent 25%);
+  background-attachment: fixed;
+}
+
+/* Enhancing Navbar */
+.navbar {
+  background: rgba(5, 5, 5, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Glassmorphism Cards */
+.certificate-glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  gap: 1.5rem;
+}
+
+.certificate-glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.certificate-glass-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 254, 0.2);
+  border-color: rgba(0, 242, 254, 0.3);
+}
+
+.certificate-glass-card:hover::before {
+  transform: scaleX(1);
+}
+
+.certificate-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(0, 242, 254, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.1);
+  transition: all 0.4s ease;
+}
+
+.certificate-glass-card:hover .certificate-icon {
+  background: var(--gradient);
+  color: #fff;
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.4);
+}
+
+.certificate-content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.certificate-action .btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.certificate-action .btn:hover {
+  background: var(--gradient);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Certificate grid layout */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem 0;
+}
+
+/* Enhanced Buttons for the rest of the site */
+.btn-primary {
+  background: var(--gradient) !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+.btn-secondary {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+.btn-secondary:hover {
+  background: var(--gradient) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+}
+
+/* Hero Section Enhancement */
+.hero-title {
+  background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.highlight {
+  background: var(--gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}

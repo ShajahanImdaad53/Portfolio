@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title><?php echo $profile['name']; ?> | Professional Certifications</title>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="theme.css"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,25 +21,7 @@
       </div>
       <div class="nav-menu">
         <a href="index.php" class="nav-link">← Back to Portfolio</a>
-        <a href="#cloud" class="nav-link">Cloud</a>
-        <a href="#data" class="nav-link">Data & AI</a>
-        <a href="#security" class="nav-link">Security</a>
-        <a href="#devops" class="nav-link">DevOps</a>
-      </div>
-      <div class="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav>
-      <div class="nav-menu">
-        <a href="index.php#hero" class="nav-link">Home</a>
-        <a href="index.php#about" class="nav-link">About</a>
-        <a href="index.php#experience" class="nav-link">Experience</a>
-        <a href="index.php#projects" class="nav-link">Projects</a>
-        <a href="certifications.php" class="nav-link active">Certifications</a>
-        <a href="index.php#contact" class="nav-link">Contact</a>
+        <a href="#all-certs" class="nav-link active">All Certificates</a>
       </div>
       <div class="nav-toggle">
         <span></span>
@@ -49,78 +32,57 @@
   </nav>
 
   <!-- Certifications Hero Section -->
-  <section class="certifications-hero">
+  <section class="certifications-hero" style="padding-top: 150px; padding-bottom: 50px; text-align: center;">
     <div class="container">
       <div class="hero-content">
-        <h1 class="hero-title">Professional Certifications</h1>
-        <p class="hero-subtitle">23+ Industry-recognized credentials showcasing expertise across cloud, data science, and technology domains</p>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-number">23+</div>
-            <div class="stat-label">Certifications</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">5</div>
-            <div class="stat-label">Cloud Platforms</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">8</div>
-            <div class="stat-label">Specializations</div>
-          </div>
-        </div>
+        <h1 class="hero-title" style="margin-bottom: 20px;">Professional Certifications</h1>
+        <p class="hero-subtitle">Showcasing my expertise through industry-recognized credentials</p>
       </div>
     </div>
   </section>
 
   <!-- Certifications Detailed -->
-  <section class="certifications-detailed">
+  <section class="certifications-detailed" id="all-certs" style="padding: 50px 0;">
     <div class="container">
-      <?php
-      $categories = [
-        'cloud' => ['name' => 'Cloud & DevOps', 'icon' => 'fas fa-cloud', 'color' => 'cloud'],
-        'data' => ['name' => 'Data Science & AI', 'icon' => 'fas fa-brain', 'color' => 'data'],
-        'devops' => ['name' => 'DevOps & Tools', 'icon' => 'fas fa-cogs', 'color' => 'devops'],
-        'security' => ['name' => 'Security', 'icon' => 'fas fa-shield-alt', 'color' => 'security']
-      ];
-
-      foreach ($categories as $categoryKey => $categoryInfo) {
-        $categoryCerts = array_filter($certifications, function($cert) use ($categoryKey) {
-          return $cert['category'] === $categoryKey;
-        });
-        if (empty($categoryCerts)) continue;
-      ?>
-      <div class="certification-category" id="<?php echo $categoryKey; ?>">
-        <div class="category-header">
-          <i class="<?php echo $categoryInfo['icon']; ?>"></i>
-          <h3><?php echo $categoryInfo['name']; ?></h3>
-          <div class="category-count">
-            <?php echo count($categoryCerts); ?> Certifications
-          </div>
-        </div>
-        <div class="certificates-grid">
-          <?php foreach ($categoryCerts as $certification): ?>
-          <div class="certificate-glass-card">
-            <div class="certificate-icon">
-              <i class="<?php echo $categoryInfo['icon']; ?>"></i>
-            </div>
-            <div class="certificate-content">
-              <h4><?php echo $certification['name']; ?></h4>
-              <div class="certificate-provider">
-                <span class="provider <?php echo $certification['provider']; ?>">
-                  <?php echo ucfirst($certification['provider']); ?>
-                </span>
-              </div>
-            </div>
-            <div class="certificate-status">
-              <span class="status-badge <?php echo $certification['status']; ?>">
-                <?php echo ucfirst($certification['status']); ?>
-              </span>
-            </div>
-          </div>
-          <?php endforeach; ?>
-        </div>
+      <div class="certificates-grid">
+        <?php
+        $dir = 'Certificates/';
+        if (is_dir($dir)) {
+            $files = scandir($dir);
+            $cert_files = array_filter($files, function($file) {
+                return pathinfo($file, PATHINFO_EXTENSION) === 'pdf' || pathinfo($file, PATHINFO_EXTENSION) === 'jpg' || pathinfo($file, PATHINFO_EXTENSION) === 'png';
+            });
+            
+            if (count($cert_files) > 0) {
+                foreach ($cert_files as $file) {
+                    $name = pathinfo($file, PATHINFO_FILENAME);
+                    // Format name nicely
+                    $name = str_replace(['_', '-'], ' ', $name);
+                    $filepath = htmlspecialchars($dir . $file);
+                    ?>
+                    <div class="certificate-glass-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h4><?php echo htmlspecialchars($name); ?></h4>
+                        </div>
+                        <div class="certificate-action">
+                            <a href="<?php echo $filepath; ?>" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
+                                <i class="fas fa-external-link-alt"></i> View Certificate
+                            </a>
+                        </div>
+                    </div>
+                    <?php
+                }
+            } else {
+                echo "<p>No certificates found in the folder.</p>";
+            }
+        } else {
+             echo "<p>Certificates directory not found.</p>";
+        }
+        ?>
       </div>
-      <?php } ?>
     </div>
   </section>
 
@@ -134,13 +96,6 @@
         <div class="footer-links">
           <a href="index.php">Portfolio</a>
           <a href="certifications.php">Certifications</a>
-          <a href="achievements.php">Achievements</a>
-        </div>
-        <div class="footer-social">
-          <a href="<?php echo $profile['linkedin']; ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <?php if (isset($profile['github'])): ?>
-          <a href="<?php echo $profile['github']; ?>" target="_blank"><i class="fab fa-github"></i></a>
-          <?php endif; ?>
         </div>
       </div>
       <div class="footer-bottom">
