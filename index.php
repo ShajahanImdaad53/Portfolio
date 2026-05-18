@@ -125,7 +125,6 @@
         <div class="about-text">
           <h3>Passionate Data Scientist & ML Engineer</h3>
           <p><?php echo $profile['about']; ?></p>
-          <p>With a strong foundation in computer science and advanced training in data science, I specialize in developing intelligent systems that solve real-world problems. My expertise spans the entire data science lifecycle, from data collection and preprocessing to model development, deployment, and monitoring.</p>
           <div class="about-details">
             <div class="detail-item">
               <i class="fas fa-map-marker-alt"></i>

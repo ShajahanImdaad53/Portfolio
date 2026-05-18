@@ -2,7 +2,7 @@
 $profile = [
     'name' => 'Imdaad Shajahan',
     'headline' => 'Data Scientist | Machine Learning Engineer | Full Stack Developer',
-    'about' => 'A passionate Data Scientist specializing in machine learning, predictive analytics, and turning complex data into actionable business insights. I craft intelligent solutions that drive innovation and efficiency across industries.',
+    'about' => 'I\'m a dedicated and ambitious Data Scientist with a strong foundation in both Computing and Financial Engineering. Currently pursuing my degrees at Sabaragamuwa University of Sri Lanka and University of Colombo, I combine technical expertise with analytical thinking to solve complex business problems. My journey in data science began with a curiosity about patterns and insights hidden in data. Today, I specialize in machine learning algorithms, statistical modeling, and data visualization, using tools like Python, R, SQL, and Power BI to transform raw data into meaningful business intelligence.',
     'profile_image' => 'git.jpg',
     'location' => 'Colombo, Sri Lanka',
     'email' => 'shajahanimdaad20@gmail.com',
