@@ -257,3 +257,118 @@ body {
   box-shadow: var(--shadow);
   border: 4px solid var(--border-light);
 }
+
+/* Professional Footer Styling */
+.footer {
+  padding: 4rem 0 2rem;
+  background: var(--nav-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-logo span {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+/* Brand Colors for Social Icons */
+.footer-social a .fa-linkedin {
+  color: #0a66c2;
+}
+
+.footer-social a .fa-whatsapp {
+  color: #25d366;
+}
+
+[data-theme="light"] .footer-social a .fa-github {
+  color: #333;
+}
+.footer-social a .fa-github {
+  color: #fff;
+}
+
+.footer-social a:hover {
+  transform: translateY(-5px);
+}
+
+.footer-social a:hover:has(.fa-linkedin) {
+  background: #0a66c2;
+  border-color: #0a66c2;
+}
+.footer-social a:hover:has(.fa-linkedin) .fa-linkedin { color: #fff; }
+
+.footer-social a:hover:has(.fa-whatsapp) {
+  background: #25d366;
+  border-color: #25d366;
+}
+.footer-social a:hover:has(.fa-whatsapp) .fa-whatsapp { color: #fff; }
+
+.footer-social a:hover:has(.fa-github) {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+.footer-social a:hover:has(.fa-github) .fa-github { color: var(--dark-bg); }
+
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
