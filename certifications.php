@@ -61,8 +61,12 @@
                     $filepath = htmlspecialchars($dir . $file);
                     ?>
                     <div class="certificate-glass-card">
-                        <div class="certificate-icon">
-                            <i class="fas fa-award"></i>
+                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
+                            <?php if(strtolower(pathinfo($file, PATHINFO_EXTENSION)) === 'pdf'): ?>
+                                <iframe src="<?php echo $filepath; ?>#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
+                            <?php else: ?>
+                                <img src="<?php echo $filepath; ?>" alt="<?php echo htmlspecialchars($name); ?>" style="width: 100%; height: 100%; object-fit: cover;" />
+                            <?php endif; ?>
                         </div>
                         <div class="certificate-content">
                             <h4><?php echo htmlspecialchars($name); ?></h4>

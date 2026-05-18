@@ -25,6 +25,7 @@
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#experience" class="nav-link">Experience</a>
+        <a href="#education" class="nav-link">Education</a>
         <a href="certifications.php" class="nav-link">Certifications</a>
         <a href="achievements.php" class="nav-link">Achievements</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -199,21 +200,15 @@
     </div>
   </section>
 
-  <!-- Experience & Education Section -->
-  <section id="experience" class="experience-education">
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Experience & Education</h2>
-        <p class="section-subtitle">My professional journey and academic background</p>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-subtitle">My professional journey</p>
       </div>
 
-      <div class="experience-education-grid">
-        <!-- Experience Cards -->
-        <div class="experience-cards">
-          <h3 class="subsection-title">
-            <i class="fas fa-briefcase"></i>
-            Professional Experience
-          </h3>
+      <div class="experience-cards">
           <div class="cards-container">
             <?php foreach ($experience as $index => $exp): ?>
             <div class="experience-card" style="background-image: url('bg<?php echo ($index % 2) + 1; ?>.png');">
@@ -241,12 +236,19 @@
           </div>
         </div>
 
-        <!-- Education Cards -->
-        <div class="education-cards">
-          <h3 class="subsection-title">
-            <i class="fas fa-graduation-cap"></i>
-            Education
-          </h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="education" style="margin-top: 4rem;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Education</h2>
+        <p class="section-subtitle">My academic background</p>
+      </div>
+
+      <div class="education-cards">
           <div class="cards-container">
             <?php foreach ($education as $index => $edu): ?>
             <div class="education-card" style="background-image: url('bg<?php echo (($index + 1) % 2) + 1; ?>.png');">
