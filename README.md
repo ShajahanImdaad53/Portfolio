@@ -123,5 +123,5 @@ portfolio/
 ---
 
 <div align="center">
-  <i>Built with ❤️ using modern web technologies</i>
+  <i>Connect With Imdaad</i>
 </div>
