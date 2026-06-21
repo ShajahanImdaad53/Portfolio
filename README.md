@@ -1,9 +1,4 @@
-ChatGPT
 
-
-
-
-Claim offer
 <div align="center">
   <img src="https://i.pinimg.com/originals/a4/96/c2/a496c2b6bc5d7fac04f0f49dd5ce1cb6.gif" width="100%" height="250" style="object-fit: cover; border-radius: 15px;" alt="Space Stars" />
   <br/>
