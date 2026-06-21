@@ -1,4 +1,9 @@
-<!-- Space Stars Banner -->
+ChatGPT
+
+
+
+
+Claim offer
 <div align="center">
   <img src="https://i.pinimg.com/originals/a4/96/c2/a496c2b6bc5d7fac04f0f49dd5ce1cb6.gif" width="100%" height="250" style="object-fit: cover; border-radius: 15px;" alt="Space Stars" />
   <br/>
@@ -9,122 +14,159 @@
   <a href="https://shajahanimdaad53.github.io/Portfolio/">
     <img src="https://img.shields.io/badge/🔴_Live_Demo-FF4136?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
   </a>
-</div>
+</div>                            this is my readme make this more attracive give me
 
-<br/>
+Here's a more modern, professional, and visually appealing GitHub README header for a Data Scientist / AI Developer profile:
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=6366f1&center=true&vCenter=true&width=435&lines=Data+Scientist;Full-Stack+Web+Developer;Tech+Enthusiast" alt="Typing SVG" />
+
+<img src="https://i.pinimg.com/originals/a4/96/c2/a496c2b6bc5d7fac04f0f49dd5ce1cb6.gif" width="100%" height="280" alt="Space Banner"/>
+
+# 🚀 Hi, I'm Shajahan Imdaad
+
+### 💡 Data Scientist | AI Engineer | Machine Learning Enthusiast
+
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=24&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=700&lines=Building+AI-Powered+Solutions;Machine+Learning+%7C+Deep+Learning;Data+Science+%7C+Computer+Vision;Sinhala+Sign+Language+Recognition;Always+Learning+New+Technologies" alt="Typing SVG" />
+
+<br>
+
+<a href="https://shajahanimdaad53.github.io/Portfolio/">
+  <img src="https://img.shields.io/badge/🌐_Portfolio-FF5733?style=for-the-badge&logo=firefox&logoColor=white" />
+</a>
+
+<a href="https://github.com/ShajahanImdaad">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+
+<a href="https://www.linkedin.com/in/YOUR-LINKEDIN">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+
+<a href="mailto:YOUR_EMAIL">
+  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
+
 </div>
 
 ---
 
-A modern, dynamic portfolio website built with PHP, HTML, CSS, and JavaScript, featuring LinkedIn integration and a stunning space-themed glassmorphism design.
+## 👨‍💻 About Me
 
-## 🌟 **Key Features**
+```yaml
+Name: Shajahan Imdaad
+Role: Data Scientist & AI Developer
+Location: Sri Lanka 🇱🇰
+Education: BSc (Hons) in Software Engineering
+Current Focus:
+  - Machine Learning
+  - Deep Learning
+  - Computer Vision
+  - Generative AI
+  - Data Analytics
 
-### 🎨 **Experience & Education Section Redesign**
-- **Unique Card-Based Layout**: Replaced simple timeline with modern animated cards
-- **Space & Glassmorphism Design**: Liquid glass effect with blur, transparency, and a dynamic starfield background.
-- **Advanced Animations**: 
-  - 3D hover transforms with enhanced glass effects
-  - Flying and jumping programming language icons in space
-  - Bouncing arrows for navigation
+Current Project:
+  - Sinhala Sign Language Recognition System
 
-### 🏆 **Certifications Showcase**
-- **23 Professional Certifications**: Complete list from LinkedIn including:
-  - AWS, Google Cloud, Microsoft Azure certifications
-  - Data Science and Machine Learning specializations
-  - Programming and development credentials
-  - DevOps and security certifications
-- **Interactive Cards**: Hover effects and verified badges for each certification
-
-## 🛠️ **Technologies Used**
-
-<div align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
-</div>
-
-<br/>
-
-- **Frontend**: HTML5, CSS3 (CSS Grid & Flexbox), JavaScript (ES6+), Font Awesome Icons
-- **Backend**: PHP 7.4+, Mail functionality for contact form
-- **Key Features**:
-  - CSS custom space animations & flying tech icons
-  - Smooth scrolling navigation
-  - Mobile-first responsive design
-  - Dynamic content loading from PHP arrays
-
-## 📁 **Project Structure**
-
-```text
-portfolio/
-├── index.php           # Main PHP portfolio page
-├── data.php            # Profile data and LinkedIn information
-├── contact.php         # Contact form handler
-├── style.css           # Modern CSS styles
-├── script.js           # Interactive JavaScript
-├── git.jpg             # Profile image (placeholder)
-├── Imdaad CV.pdf       # Resume/CV download
-└── README.md           # This file
+Fun Fact:
+  - Turning data into intelligent solutions 🚀
 ```
 
-## ⚙️ **Setup Instructions**
+---
 
-### Prerequisites
-- PHP 7.4 or higher
-- Web server (Apache, Nginx) or local development server
+## 🛠️ Tech Stack
 
-### Running the Portfolio
+### Programming Languages
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-- **Local Development**:
-  ```bash
-  php -S localhost:8000
-  ```
-  Visit `http://localhost:8000`
+### AI / ML
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Scikit Learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
-- **Web Server**: Upload files to your hosting provider with PHP support.
+### Data Science
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
 
-## 📞 **Get In Touch**
+### Web Development
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react)
+![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3)
+
+---
+
+## 📊 GitHub Stats
 
 <div align="center">
-  <h3>Let's Connect & Collaborate!</h3>
-  <br/>
-  <table style="border: none;">
-    <tr>
-      <td align="center" width="25%" style="border: none;">
-        <a href="https://wa.me/94754738475" style="text-decoration: none;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="65px;" alt="WhatsApp"/><br/>
-          <br/><b>Chat on WhatsApp</b>
-        </a>
-      </td>
-      <td align="center" width="25%" style="border: none;">
-        <a href="mailto:shajahanimdaad20@gmail.com" style="text-decoration: none;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" width="65px;" alt="Email"/><br/>
-          <br/><b>Send an Email</b>
-        </a>
-      </td>
-      <td align="center" width="25%" style="border: none;">
-        <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" style="text-decoration: none;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" width="65px;" alt="LinkedIn"/><br/>
-          <br/><b>Connect on LinkedIn</b>
-        </a>
-      </td>
-      <td align="center" width="25%" style="border: none;">
-        <a href="https://github.com/ShajahanImdaad53" style="text-decoration: none;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="65px;" alt="GitHub"/><br/>
-          <br/><b>Follow on GitHub</b>
-        </a>
-      </td>
-    </tr>
-  </table>
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=ShajahanImdaad&show_icons=true&theme=tokyonight"/>
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ShajahanImdaad&layout=compact&theme=tokyonight"/>
+
 </div>
 
 ---
 
+## 🔥 GitHub Streak
+
 <div align="center">
-  <i>Connect With Imdaad</i>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=ShajahanImdaad&theme=tokyonight"/>
+
 </div>
+
+---
+
+## 🏆 Achievements
+
+- 🎓 Software Engineering Undergraduate
+- 🤖 AI & Machine Learning Developer
+- 📊 Data Science Enthusiast
+- 🧠 Computer Vision Researcher
+- 🚀 Open Source Contributor
+
+---
+
+## 🌟 Featured Project
+
+### 🤟 Sinhala Sign Language Recognition System
+
+AI-powered real-time sign language recognition system using:
+
+- Computer Vision
+- Deep Learning
+- TensorFlow
+- OpenCV
+- Flask
+
+---
+
+<div align="center">
+
+### 🚀 Let's Build Something Amazing Together!
+
+<img src="https://komarev.com/ghpvc/?username=ShajahanImdaad&style=for-the-badge&color=blue" />
+
+</div>
+This version looks much more professional and recruiter-friendly, especially for AI, Data Science, and Software Engineering portfolios. It includes:
+
+Animated typing effect
+
+Professional badges
+
+About Me section
+
+Tech stack
+
+GitHub stats
+
+Streak stats
+
+Featured project section
+
+Modern dark-theme aesthetic suitable for 2026 GitHub profiles.
+
+
