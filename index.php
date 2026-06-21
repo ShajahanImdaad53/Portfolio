@@ -89,27 +89,20 @@
             <img src="<?php echo $profile['profile_image']; ?>" alt="<?php echo $profile['name']; ?>" class="profile-image" />
             <div class="image-overlay"></div>
           </div>
-          <div class="floating-elements">
-            <div class="floating-card card-1">
-              <i class="fas fa-chart-line"></i>
-              <span>Data Analysis</span>
-            </div>
-            <div class="floating-card card-2">
-              <i class="fas fa-brain"></i>
-              <span>Machine Learning</span>
-            </div>
-            <div class="floating-card card-3">
-              <i class="fas fa-code"></i>
-              <span>Python Expert</span>
-            </div>
+          <div class="flying-icons">
+            <i class="fab fa-python icon-fly" style="color: #3776AB; font-size: 2.5rem; top: 10%; left: 10%; animation-delay: 0s;"></i>
+            <i class="fab fa-js-square icon-fly" style="color: #F7DF1E; font-size: 3rem; top: 20%; right: 15%; animation-delay: 1s;"></i>
+            <i class="fab fa-php icon-fly" style="color: #777BB4; font-size: 2.5rem; bottom: 30%; left: 20%; animation-delay: 2s;"></i>
+            <i class="fab fa-html5 icon-fly" style="color: #E34F26; font-size: 2.8rem; bottom: 15%; right: 10%; animation-delay: 0.5s;"></i>
+            <i class="fab fa-css3-alt icon-fly" style="color: #1572B6; font-size: 2.6rem; top: 50%; right: -5%; animation-delay: 1.5s;"></i>
+            <i class="fab fa-react icon-fly" style="color: #61DAFB; font-size: 2.4rem; top: -10%; right: 30%; animation-delay: 2.5s;"></i>
           </div>
         </div>
       </div>
       <div class="scroll-indicator">
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
-        </div>
-        <span>Scroll Down</span>
+        <a href="#about" class="scroll-arrow" aria-label="Scroll to About section">
+          <i class="fas fa-chevron-down" style="font-size: 2rem; color: var(--text-secondary);"></i>
+        </a>
       </div>
     </div>
   </section>

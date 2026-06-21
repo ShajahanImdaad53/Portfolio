@@ -1,5 +1,8 @@
+<!-- Space Stars Banner -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=250&section=header&text=Hi%20there,%20I'm%20Imdaad!&fontSize=50&animation=fadeIn&fontAlignY=38&desc=Data%20Scientist%20%7C%20Full%20Stack%20Developer&descAlignY=51&descAlign=50" width="100%" />
+  <img src="https://i.pinimg.com/originals/a4/96/c2/a496c2b6bc5d7fac04f0f49dd5ce1cb6.gif" width="100%" height="250" style="object-fit: cover; border-radius: 15px;" alt="Space Stars" />
+  <br/>
+  <h1>🚀 Hi there, I'm Imdaad!</h1>
 </div>
 
 <div align="center">
@@ -11,39 +14,22 @@
 <br/>
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="https://github.com/ShajahanImdaad53">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-  <a href="https://wa.me/94754738475">
-    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
-  </a>
-  <a href="mailto:shajahanimdaad20@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-</div>
-
-<div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=6366f1&center=true&vCenter=true&width=435&lines=Data+Scientist;Full-Stack+Web+Developer;Tech+Enthusiast" alt="Typing SVG" />
 </div>
 
 ---
 
-A modern, dynamic portfolio website built with PHP, HTML, CSS, and JavaScript, featuring LinkedIn integration and a stunning glassmorphism design.
+A modern, dynamic portfolio website built with PHP, HTML, CSS, and JavaScript, featuring LinkedIn integration and a stunning space-themed glassmorphism design.
 
 ## 🌟 **Key Features**
 
 ### 🎨 **Experience & Education Section Redesign**
 - **Unique Card-Based Layout**: Replaced simple timeline with modern animated cards
-- **iOS Glassmorphism Design**: Liquid glass effect with blur, transparency, and frosted glass appearance
-- **Background Images**: Each card uses dynamic backgrounds with a sleek glass overlay
+- **Space & Glassmorphism Design**: Liquid glass effect with blur, transparency, and a dynamic starfield background.
 - **Advanced Animations**: 
   - 3D hover transforms with enhanced glass effects
-  - Subtle shimmer animations on glass surfaces
-  - Smooth backdrop-filter transitions
-  - Glass-like shadows and highlights
+  - Flying and jumping programming language icons in space
+  - Bouncing arrows for navigation
 
 ### 🏆 **Certifications Showcase**
 - **23 Professional Certifications**: Complete list from LinkedIn including:
@@ -51,8 +37,6 @@ A modern, dynamic portfolio website built with PHP, HTML, CSS, and JavaScript, f
   - Data Science and Machine Learning specializations
   - Programming and development credentials
   - DevOps and security certifications
-- **Categorized Display**: Organized by Cloud & DevOps, Data Science & ML, Programming & Tools, Security & Other
-- **Statistics Dashboard**: Shows 23+ certifications, 5 cloud platforms, 8 specializations
 - **Interactive Cards**: Hover effects and verified badges for each certification
 
 ## 🛠️ **Technologies Used**
@@ -69,11 +53,8 @@ A modern, dynamic portfolio website built with PHP, HTML, CSS, and JavaScript, f
 - **Frontend**: HTML5, CSS3 (CSS Grid & Flexbox), JavaScript (ES6+), Font Awesome Icons
 - **Backend**: PHP 7.4+, Mail functionality for contact form
 - **Key Features**:
-  - Intersection Observer API for scroll animations
-  - CSS Custom Properties (CSS Variables)
+  - CSS custom space animations & flying tech icons
   - Smooth scrolling navigation
-  - Particle background effects
-  - Typing animation effects
   - Mobile-first responsive design
   - Dynamic content loading from PHP arrays
 
@@ -109,16 +90,38 @@ portfolio/
 
 ## 📞 **Get In Touch**
 
-<p align="center">
-  <a href="https://wa.me/94754738475">
-    <img src="https://img.shields.io/badge/Chat_on_WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
-  </a>
-  <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a">
-    <img src="https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
+<div align="center">
+  <h3>Let's Connect & Collaborate!</h3>
   <br/>
-  <strong>Email:</strong> <a href="mailto:shajahanimdaad20@gmail.com">shajahanimdaad20@gmail.com</a> | <strong>Location:</strong> Colombo, Sri Lanka
-</p>
+  <table style="border: none;">
+    <tr>
+      <td align="center" width="25%" style="border: none;">
+        <a href="https://wa.me/94754738475" style="text-decoration: none;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="65px;" alt="WhatsApp"/><br/>
+          <br/><b>Chat on WhatsApp</b>
+        </a>
+      </td>
+      <td align="center" width="25%" style="border: none;">
+        <a href="mailto:shajahanimdaad20@gmail.com" style="text-decoration: none;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" width="65px;" alt="Email"/><br/>
+          <br/><b>Send an Email</b>
+        </a>
+      </td>
+      <td align="center" width="25%" style="border: none;">
+        <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" style="text-decoration: none;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" width="65px;" alt="LinkedIn"/><br/>
+          <br/><b>Connect on LinkedIn</b>
+        </a>
+      </td>
+      <td align="center" width="25%" style="border: none;">
+        <a href="https://github.com/ShajahanImdaad53" style="text-decoration: none;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="65px;" alt="GitHub"/><br/>
+          <br/><b>Follow on GitHub</b>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
 
