@@ -1,149 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Imdaad Shajahan | Data Scientist | Machine Learning Engineer | Full Stack Developer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="theme.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imdaad Shajahan | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
-  <!-- Navigation -->
+
+  <!-- Floating Navbar -->
   <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <span>Imdaad</span>
-      </div>
-      <div class="nav-menu">
-        <a href="#hero" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="certifications.html" class="nav-link">Certifications</a>
-        <a href="achievements.html" class="nav-link">Achievements</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
-      <div class="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
-        <i class="fas fa-moon"></i>
-      </button>
-    </div>
+    <a href="#hero" class="nav-link active">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
   <!-- Hero Section -->
   <section id="hero" class="hero">
-    <div id="space-stars"></div>
-    <div class="hero-container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="hero-title">
-            Hi, I'm <span class="highlight">Imdaad Shajahan</span>
-          </h1>
-          <div class="hero-subtitle">
-            <span class="typing-text"></span>
-            <span class="cursor">|</span>
-          </div>
-          <p class="hero-description">
-            I'm a dedicated and ambitious Data Scientist with a strong foundation in both Computing and Financial
-            Engineering. Currently pursuing my degrees at Sabaragamuwa University of Sri Lanka and University of
-            Colombo, I combine technical expertise with analytical thinking to solve complex business problems. My
-            journey in data science began with a curiosity about patterns and insights hidden in data. Today, I
-            specialize in machine learning algorithms, statistical modeling, and data visualization, using tools like
-            Python, R, SQL, and Power BI to transform raw data into meaningful business intelligence. </p>
-          <div class="hero-stats">
-            <div class="stat">
-              <span class="stat-number">4+</span>
-              <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">20+</span>
-              <span class="stat-label">Certifications</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">1+</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-          </div>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">
-              <i class="fas fa-eye"></i> View My Work
-            </a>
-            <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" target="_blank" class="btn btn-secondary">
-              <i class="fab fa-linkedin"></i> LinkedIn Profile
-            </a>
-            <a href="https://github.com/ShajahanImdaad53" target="_blank" class="btn btn-secondary"
-              style="margin-top: 10px;">
-              <i class="fab fa-github"></i> GitHub Profile
-            </a>
-          </div>
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="hero-badge">Available for opportunities</div>
+        <h1 class="hero-title">Building digital <br><span>experiences</span>.</h1>
+        <p class="hero-description">
+          Hi, I'm Imdaad Shajahan. A Data Scientist & Full Stack Developer specializing in intelligent systems, beautiful interfaces, and robust architecture.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Work <i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-secondary">Get in touch</a>
         </div>
-        <div class="hero-image">
-          <div class="image-container">
-            <img src="git.jpg" alt="Imdaad Shajahan" class="profile-image" />
-            <div class="image-overlay"></div>
-          </div>
-          <div class="flying-icons">
-            <i class="fab fa-python icon-fly" style="color: #3776AB; font-size: 2.5rem; top: 10%; left: 10%; animation-delay: 0s;"></i>
-            <i class="fab fa-js icon-fly" style="color: #F7DF1E; font-size: 2.5rem; top: 20%; right: 15%; animation-delay: 1s;"></i>
-            <i class="fab fa-php icon-fly" style="color: #777BB4; font-size: 2.5rem; bottom: 20%; left: 20%; animation-delay: 2s;"></i>
-            <i class="fab fa-html5 icon-fly" style="color: #E34F26; font-size: 2.5rem; bottom: 10%; right: 10%; animation-delay: 3s;"></i>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <a href="#about" class="scroll-arrow" aria-label="Scroll to About section">
-          <i class="fas fa-chevron-down"></i>
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About Section (Bento Grid) -->
   <section id="about" class="about">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">About Me <img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Waving" style="width: 50px; border-radius: 50%; vertical-align: middle;"></h2>
-        <p class="section-subtitle">Get to know me better</p>
+      <div class="section-header reveal">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Get to know the developer</p>
       </div>
-      <div class="about-content">
-        <div class="about-text">
-          <h3>Passionate Data Scientist & ML Engineer</h3>
-          <p>I'm a dedicated and ambitious Data Scientist with a strong foundation in both Computing and Financial
-            Engineering. Currently pursuing my degrees at Sabaragamuwa University of Sri Lanka and University of
-            Colombo, I combine technical expertise with analytical thinking to solve complex business problems. My
-            journey in data science began with a curiosity about patterns and insights hidden in data. Today, I
-            specialize in machine learning algorithms, statistical modeling, and data visualization, using tools like
-            Python, R, SQL, and Power BI to transform raw data into meaningful business intelligence.</p>
-          <div class="about-details">
-            <div class="detail-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Colombo, Sri Lanka</span>
-            </div>
-            <div class="detail-item">
-              <i class="fas fa-envelope"></i>
-              <span>shajahanimdaad20@gmail.com</span>
-            </div>
-            <div class="detail-item">
-              <i class="fas fa-phone"></i>
-              <span>+94754738475</span>
-            </div>
+      
+      <div class="about-bento reveal">
+        <div class="glass-card profile-card">
+          <div class="profile-img-container">
+            <img src="git.jpg" alt="Imdaad Shajahan">
           </div>
+          <h3>Imdaad Shajahan</h3>
+          <p style="color: var(--text-secondary); margin-top: 0.5rem;">Colombo, Sri Lanka</p>
         </div>
-        <div class="about-image">
-          <img src="git.jpg" alt="Imdaad Shajahan" />
+        
+        <div class="glass-card about-text">
+          <p>
+            I'm a dedicated and ambitious Data Scientist with a strong foundation in both Computing and Financial Engineering. Currently pursuing my degrees at Sabaragamuwa University of Sri Lanka and University of Colombo.
+          </p>
+          <p>
+            I combine technical expertise with analytical thinking to solve complex business problems. My journey in data science began with a curiosity about patterns and insights hidden in data. 
+          </p>
+          <p>
+            Today, I specialize in machine learning algorithms, statistical modeling, and data visualization. I build tools that transform raw data into meaningful intelligence.
+          </p>
         </div>
       </div>
     </div>
@@ -152,62 +71,25 @@
   <!-- Skills Section -->
   <section id="skills" class="skills">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <p class="section-subtitle">Technologies I work with</p>
+      <div class="section-header reveal">
+        <h2 class="section-title">Tech Stack</h2>
+        <p class="section-subtitle">Tools and technologies I work with</p>
       </div>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <i class="fab fa-python" style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">Python</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-chart-bar"
-            style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">R</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-database" style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">SQL</span>
-        </div>
-        <div class="skill-item">
-          <i class="fab fa-react" style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">React.js</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-table" style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">Pandas</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-square-root-alt"
-            style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">NumPy</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-brain" style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">Scikit-learn</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-network-wired"
-            style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">TensorFlow</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-database" style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">MySQL</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-database" style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">PostgreSQL</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-leaf" style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">MongoDB</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-chart-pie"
-            style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary-color);"></i>
-          <span class="skill-name">Power BI</span>
+      
+      <div class="glass-card reveal">
+        <div class="skills-wrapper">
+          <div class="skill-pill"><i class="fab fa-python"></i> Python</div>
+          <div class="skill-pill"><i class="fab fa-js"></i> JavaScript</div>
+          <div class="skill-pill"><i class="fab fa-react"></i> React.js</div>
+          <div class="skill-pill"><i class="fas fa-database"></i> SQL</div>
+          <div class="skill-pill"><i class="fas fa-chart-pie"></i> Power BI</div>
+          <div class="skill-pill"><i class="fas fa-brain"></i> Scikit-learn</div>
+          <div class="skill-pill"><i class="fas fa-network-wired"></i> TensorFlow</div>
+          <div class="skill-pill"><i class="fab fa-html5"></i> HTML/CSS</div>
+          <div class="skill-pill"><i class="fas fa-table"></i> Pandas</div>
+          <div class="skill-pill"><i class="fas fa-square-root-alt"></i> NumPy</div>
+          <div class="skill-pill"><i class="fab fa-php"></i> PHP</div>
+          <div class="skill-pill"><i class="fas fa-leaf"></i> MongoDB</div>
         </div>
       </div>
     </div>
@@ -216,235 +98,61 @@
   <!-- Projects Section -->
   <section id="projects" class="projects">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">My GitHub Repositories</p>
+      <div class="section-header reveal">
+        <h2 class="section-title">Selected Works</h2>
+        <p class="section-subtitle">My public GitHub repositories</p>
       </div>
+      
+      <!-- Container for dynamic JS injection -->
       <div class="projects-grid" id="github-projects-container">
-        <div style="text-align: center; width: 100%; grid-column: 1 / -1;">
-          <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--primary-color);"></i>
-          <p style="margin-top: 10px;">Loading projects from GitHub...</p>
+        <div class="glass-card" style="text-align: center; grid-column: 1 / -1;">
+          <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--text-primary); margin-bottom: 1rem;"></i>
+          <p>Loading projects from GitHub...</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="experience">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Professional Experience</h2>
-        <p class="section-subtitle">My professional journey</p>
-      </div>
-
-      <div class="experience-cards">
-        <div class="cards-container">
-          <div class="experience-card" style="background-image: url('bg1.png');">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-              <div class="card-header">
-                <div class="card-icon">
-                  <i class="fas fa-building"></i>
-                </div>
-                <div class="card-meta">
-                  <span class="card-duration">2025 - Present</span>
-                  <span class="card-location">Colombo, Sri Lanka</span>
-                </div>
-              </div>
-              <h4 class="card-title">Data Scientist Intern</h4>
-              <p class="card-company">Various Organizations</p>
-              <p class="card-description">Applying data science skills to real-world problems, developing machine
-                learning models, and creating data-driven solutions for business optimization.</p>
-              <div class="card-progress">
-                <div class="progress-bar" style="width: 100%"></div>
-              </div>
-            </div>
-            <div class="card-hover-effect"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="education" style="margin-top: 4rem;">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Education</h2>
-        <p class="section-subtitle">My academic background</p>
-      </div>
-
-      <div class="education-cards">
-        <div class="cards-container">
-          <div class="education-card" style="background-image: url('bg2.png');">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-              <div class="card-header">
-                <div class="card-icon">
-                  <i class="fas fa-university"></i>
-                </div>
-                <div class="card-meta">
-                  <span class="card-year">2023 - Present</span>
-                </div>
-              </div>
-              <h4 class="card-title">BSc in Computing & Information Systems</h4>
-              <p class="card-school">Sabaragamuwa University of Sri Lanka</p>
-              <p class="card-description">Comprehensive study of computer science fundamentals, software engineering,
-                data structures, algorithms, and information systems management.</p>
-              <div class="card-achievement">
-                <i class="fas fa-award"></i>
-                <span>Completed with Excellence</span>
-              </div>
-            </div>
-            <div class="card-hover-effect"></div>
-          </div>
-          <div class="education-card" style="background-image: url('bg1.png');">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-              <div class="card-header">
-                <div class="card-icon">
-                  <i class="fas fa-university"></i>
-                </div>
-                <div class="card-meta">
-                  <span class="card-year">2022 - Present</span>
-                </div>
-              </div>
-              <h4 class="card-title">BSc in Financial Engineering</h4>
-              <p class="card-school">University of Colombo</p>
-              <p class="card-description">Advanced study of financial mathematics, quantitative methods, risk
-                management, and financial modeling techniques.</p>
-              <div class="card-achievement">
-                <i class="fas fa-award"></i>
-                <span>Completed with Excellence</span>
-              </div>
-            </div>
-            <div class="card-hover-effect"></div>
-          </div>
-          <div class="education-card" style="background-image: url('bg2.png');">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-              <div class="card-header">
-                <div class="card-icon">
-                  <i class="fas fa-university"></i>
-                </div>
-                <div class="card-meta">
-                  <span class="card-year">Completed</span>
-                </div>
-              </div>
-              <h4 class="card-title">Advanced Level (Physical Science)</h4>
-              <p class="card-school">Km/Shams National School</p>
-              <p class="card-description">Strong foundation in mathematics, physics, and chemistry, providing the
-                analytical and problem-solving skills essential for data science and engineering.</p>
-              <div class="card-achievement">
-                <i class="fas fa-award"></i>
-                <span>Completed with Excellence</span>
-              </div>
-            </div>
-            <div class="card-hover-effect"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Certifications & Achievements Preview -->
-    <div class="certifications-preview"
-      style="margin-top: 5rem; text-align: center; background: var(--card-bg); padding: 3rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(15px);">
-      <div class="preview-header" style="margin-bottom: 2rem;">
-        <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 1rem;">Professional Credentials</h2>
-        <p class="section-subtitle">Explore my complete collection of verified certifications and notable achievements.
-        </p>
-      </div>
-      <div class="preview-actions" style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-        <a href="certifications.html" class="btn btn-primary"
-          style="padding: 1rem 2rem; font-size: 1.1rem; border-radius: 50px;">
-          <i class="fas fa-certificate"></i> View All Certifications
-        </a>
-      </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- LinkedIn Posts Section (Hidden)
-  <section id="linkedin-posts" class="linkedin-posts">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Latest LinkedIn Posts</h2>
-        <p class="section-subtitle">Stay updated with my professional insights</p>
-      </div>
-      <div class="posts-grid">
-              </div>
-    </div>
-  </section>
-  -->
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Let's work together</p>
+      <div class="section-header reveal">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Feel free to reach out for collaborations</p>
       </div>
-      <div class="contact-content">
-        <div class="contact-info">
-          <div class="contact-card">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div class="contact-details">
-              <h3>Email</h3>
-              <p style="margin-bottom: 0.5rem;">shajahanimdaad20@gmail.com</p>
-              <a href="mailto:shajahanimdaad20@gmail.com" class="btn btn-primary"
-                style="padding: 0.4rem 1.2rem; font-size: 0.85rem; border-radius: 50px; display: inline-block;">Send
-                Email</a>
-            </div>
+      
+      <div class="contact-bento reveal">
+        <a href="mailto:shajahanimdaad20@gmail.com" class="glass-card contact-card">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-details">
+            <h3>Email</h3>
+            <p>shajahanimdaad20@gmail.com</p>
           </div>
-          <div class="contact-card">
-            <div class="contact-icon" style="background: #0077b5;"><i class="fab fa-linkedin"></i></div>
-            <div class="contact-details">
-              <h3>LinkedIn</h3>
-              <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Let's connect
-                professionally.</p>
-              <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" target="_blank" class="btn btn-primary"
-                style="background: #0077b5; padding: 0.4rem 1.2rem; font-size: 0.85rem; border-radius: 50px; display: inline-block;">Connect
-                Now</a>
-            </div>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" target="_blank" class="glass-card contact-card">
+          <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+          <div class="contact-details">
+            <h3>LinkedIn</h3>
+            <p>Connect professionally</p>
           </div>
-          <div class="contact-card">
-            <div class="contact-icon" style="background: #25d366;"><i class="fab fa-whatsapp"></i></div>
-            <div class="contact-details">
-              <h3>WhatsApp</h3>
-              <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Reach out for quick
-                replies.</p>
-              <a href="https://Wa.me/+94754738475" target="_blank" class="btn btn-primary"
-                style="background: #25d366; padding: 0.4rem 1.2rem; font-size: 0.85rem; border-radius: 50px; display: inline-block;">Chat
-                Now</a>
-            </div>
+        </a>
+        
+        <a href="https://github.com/ShajahanImdaad53" target="_blank" class="glass-card contact-card">
+          <div class="contact-icon"><i class="fab fa-github"></i></div>
+          <div class="contact-details">
+            <h3>GitHub</h3>
+            <p>View my source code</p>
           </div>
-          <div class="contact-card">
-            <div class="contact-icon" style="background: var(--gradient);"><i class="fas fa-phone"></i></div>
-            <div class="contact-details">
-              <h3>Phone</h3>
-              <p style="margin-bottom: 0.5rem;">+94754738475</p>
-              <a href="tel:+94754738475" class="btn btn-secondary"
-                style="padding: 0.4rem 1.2rem; font-size: 0.85rem; border-radius: 50px; display: inline-block;">Call
-                Now</a>
-            </div>
+        </a>
+        
+        <a href="https://Wa.me/+94754738475" target="_blank" class="glass-card contact-card">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="contact-details">
+            <h3>WhatsApp</h3>
+            <p>Chat directly</p>
           </div>
-        </div>
-        <div class="contact-form">
-          <form action="contact.html" method="post">
-            <div class="form-group">
-              <input type="text" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-              <textarea name="message" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -452,30 +160,10 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <span>Imdaad</span>
-        </div>
-        <div class="footer-links">
-          <a href="#hero">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" target="_blank"><i
-              class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/ShajahanImdaad53" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://Wa.me/+94754738475" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Imdaad Shajahan. All rights reserved.</p>
-      </div>
+      <p>&copy; 2026 Imdaad Shajahan. Designed with a modern aesthetic.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
-
 </html>
