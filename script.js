@@ -457,6 +457,72 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // ===== GitHub Projects Fetcher =====
+  const githubProjectsContainer = document.getElementById('github-projects-container');
+  if (githubProjectsContainer) {
+    fetch('https://api.github.com/users/ShajahanImdaad53/repos?sort=updated&per_page=100')
+      .then(response => response.json())
+      .then(repos => {
+        if (repos.length > 0) {
+          githubProjectsContainer.innerHTML = '';
+          repos.forEach(repo => {
+            // Determine icon based on language or name
+            let iconClass = 'fas fa-code';
+            if (repo.language === 'Python') iconClass = 'fab fa-python';
+            else if (repo.language === 'HTML') iconClass = 'fab fa-html5';
+            else if (repo.language === 'JavaScript') iconClass = 'fab fa-js';
+            else if (repo.language === 'TypeScript') iconClass = 'fab fa-react'; // Approximating React for TS apps
+            else if (repo.language === 'Java') iconClass = 'fab fa-java';
+            else if (repo.language === 'PHP') iconClass = 'fab fa-php';
+            
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.innerHTML = `
+              <div class="project-image" style="background: var(--gradient); display: flex; align-items: center; justify-content: center; min-height: 220px;">
+                <i class="${iconClass}" style="font-size: 6rem; color: rgba(255,255,255,0.8);"></i>
+                <div class="project-overlay">
+                  <div class="project-links">
+                    ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" class="project-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                    <a href="${repo.html_url}" target="_blank" class="project-link" title="Source Code">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">${repo.name.replace(/-/g, ' ')}</h3>
+                <p class="project-description" style="min-height: 80px;">${repo.description || 'A project developed by Imdaad Shajahan. View the source code for more details.'}</p>
+                <div class="project-tech">
+                  ${repo.language ? `<span class="tech-tag">${repo.language}</span>` : ''}
+                  ${repo.topics && repo.topics.length > 0 ? repo.topics.slice(0,3).map(t => `<span class="tech-tag">${t}</span>`).join('') : ''}
+                </div>
+              </div>
+            `;
+            githubProjectsContainer.appendChild(card);
+          });
+          
+          // Re-attach hover effects
+          const newCards = document.querySelectorAll('.project-card');
+          newCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+              card.style.transform = 'translateY(-10px)';
+              card.style.boxShadow = 'var(--shadow-hover)';
+            });
+            card.addEventListener('mouseleave', () => {
+              card.style.transform = 'translateY(0)';
+              card.style.boxShadow = 'var(--shadow)';
+            });
+          });
+        } else {
+          githubProjectsContainer.innerHTML = '<p style="text-align: center; width: 100%; grid-column: 1 / -1;">No public repositories found.</p>';
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching GitHub repos:', error);
+        githubProjectsContainer.innerHTML = '<p style="text-align: center; width: 100%; grid-column: 1 / -1; color: red;">Failed to load projects. Please try again later.</p>';
+      });
+  }
+
   // ===== Console Welcome Message =====
   console.log(`
   ╔══════════════════════════════════════════════════════════════╗
