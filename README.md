@@ -1,11 +1,5 @@
 
 
-<div align="center">
-  <a href="https://shajahanimdaad53.github.io/Portfolio/">
-    <img src="https://img.shields.io/badge/🔴_Live_Demo-FF4136?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
-  </a>
-</div>                            this is my readme make this more attracive give me
-
 Here's a more modern, professional, and visually appealing GitHub README header for a Data Scientist / AI Developer profile:
 
 <div align="center">
