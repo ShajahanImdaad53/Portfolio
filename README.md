@@ -1,23 +1,49 @@
-# Imdaad Shajahan - Data Scientist Portfolio
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=250&section=header&text=Hi%20there,%20I'm%20Imdaad!&fontSize=50&animation=fadeIn&fontAlignY=38&desc=Data%20Scientist%20%7C%20Full%20Stack%20Developer&descAlignY=51&descAlign=50" width="100%" />
+</div>
 
-A modern, dynamic portfolio website built with PHP, HTML, CSS, and JavaScript, featuring LinkedIn integration.
+<div align="center">
+  <a href="https://shajahanimdaad53.github.io/Portfolio/">
+    <img src="https://img.shields.io/badge/🔴_Live_Demo-FF4136?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+  </a>
+</div>
 
-## ✨ **Latest Updates**
+<br/>
+
+<div align="center">
+  <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://github.com/ShajahanImdaad53">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+  <a href="https://wa.me/94754738475">
+    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
+  </a>
+  <a href="mailto:shajahanimdaad20@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+</div>
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=6366f1&center=true&vCenter=true&width=435&lines=Data+Scientist;Full-Stack+Web+Developer;Tech+Enthusiast" alt="Typing SVG" />
+</div>
+
+---
+
+A modern, dynamic portfolio website built with PHP, HTML, CSS, and JavaScript, featuring LinkedIn integration and a stunning glassmorphism design.
+
+## 🌟 **Key Features**
 
 ### 🎨 **Experience & Education Section Redesign**
 - **Unique Card-Based Layout**: Replaced simple timeline with modern animated cards
 - **iOS Glassmorphism Design**: Liquid glass effect with blur, transparency, and frosted glass appearance
-- **Background Images**: Each card uses `bg1.png` and `bg2.png` as dynamic backgrounds with glass overlay
+- **Background Images**: Each card uses dynamic backgrounds with a sleek glass overlay
 - **Advanced Animations**: 
   - 3D hover transforms with enhanced glass effects
   - Subtle shimmer animations on glass surfaces
   - Smooth backdrop-filter transitions
   - Glass-like shadows and highlights
-- **Professional Elements**:
-  - Frosted glass icons and meta information
-  - Gradient text effects on glass backgrounds
-  - Achievement badges with glass styling
-  - Progress bars with glassmorphism effects
 
 ### 🏆 **Certifications Showcase**
 - **23 Professional Certifications**: Complete list from LinkedIn including:
@@ -29,97 +55,47 @@ A modern, dynamic portfolio website built with PHP, HTML, CSS, and JavaScript, f
 - **Statistics Dashboard**: Shows 23+ certifications, 5 cloud platforms, 8 specializations
 - **Interactive Cards**: Hover effects and verified badges for each certification
 
-### 🎯 **Enhanced Features**
-- **Background Integration**: All sections now use semi-transparent backgrounds with your custom images
-- **Responsive Design**: Optimized for all device sizes
-- **Performance Optimized**: Smooth animations and efficient CSS
+## 🛠️ **Technologies Used**
 
-## 🛠️ Technologies Used
+<div align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
+</div>
 
-### Frontend
-- HTML5
-- CSS3 (Modern CSS with CSS Grid & Flexbox)
-- JavaScript (ES6+)
-- Font Awesome Icons
+<br/>
 
-### Backend
-- PHP 7.4+
-- Mail functionality for contact form
+- **Frontend**: HTML5, CSS3 (CSS Grid & Flexbox), JavaScript (ES6+), Font Awesome Icons
+- **Backend**: PHP 7.4+, Mail functionality for contact form
+- **Key Features**:
+  - Intersection Observer API for scroll animations
+  - CSS Custom Properties (CSS Variables)
+  - Smooth scrolling navigation
+  - Particle background effects
+  - Typing animation effects
+  - Mobile-first responsive design
+  - Dynamic content loading from PHP arrays
 
-### Key Features
-- Intersection Observer API for scroll animations
-- CSS Custom Properties (CSS Variables)
-- Modern CSS Grid and Flexbox layouts
-- Smooth scrolling navigation
-- Particle background effects
-- Typing animation effects
-- Mobile-first responsive design
-- Dynamic content loading from PHP arrays
+## 📁 **Project Structure**
 
-## 📁 Project Structure
-
-```
+```text
 portfolio/
 ├── index.php           # Main PHP portfolio page
 ├── data.php            # Profile data and LinkedIn information
 ├── contact.php         # Contact form handler
 ├── style.css           # Modern CSS styles
 ├── script.js           # Interactive JavaScript
-├── git.jpg            # Profile image (placeholder)
-├── Imdaad CV.pdf      # Resume/CV download
-└── README.md          # This file
+├── git.jpg             # Profile image (placeholder)
+├── Imdaad CV.pdf       # Resume/CV download
+└── README.md           # This file
 ```
 
-## 🎯 Sections
-
-1. **Hero Section**: Introduction with profile photo and key information
-2. **About**: Personal background, education, and statistics
-3. **Skills**: Technical skills organized by category
-4. **Projects**: Featured projects with descriptions and technologies
-5. **Experience**: Work experience timeline
-6. **Certifications**: Professional certifications and achievements
-7. **LinkedIn Posts**: Recent LinkedIn posts and updates
-8. **Contact**: Contact information and functional form
-
-## ⚙️ Setup Instructions
+## ⚙️ **Setup Instructions**
 
 ### Prerequisites
 - PHP 7.4 or higher
 - Web server (Apache, Nginx) or local development server
-
-### Installation
-
-1. **Update Profile Data**:
-   - Open `data.php` in a text editor
-   - Visit your LinkedIn profile: https://www.linkedin.com/in/imdaad-shajahan-75094229a
-   - Copy your information to replace placeholders:
-     - Profile image URL
-     - About section
-     - Work experience
-     - Education
-     - Skills
-     - Projects
-     - Certifications
-     - Recent post links
-
-2. **Configure Contact Form**:
-   - Ensure PHP mail function is enabled on your server
-   - Update email settings in `contact.php` if needed
-
-3. **Add Project Images**:
-   - Visit your LinkedIn profile projects section
-   - Right-click on project images and copy image URLs
-   - Replace the placeholder image URLs in `data.php` for each project
-   - Example: `'image' => 'https://media.licdn.com/dms/image/C4E22AQF...'`
-
-4. **Background Images**:
-   - The website now uses `bg1.png` as a transparent background overlay throughout all sections
-   - Reduced opacity to 60% for better background visibility
-   - All sections (hero, about, skills, projects, experience, contact, footer) have semi-transparent backgrounds
-
-5. **Timeline Design**:
-   - Circular timeline markers have been changed to square shapes
-   - Removed pulsing animation from timeline markers
 
 ### Running the Portfolio
 
@@ -127,84 +103,25 @@ portfolio/
   ```bash
   php -S localhost:8000
   ```
-  Visit `http://localhost:8000/index.php`
+  Visit `http://localhost:8000`
 
 - **Web Server**: Upload files to your hosting provider with PHP support.
 
-## 🔄 Updating Content
+## 📞 **Get In Touch**
 
-### From LinkedIn
-1. Visit https://www.linkedin.com/in/imdaad-shajahan-75094229a
-2. Copy information to `data.php` arrays
-3. Update profile image URL
-4. Add recent post links
-
-### Adding Projects
-Add to `$projects` array in `data.php`:
-
-```php
-[
-    'title' => 'Project Title',
-    'description' => 'Description...',
-    'technologies' => ['Tech1', 'Tech2'],
-    'github' => 'https://github.com/...',
-    'demo' => 'https://demo-link.com'
-]
-```
-
-## 📞 Contact
-
-Imdaad Shajahan
-- LinkedIn: https://www.linkedin.com/in/imdaad-shajahan-75094229a
-- Email: [Update in data.php]
+<p align="center">
+  <a href="https://wa.me/94754738475">
+    <img src="https://img.shields.io/badge/Chat_on_WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
+  </a>
+  <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a">
+    <img src="https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <br/>
+  <strong>Email:</strong> <a href="mailto:shajahanimdaad20@gmail.com">shajahanimdaad20@gmail.com</a> | <strong>Location:</strong> Colombo, Sri Lanka
+</p>
 
 ---
 
-*Built with ❤️ using PHP, HTML, CSS & JS*
-
-## 🚀 Getting Started
-
-1. Clone or download the repository
-2. Open `index.html` in your web browser
-3. For local development with live server:
-   ```bash
-   python -m http.server 8000
-   ```
-   Then visit `http://localhost:8000`
-
-## 📱 Responsive Design
-
-The portfolio is fully responsive and optimized for:
-- Desktop (1200px+)
-- Tablet (768px - 1199px)
-- Mobile (320px - 767px)
-
-## 🎨 Customization
-
-### Colors
-The design uses CSS custom properties (variables) for easy customization:
-- Primary: Indigo (#6366f1)
-- Secondary: Purple (#8b5cf6)
-- Accent: Amber (#f59e0b)
-
-### Content
-Update the following sections in `index.html`:
-- Personal information in the hero section
-- Skills in the skills section
-- Projects in the projects section
-- Contact information
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 📞 Contact
-
-**Imdaad Shajahan**
-- Email: shajahanimdaad20@gmail.com
-- Phone: +94 754 738 475
-- Location: Colombo, Sri Lanka
-
----
-
-*Built with ❤️ using modern web technologies*
+<div align="center">
+  <i>Built with ❤️ using modern web technologies</i>
+</div>
