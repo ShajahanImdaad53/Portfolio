@@ -475,6 +475,21 @@ document.addEventListener('DOMContentLoaded', function() {
             else if (repo.language === 'Java') iconClass = 'fab fa-java';
             else if (repo.language === 'PHP') iconClass = 'fab fa-php';
             
+            let demoLink = repo.homepage || '';
+            let demoIcon = 'fas fa-external-link-alt';
+            let demoTitle = 'Live Demo';
+            
+            // Custom logic for specific projects
+            if (repo.name.toLowerCase().includes('snakegame')) {
+              demoLink = 'https://www.linkedin.com/posts/imdaad-shajahan-75094229a_python-gamedevelopment-personalproject-activity-7393937615399469056-Bw6d?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEhl4awB6_OPsTnOc_SAn91uBjPQh8J_pHs';
+              demoIcon = 'fab fa-linkedin';
+              demoTitle = 'View on LinkedIn';
+            } else if (repo.name.toLowerCase().includes('blinkit') || repo.name.toLowerCase().includes('powerbi') || repo.name.toLowerCase().includes('dashboard')) {
+              demoLink = 'https://www.linkedin.com/posts/imdaad-shajahan-75094229a_powerbi-dataanalytics-datavisualization-activity-7375905973787602944-6ZnS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEhl4awB6_OPsTnOc_SAn91uBjPQh8J_pHs';
+              demoIcon = 'fab fa-linkedin';
+              demoTitle = 'View on LinkedIn';
+            }
+            
             const card = document.createElement('div');
             card.className = 'project-card';
             card.innerHTML = `
@@ -482,7 +497,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <i class="${iconClass}" style="font-size: 6rem; color: rgba(255,255,255,0.8);"></i>
                 <div class="project-overlay">
                   <div class="project-links">
-                    ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" class="project-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                    ${demoLink ? `<a href="${demoLink}" target="_blank" class="project-link" title="${demoTitle}"><i class="${demoIcon}"></i></a>` : ''}
                     <a href="${repo.html_url}" target="_blank" class="project-link" title="Source Code">
                       <i class="fab fa-github"></i>
                     </a>
