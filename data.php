@@ -90,6 +90,14 @@ $projects = [
         'icon' => 'fas fa-recycle',
         'github' => 'https://github.com/ShajahanImdaad53',
         'demo' => '#'
+    ],
+    [
+        'title' => 'Classic Snake Game',
+        'description' => 'A classic and interactive Snake Game developed to demonstrate fundamental game mechanics, state management, and real-time user input handling. Features score tracking, dynamic speed, and collision detection.',
+        'technologies' => ['JavaScript', 'HTML5 Canvas', 'CSS3'],
+        'icon' => 'fas fa-gamepad',
+        'github' => 'https://github.com/ShajahanImdaad53/SnakeGame',
+        'demo' => 'https://shajahanimdaad53.github.io/SnakeGame/'
     ]
 ];
 
