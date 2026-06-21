@@ -3,14 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Imdaad Shajahan | Portfolio</title>
+  <meta name="description" content="Imdaad Shajahan - Data Scientist, ML Engineer & Full Stack Developer. Portfolio showcasing intelligent systems, data visualization, and modern web applications.">
+  <title>Imdaad Shajahan | Data Scientist & Developer</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Particle Background -->
+  <canvas id="particles-canvas"></canvas>
+
   <!-- Floating Navbar -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <a href="#hero" class="nav-link active">Home</a>
     <a href="#about" class="nav-link">About</a>
     <a href="#skills" class="nav-link">Skills</a>
@@ -22,11 +30,11 @@
   <section id="hero" class="hero">
     <div class="hero-glow"></div>
     <div class="container">
-      <div class="hero-content reveal">
-        <div class="hero-badge">Available for opportunities</div>
+      <div class="hero-content">
+        <div class="hero-badge">&#9679; Available for opportunities</div>
         <h1 class="hero-title">Building digital <br><span>experiences</span>.</h1>
         <p class="hero-description">
-          Hi, I'm Imdaad Shajahan. A Data Scientist & Full Stack Developer specializing in intelligent systems, beautiful interfaces, and robust architecture.
+          Hi, I'm Imdaad Shajahan — a Data Scientist & Full Stack Developer specializing in intelligent systems, beautiful interfaces, and robust architecture.
         </p>
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">View Work <i class="fas fa-arrow-right"></i></a>
@@ -34,34 +42,51 @@
         </div>
       </div>
     </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Scroll</span>
+    </div>
   </section>
 
-  <!-- About Section (Bento Grid) -->
+  <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">Get to know the developer</p>
+        <p class="section-subtitle">Get to know the developer behind the pixels</p>
       </div>
       
-      <div class="about-bento reveal">
-        <div class="glass-card profile-card">
+      <div class="about-bento">
+        <div class="glass-card profile-card reveal">
           <div class="profile-img-container">
             <img src="git.jpg" alt="Imdaad Shajahan">
           </div>
           <h3>Imdaad Shajahan</h3>
-          <p style="color: var(--text-secondary); margin-top: 0.5rem;">Colombo, Sri Lanka</p>
+          <p style="color: var(--accent-color); margin-top: 0.25rem; font-size: 0.9rem;">Data Scientist & Developer</p>
+          <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.85rem;">
+            <i class="fas fa-map-marker-alt" style="color: var(--accent-color);"></i> Colombo, Sri Lanka
+          </p>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-number" id="repo-count">-</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">2</span>
+              <span class="stat-label">Degrees</span>
+            </div>
+          </div>
         </div>
         
-        <div class="glass-card about-text">
+        <div class="glass-card about-text reveal">
           <p>
-            I'm a dedicated and ambitious Data Scientist with a strong foundation in both Computing and Financial Engineering. Currently pursuing my degrees at Sabaragamuwa University of Sri Lanka and University of Colombo.
+            I'm a dedicated and ambitious Data Scientist with a strong foundation in both <strong style="color: var(--text-primary);">Computing</strong> and <strong style="color: var(--text-primary);">Financial Engineering</strong>. Currently pursuing my degrees at Sabaragamuwa University of Sri Lanka and University of Colombo.
           </p>
           <p>
-            I combine technical expertise with analytical thinking to solve complex business problems. My journey in data science began with a curiosity about patterns and insights hidden in data. 
+            I combine technical expertise with analytical thinking to solve complex business problems. My journey in data science began with a curiosity about patterns and insights hidden in data.
           </p>
           <p>
-            Today, I specialize in machine learning algorithms, statistical modeling, and data visualization. I build tools that transform raw data into meaningful intelligence.
+            Today, I specialize in machine learning algorithms, statistical modeling, and data visualization, using tools like Python, R, SQL, and Power BI to transform raw data into meaningful business intelligence.
           </p>
         </div>
       </div>
@@ -73,7 +98,7 @@
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">Tech Stack</h2>
-        <p class="section-subtitle">Tools and technologies I work with</p>
+        <p class="section-subtitle">Tools and technologies I work with daily</p>
       </div>
       
       <div class="glass-card reveal">
@@ -85,7 +110,7 @@
           <div class="skill-pill"><i class="fas fa-chart-pie"></i> Power BI</div>
           <div class="skill-pill"><i class="fas fa-brain"></i> Scikit-learn</div>
           <div class="skill-pill"><i class="fas fa-network-wired"></i> TensorFlow</div>
-          <div class="skill-pill"><i class="fab fa-html5"></i> HTML/CSS</div>
+          <div class="skill-pill"><i class="fab fa-html5"></i> HTML / CSS</div>
           <div class="skill-pill"><i class="fas fa-table"></i> Pandas</div>
           <div class="skill-pill"><i class="fas fa-square-root-alt"></i> NumPy</div>
           <div class="skill-pill"><i class="fab fa-php"></i> PHP</div>
@@ -100,14 +125,13 @@
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">Selected Works</h2>
-        <p class="section-subtitle">My public GitHub repositories</p>
+        <p class="section-subtitle">A curated collection of my public repositories</p>
       </div>
       
-      <!-- Container for dynamic JS injection -->
       <div class="projects-grid" id="github-projects-container">
-        <div class="glass-card" style="text-align: center; grid-column: 1 / -1;">
-          <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--text-primary); margin-bottom: 1rem;"></i>
-          <p>Loading projects from GitHub...</p>
+        <div class="glass-card" style="text-align: center; grid-column: 1 / -1; padding: 4rem 2rem;">
+          <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem; display: block;"></i>
+          <p style="color: var(--text-secondary);">Loading projects from GitHub...</p>
         </div>
       </div>
     </div>
@@ -118,7 +142,7 @@
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">Let's Connect</h2>
-        <p class="section-subtitle">Feel free to reach out for collaborations</p>
+        <p class="section-subtitle">Feel free to reach out for collaborations or just a friendly hello</p>
       </div>
       
       <div class="contact-bento reveal">
@@ -160,7 +184,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Imdaad Shajahan. Designed with a modern aesthetic.</p>
+      <p>&copy; 2026 Imdaad Shajahan. Crafted with precision.</p>
     </div>
   </footer>
 
