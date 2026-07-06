@@ -165,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Counter animation utility function
   function animateCounter(el, target, duration = 1500) {
     let startTimestamp = null;
+    el.textContent = '0';
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
