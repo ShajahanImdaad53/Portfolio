@@ -3,8 +3,24 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
-  // 1. Custom Cursor
+  // 0. Light / Dark Mode Toggle
   // ==========================================
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+
+  // Load saved preference
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-mode');
+    themeIcon.className = 'fas fa-sun';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    themeIcon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+
   const dot = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
   let mouseX = 0, mouseY = 0;
