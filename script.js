@@ -191,10 +191,61 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 6. Fetch GitHub Projects
+  // 6. About Stats Counters Animation
+  // ==========================================
+  const statsSection = document.querySelector('.profile-card');
+  let animated = false;
+
+  const statsObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animated) {
+        animated = true;
+        
+        // Animate Certs count (19)
+        const certCountEl = document.getElementById('cert-count');
+        if (certCountEl) {
+          animateCounter(certCountEl, 19, 1500);
+        }
+
+        // Animate Projects count (if already loaded)
+        const repoCountEl = document.getElementById('repo-count');
+        if (repoCountEl && window.targetRepoCount !== undefined) {
+          animateCounter(repoCountEl, window.targetRepoCount, 1500);
+        } else {
+          // If repos aren't loaded yet, store a flag so it animates once fetched
+          window.shouldAnimateRepos = true;
+        }
+        
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  if (statsSection) {
+    statsObserver.observe(statsSection);
+  }
+
+  // ==========================================
+  // 7. Fetch GitHub Projects
   // ==========================================
   fetchGitHubProjects();
 });
+
+// Counter animation utility function
+function animateCounter(el, target, duration = 1500) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    el.textContent = Math.floor(progress * target);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    } else {
+      el.textContent = target; // Ensure exact final value
+    }
+  };
+  window.requestAnimationFrame(step);
+}
 
 
 async function fetchGitHubProjects() {
@@ -209,8 +260,13 @@ async function fetchGitHubProjects() {
     const repos = await response.json();
     const filteredRepos = repos.filter(repo => !repo.fork && repo.name !== username);
 
-    // Update repo count in About section
-    if (repoCountEl) repoCountEl.textContent = filteredRepos.length;
+    // Update repo count target
+    window.targetRepoCount = filteredRepos.length;
+    if (window.shouldAnimateRepos && repoCountEl) {
+      animateCounter(repoCountEl, window.targetRepoCount, 1500);
+    } else if (repoCountEl) {
+      repoCountEl.textContent = '0'; // default starting state
+    }
 
     container.innerHTML = '';
 
