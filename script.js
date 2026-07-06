@@ -162,6 +162,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Counter animation utility function
+  function animateCounter(el, target, duration = 1500) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      el.textContent = Math.floor(progress * target);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        el.textContent = target; // Ensure exact final value
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
   // ==========================================
   // 4. Scroll Reveal (Intersection Observer)
   // ==========================================
@@ -170,6 +186,22 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('active');
+
+      // Trigger counter animations when profile-card is revealed
+      if (entry.target.classList.contains('profile-card')) {
+        const certCountEl = document.getElementById('cert-count');
+        if (certCountEl) {
+          animateCounter(certCountEl, 19, 1500);
+        }
+
+        const repoCountEl = document.getElementById('repo-count');
+        if (repoCountEl && window.targetRepoCount !== undefined) {
+          animateCounter(repoCountEl, window.targetRepoCount, 1500);
+        } else {
+          window.shouldAnimateRepos = true;
+        }
+      }
+
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
@@ -191,63 +223,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 6. About Stats Counters Animation
-  // ==========================================
-  const statsSection = document.querySelector('.profile-card');
-  let animated = false;
-
-  const statsObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !animated) {
-        animated = true;
-        
-        // Animate Certs count (19)
-        const certCountEl = document.getElementById('cert-count');
-        if (certCountEl) {
-          animateCounter(certCountEl, 19, 1500);
-        }
-
-        // Animate Projects count (if already loaded)
-        const repoCountEl = document.getElementById('repo-count');
-        if (repoCountEl && window.targetRepoCount !== undefined) {
-          animateCounter(repoCountEl, window.targetRepoCount, 1500);
-        } else {
-          // If repos aren't loaded yet, store a flag so it animates once fetched
-          window.shouldAnimateRepos = true;
-        }
-        
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  if (statsSection) {
-    statsObserver.observe(statsSection);
-  }
-
-  // ==========================================
-  // 7. Fetch GitHub Projects
+  // 6. Fetch GitHub Projects
   // ==========================================
   fetchGitHubProjects();
 });
-
-// Counter animation utility function
-function animateCounter(el, target, duration = 1500) {
-  let startTimestamp = null;
-  const step = (timestamp) => {
-    if (!startTimestamp) startTimestamp = timestamp;
-    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-    el.textContent = Math.floor(progress * target);
-    if (progress < 1) {
-      window.requestAnimationFrame(step);
-    } else {
-      el.textContent = target; // Ensure exact final value
-    }
-  };
-  window.requestAnimationFrame(step);
-}
-
-
 async function fetchGitHubProjects() {
   const container = document.getElementById('github-projects-container');
   const repoCountEl = document.getElementById('repo-count');
