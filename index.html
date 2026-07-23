@@ -10,6 +10,30 @@
 </head>
 <body>
 
+  <!-- Intro Screen (Solar System) -->
+  <div id="intro-screen">
+    <div class="solar-system">
+      <div class="sun-profile">
+        <img src="git.jpg" alt="Imdaad Shajahan">
+      </div>
+      <div class="orbit orbit-1">
+        <div class="planet planet-python"><i class="fab fa-python"></i></div>
+      </div>
+      <div class="orbit orbit-2">
+        <div class="planet planet-js"><i class="fab fa-js"></i></div>
+      </div>
+      <div class="orbit orbit-3">
+        <div class="planet planet-react"><i class="fab fa-react"></i></div>
+      </div>
+      <div class="orbit orbit-4">
+        <div class="planet planet-sql"><i class="fas fa-database"></i></div>
+      </div>
+      <div class="orbit orbit-5">
+        <div class="planet planet-ml"><i class="fas fa-brain"></i></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Custom Cursor -->
   <div class="cursor-dot" id="cursor-dot"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
@@ -396,38 +420,58 @@
         <p class="section-subtitle">Feel free to reach out for collaborations or just a friendly hello</p>
       </div>
       
-      <div class="contact-bento reveal">
-        <a href="mailto:shajahanimdaad20@gmail.com" class="glass-card contact-card">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <div class="contact-details">
-            <h3>Email</h3>
-            <p>shajahanimdaad20@gmail.com</p>
-          </div>
-        </a>
-        
-        <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" target="_blank" class="glass-card contact-card">
-          <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-          <div class="contact-details">
-            <h3>LinkedIn</h3>
-            <p>Connect professionally</p>
-          </div>
-        </a>
-        
-        <a href="https://github.com/ShajahanImdaad53" target="_blank" class="glass-card contact-card">
-          <div class="contact-icon"><i class="fab fa-github"></i></div>
-          <div class="contact-details">
-            <h3>GitHub</h3>
-            <p>View my source code</p>
-          </div>
-        </a>
-        
-        <a href="https://Wa.me/+94754738475" target="_blank" class="glass-card contact-card">
-          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-          <div class="contact-details">
-            <h3>WhatsApp</h3>
-            <p>Chat directly</p>
-          </div>
-        </a>
+      <div class="contact-layout reveal">
+        <div class="contact-bento">
+          <a href="mailto:shajahanimdaad20@gmail.com" class="glass-card contact-card">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <p>shajahanimdaad20@gmail.com</p>
+            </div>
+          </a>
+          
+          <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" target="_blank" class="glass-card contact-card">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <div class="contact-details">
+              <h3>LinkedIn</h3>
+              <p>Connect professionally</p>
+            </div>
+          </a>
+          
+          <a href="https://github.com/ShajahanImdaad53" target="_blank" class="glass-card contact-card">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div class="contact-details">
+              <h3>GitHub</h3>
+              <p>View my source code</p>
+            </div>
+          </a>
+          
+          <a href="https://Wa.me/+94754738475" target="_blank" class="glass-card contact-card">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-details">
+              <h3>WhatsApp</h3>
+              <p>Chat directly</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="glass-card contact-form">
+          <form id="firebase-contact-form">
+            <div class="form-group">
+              <label for="form-name">Name</label>
+              <input type="text" id="form-name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -440,5 +484,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script type="module" src="contact-handler.js"></script>
 </body>
 </html>

@@ -493,20 +493,38 @@ h1, h2, h3, h4 {
   color: var(--text-primary);
   font-weight: 500;
   font-size: 0.95rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: none;
+  animation: floatSkill 4s ease-in-out infinite;
+}
+
+/* Stagger animations for skill pills */
+.skill-pill:nth-child(2n) { animation-delay: 0.5s; }
+.skill-pill:nth-child(3n) { animation-delay: 1.2s; }
+.skill-pill:nth-child(5n) { animation-delay: 1.8s; }
+
+@keyframes floatSkill {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 .skill-pill i {
   color: var(--accent-color);
   font-size: 1.1rem;
+  transition: transform 0.3s ease;
 }
 
 .skill-pill:hover {
-  background: rgba(129, 140, 248, 0.1);
-  border-color: rgba(129, 140, 248, 0.3);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(129, 140, 248, 0.1);
+  background: rgba(129, 140, 248, 0.15);
+  border-color: rgba(129, 140, 248, 0.6);
+  transform: translateY(-5px) scale(1.1) rotate(2deg) !important;
+  box-shadow: 0 10px 25px rgba(129, 140, 248, 0.3), 0 0 10px rgba(129, 140, 248, 0.2) inset;
+  z-index: 10;
+}
+
+.skill-pill:hover i {
+  transform: scale(1.2) rotate(-10deg);
+  text-shadow: 0 0 10px rgba(129, 140, 248, 0.8);
 }
 
 /* Projects Section */
@@ -534,6 +552,21 @@ h1, h2, h3, h4 {
   justify-content: center;
   position: relative;
   overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
 }
 
 .project-image::after {
@@ -641,10 +674,83 @@ h1, h2, h3, h4 {
 /* Contact Section */
 .contact { padding: 8rem 0; margin-bottom: 2rem; }
 
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
 .contact-bento {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
+}
+
+.contact-form {
+  padding: 2.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 15px rgba(129, 140, 248, 0.15);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* Light mode overrides for form */
+body.light-mode .form-group input,
+body.light-mode .form-group textarea {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(79, 70, 229, 0.15);
+  color: var(--text-primary);
+}
+
+body.light-mode .form-group input:focus,
+body.light-mode .form-group textarea:focus {
+  background: #ffffff;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.15);
 }
 
 .contact-card {
@@ -691,7 +797,7 @@ h1, h2, h3, h4 {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .about-bento, .contact-bento {
+  .about-bento, .contact-layout, .contact-bento {
     grid-template-columns: 1fr;
   }
 
@@ -1079,4 +1185,121 @@ body.light-mode #particles-canvas {
 @media (max-width: 768px) {
   .certs-grid { grid-template-columns: 1fr; }
   .cert-link { cursor: pointer; }
+}
+
+/* Intro Screen (Solar System) */
+#intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #09090b;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+#intro-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.solar-system {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sun-profile {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 10;
+  box-shadow: 0 0 40px rgba(129, 140, 248, 0.8), 0 0 100px rgba(99, 102, 241, 0.5);
+  border: 4px solid var(--accent-color);
+  transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              opacity 0.8s ease;
+}
+
+.sun-profile.revealed {
+  width: 180px;
+  height: 180px;
+  opacity: 1;
+}
+
+.sun-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(129, 140, 248, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.orbit-1 { width: 150px; height: 150px; animation: spin 8s linear infinite; }
+.orbit-2 { width: 220px; height: 220px; animation: spin 12s linear infinite reverse; }
+.orbit-3 { width: 290px; height: 290px; animation: spin 16s linear infinite; }
+.orbit-4 { width: 360px; height: 360px; animation: spin 20s linear infinite reverse; }
+.orbit-5 { width: 440px; height: 440px; animation: spin 24s linear infinite; }
+
+.planet {
+  position: absolute;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  background: var(--glass-bg);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(129, 140, 248, 0.5);
+  animation: counter-spin linear infinite;
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.orbit-1 .planet { animation-duration: 8s; background: rgba(55, 118, 171, 0.2); color: #3776AB; }
+.orbit-2 .planet { animation-duration: 12s; animation-direction: reverse; background: rgba(247, 223, 30, 0.2); color: #F7DF1E; }
+.orbit-3 .planet { animation-duration: 16s; background: rgba(97, 218, 251, 0.2); color: #61DAFB; }
+.orbit-4 .planet { animation-duration: 20s; animation-direction: reverse; background: rgba(51, 103, 145, 0.2); color: #336791; }
+.orbit-5 .planet { animation-duration: 24s; background: rgba(255, 111, 0, 0.2); color: #FF6F00; }
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes counter-spin { 100% { transform: rotate(-360deg); } }
+
+/* Convergence State */
+.solar-system.converge .orbit {
+  width: 0 !important;
+  height: 0 !important;
+  border-color: transparent;
+  opacity: 0;
+}
+
+.solar-system.converge .planet {
+  top: 0;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border: none;
+  box-shadow: none;
 }

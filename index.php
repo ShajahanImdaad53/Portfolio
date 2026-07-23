@@ -357,7 +357,7 @@
           </div>
         </div>
         <div class="contact-form">
-          <form action="contact.html" method="post">
+          <form id="firebase-contact-form">
             <div class="form-group">
               <input type="text" name="name" placeholder="Your Name" required>
             </div>
@@ -404,5 +404,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script type="module" src="contact-handler.js"></script>
 </body>
 </html>

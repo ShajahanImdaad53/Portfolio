@@ -3,6 +3,44 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
+  // Intro Animation (Solar System)
+  // ==========================================
+  const introScreen = document.getElementById('intro-screen');
+  if (introScreen) {
+    // Disable scrolling during intro
+    document.body.style.overflow = 'hidden';
+    
+    const solarSystem = document.querySelector('.solar-system');
+    const sunProfile = document.querySelector('.sun-profile');
+    
+    // Timeline
+    // 1. Orbit plays automatically via CSS (for 3 seconds)
+    setTimeout(() => {
+      // 2. Converge (planets rush to center)
+      solarSystem.classList.add('converge');
+      
+      setTimeout(() => {
+        // 3. Reveal profile photo (explosion)
+        sunProfile.classList.add('revealed');
+        
+        setTimeout(() => {
+          // 4. Fade out intro screen and enable scroll
+          introScreen.classList.add('hidden');
+          document.body.style.overflow = '';
+          
+          // Remove from DOM after fade to avoid blocking clicks
+          setTimeout(() => {
+            introScreen.remove();
+          }, 1200);
+          
+        }, 2000); // Time to show the profile photo before fading
+        
+      }, 1000); // Time it takes for planets to converge
+      
+    }, 3000); // Time for the initial orbit phase
+  }
+
+  // ==========================================
   // 0. Light / Dark Mode Toggle
   // ==========================================
   const themeToggle = document.getElementById('theme-toggle');
@@ -234,7 +272,7 @@ async function fetchGitHubProjects() {
   const username = 'ShajahanImdaad53';
 
   try {
-    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=30`);
+    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
     if (!response.ok) throw new Error('Failed to fetch repos');
 
     const repos = await response.json();
@@ -289,12 +327,25 @@ async function fetchGitHubProjects() {
       ];
       const gradient = gradients[index % gradients.length];
 
+      // Custom AI Generated Thumbnails Mapping
+      const thumbnailMap = {
+        'SnakeGame': 'assets/thumbnails/snake_game_thumb.png',
+        'Hospital-Management': 'assets/thumbnails/hospital_mgmt_thumb.png',
+        'ECOMMERCE': 'assets/thumbnails/ecommerce_thumb.png',
+        'SignLanguage': 'assets/thumbnails/sign_language_thumb.png',
+        'handloom-website': 'assets/thumbnails/handloom_site_thumb.png',
+        'AI-CHATBOT': 'assets/thumbnails/ai_chatbot_thumb.png',
+        'chatbot': 'assets/thumbnails/ai_chatbot_thumb.png',
+        'Portfolio': 'assets/thumbnails/portfolio_site_thumb.png'
+      };
+      const thumbImage = thumbnailMap[repo.name] || null;
+
       const card = document.createElement('div');
       card.className = 'glass-card project-card reveal';
 
       card.innerHTML = `
         <div class="project-image" style="background: ${gradient};">
-          <i class="${iconClass}"></i>
+          ${thumbImage ? `<img src="${thumbImage}" alt="${repo.name} thumbnail" />` : `<i class="${iconClass}"></i>`}
           <div class="project-overlay">
             <div class="project-links">
               ${demoLink ? `<a href="${demoLink}" target="_blank" class="project-link" title="${demoTitle}"><i class="${demoIcon}"></i></a>` : ''}
