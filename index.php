@@ -403,7 +403,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
   <script type="module" src="contact-handler.js"></script>
 </body>
 </html>
