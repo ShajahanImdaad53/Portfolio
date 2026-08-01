@@ -340,7 +340,8 @@ async function fetchGitHubProjects() {
         'fh-electronicsmaruthamunai': 'assets/thumbnails/fh_electronics_thumb.jpg',
         'aI-powered-job-market-and-career-recommendation-System': 'assets/thumbnails/ai_job_thumb.jpg',
         'AutoReply': 'assets/thumbnails/autoreply_thumb.jpg',
-        'imdaadECW': 'assets/thumbnails/imdaad_ecw_thumb.jpg'
+        'imdaadECW': 'assets/thumbnails/imdaad_ecw_thumb.jpg',
+        'online-complaint-box': 'assets/thumbnails/online_complaint_box_thumb.jpg',
       };
       const thumbImage = thumbnailMap[repo.name] || null;
 
