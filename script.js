@@ -405,3 +405,26 @@ async function fetchGitHubProjects() {
     `;
   }
 }
+
+// ==========================================
+// Math Animations
+// ==========================================
+function initMathAnimations() {
+  const container = document.getElementById('math-background-container');
+  if (!container) return;
+  const symbols = ['Σ', 'μ', 'σ²', '∫', 'x̄', 'β', 'π', 'Δ', 'e=mc²', 'f(x)', '∞'];
+  setInterval(() => {
+    const particle = document.createElement('div');
+    particle.className = 'math-particle';
+    particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    particle.style.left = Math.random() * 100 + 'vw';
+    particle.style.fontSize = Math.random() * 20 + 14 + 'px';
+    particle.style.setProperty('--rotation', (Math.random() * 360) + 'deg');
+    particle.style.setProperty('--max-opacity', (Math.random() * 0.3 + 0.1).toFixed(2));
+    const duration = Math.random() * 10 + 10; // 10 to 20 seconds
+    particle.style.animationDuration = duration + 's';
+    container.appendChild(particle);
+    setTimeout(() => particle.remove(), duration * 1000);
+  }, 800);
+}
+document.addEventListener('DOMContentLoaded', initMathAnimations);

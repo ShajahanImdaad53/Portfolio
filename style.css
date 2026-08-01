@@ -22,13 +22,58 @@
 body {
   font-family: 'Outfit', sans-serif;
   background-color: var(--bg-color);
-  background-image: var(--bg-gradient);
+  background-image: url('assets/math_bg.jpg');
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
   scroll-behavior: smooth;
   cursor: none;
+}
+
+/* Math Background Container */
+#math-background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--bg-gradient); /* Overlay gradient for readability */
+}
+
+/* Math Particles */
+.math-particle {
+  position: absolute;
+  color: var(--accent-color);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  filter: drop-shadow(0 0 5px var(--accent-glow));
+  animation: floatMath linear infinite;
+}
+
+@keyframes floatMath {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--max-opacity, 0.5);
+  }
+  90% {
+    opacity: var(--max-opacity, 0.5);
+  }
+  100% {
+    transform: translateY(-20vh) rotate(var(--rotation, 360deg)) scale(1.2);
+    opacity: 0;
+  }
 }
 
 /* Custom Cursor */
