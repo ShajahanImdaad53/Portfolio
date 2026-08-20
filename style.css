@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --bg-color: #09090b;
-  --bg-gradient: radial-gradient(circle at top center, rgba(30, 27, 75, 0.4) 0%, #09090b 40%);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent-color: #818cf8;
-  --accent-glow: rgba(129, 140, 248, 0.5);
+  --bg-color: #000000;
+  --bg-gradient: radial-gradient(circle at top center, rgba(30, 30, 30, 0.4) 0%, #000000 40%);
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --accent-color: #ffffff;
+  --accent-glow: rgba(255, 255, 255, 0.3);
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-hover: rgba(255, 255, 255, 0.06);

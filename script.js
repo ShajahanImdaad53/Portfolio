@@ -359,6 +359,7 @@ async function fetchGitHubProjects() {
         'AutoReply': 'assets/thumbnails/autoreply_thumb.jpg',
         'imdaadECW': 'assets/thumbnails/imdaad_ecw_thumb.jpg',
         'online-complaint-box': 'assets/thumbnails/online_complaint_box_thumb.jpg',
+        'predictive-analysis': 'assets/thumbnails/predictive_analysis_thumb.jpg',
       };
       const thumbImage = thumbnailMap[repo.name] || null;
 
