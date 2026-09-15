@@ -3,6 +3,44 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
+  // Intro Animation (Solar System)
+  // ==========================================
+  const introScreen = document.getElementById('intro-screen');
+  if (introScreen) {
+    // Disable scrolling during intro
+    document.body.style.overflow = 'hidden';
+    
+    const solarSystem = document.querySelector('.solar-system');
+    const sunProfile = document.querySelector('.sun-profile');
+    
+    // Timeline
+    // 1. Orbit plays automatically via CSS (for 3 seconds)
+    setTimeout(() => {
+      // 2. Converge (planets rush to center)
+      solarSystem.classList.add('converge');
+      
+      setTimeout(() => {
+        // 3. Reveal profile photo (explosion)
+        sunProfile.classList.add('revealed');
+        
+        setTimeout(() => {
+          // 4. Fade out intro screen and enable scroll
+          introScreen.classList.add('hidden');
+          document.body.style.overflow = '';
+          
+          // Remove from DOM after fade to avoid blocking clicks
+          setTimeout(() => {
+            introScreen.remove();
+          }, 1200);
+          
+        }, 2000); // Time to show the profile photo before fading
+        
+      }, 1000); // Time it takes for planets to converge
+      
+    }, 3000); // Time for the initial orbit phase
+  }
+
+  // ==========================================
   // 0. Light / Dark Mode Toggle
   // ==========================================
   const themeToggle = document.getElementById('theme-toggle');
@@ -233,12 +271,29 @@ async function fetchGitHubProjects() {
   const repoCountEl = document.getElementById('repo-count');
   const username = 'ShajahanImdaad53';
 
+  let filteredRepos = [];
+
   try {
-    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=30`);
+    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
     if (!response.ok) throw new Error('Failed to fetch repos');
 
     const repos = await response.json();
-    const filteredRepos = repos.filter(repo => !repo.fork && repo.name !== username);
+    filteredRepos = repos.filter(repo => !repo.fork && repo.name !== username);
+  } catch (error) {
+    console.warn('GitHub API rate limit exceeded or error, using fallback projects', error);
+    filteredRepos = [
+      { name: "online-complaint-box", description: "A digital complaint management system.", language: "JavaScript", html_url: "https://github.com/ShajahanImdaad53/online-complaint-box", homepage: "https://online-complaint-box.vercel.app" },
+      { name: "predictive-analysis", description: "Predictive analysis models and scripts.", language: "Python", html_url: "https://github.com/ShajahanImdaad53/predictive-analysis", homepage: null },
+      { name: "aI-powered-job-market-and-career-recommendation-System", description: "AI based career recommendations.", language: "JavaScript", html_url: "https://github.com/ShajahanImdaad53/aI-powered-job-market-and-career-recommendation-System", homepage: null },
+      { name: "fh-electronicsmaruthamunai", description: "E-commerce store for electronics.", language: "CSS", html_url: "https://github.com/ShajahanImdaad53/fh-electronicsmaruthamunai", homepage: null },
+      { name: "ECOMMERCE", description: "An eCommerce platform built with modern tech.", language: "TypeScript", html_url: "https://github.com/ShajahanImdaad53/ECOMMERCE", homepage: "https://ecommerce-zeta-nine-68.vercel.app" },
+      { name: "SnakeGame", description: "Classic Snake Game in Python.", language: "Python", html_url: "https://github.com/ShajahanImdaad53/SnakeGame", homepage: null },
+      { name: "Hospital-Management", description: "Hospital Management System.", language: "JavaScript", html_url: "https://github.com/ShajahanImdaad53/Hospital-Management", homepage: null },
+      { name: "SignLanguage", description: "Sign Language detection.", language: "Python", html_url: "https://github.com/ShajahanImdaad53/SignLanguage", homepage: null },
+      { name: "handloom-website", description: "A website for handloom products.", language: "HTML", html_url: "https://github.com/ShajahanImdaad53/handloom-website", homepage: null },
+      { name: "Portfolio", description: "Personal Portfolio.", language: "CSS", html_url: "https://github.com/ShajahanImdaad53/Portfolio", homepage: null }
+    ];
+  }
 
     // Update repo count target
     window.targetRepoCount = filteredRepos.length;
@@ -289,12 +344,31 @@ async function fetchGitHubProjects() {
       ];
       const gradient = gradients[index % gradients.length];
 
+      // Custom AI Generated Thumbnails Mapping
+      const thumbnailMap = {
+        'SnakeGame': 'assets/thumbnails/snake_game_thumb.png',
+        'Hospital-Management': 'assets/thumbnails/hospital_mgmt_thumb.png',
+        'ECOMMERCE': 'assets/thumbnails/ecommerce_thumb.png',
+        'SignLanguage': 'assets/thumbnails/sign_language_thumb.png',
+        'handloom-website': 'assets/thumbnails/handloom_site_thumb.png',
+        'AI-CHATBOT': 'assets/thumbnails/ai_chatbot_thumb.png',
+        'chatbot': 'assets/thumbnails/ai_chatbot_thumb.png',
+        'Portfolio': 'assets/thumbnails/portfolio_site_thumb.png',
+        'fh-electronicsmaruthamunai': 'assets/thumbnails/fh_electronics_thumb.jpg',
+        'aI-powered-job-market-and-career-recommendation-System': 'assets/thumbnails/ai_job_thumb.jpg',
+        'AutoReply': 'assets/thumbnails/autoreply_thumb.jpg',
+        'imdaadECW': 'assets/thumbnails/imdaad_ecw_thumb.jpg',
+        'online-complaint-box': 'assets/thumbnails/online_complaint_box_thumb.jpg',
+        'predictive-analysis': 'assets/thumbnails/predictive_analysis_thumb.jpg',
+      };
+      const thumbImage = thumbnailMap[repo.name] || null;
+
       const card = document.createElement('div');
       card.className = 'glass-card project-card reveal';
 
       card.innerHTML = `
         <div class="project-image" style="background: ${gradient};">
-          <i class="${iconClass}"></i>
+          ${thumbImage ? `<img src="${thumbImage}" alt="${repo.name} thumbnail" />` : `<i class="${iconClass}"></i>`}
           <div class="project-overlay">
             <div class="project-links">
               ${demoLink ? `<a href="${demoLink}" target="_blank" class="project-link" title="${demoTitle}"><i class="${demoIcon}"></i></a>` : ''}
@@ -339,13 +413,27 @@ async function fetchGitHubProjects() {
       });
     });
 
-  } catch (error) {
-    console.error('Error fetching GitHub repos:', error);
-    container.innerHTML = `
-      <div class="glass-card" style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;">
-        <i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: #ef4444; margin-bottom: 1rem; display: block;"></i>
-        <p style="color: var(--text-secondary);">Failed to load projects. Please try again later.</p>
-      </div>
-    `;
-  }
 }
+
+// ==========================================
+// Math Animations
+// ==========================================
+function initMathAnimations() {
+  const container = document.getElementById('math-background-container');
+  if (!container) return;
+  const symbols = ['Σ', 'μ', 'σ²', '∫', 'x̄', 'β', 'π', 'Δ', 'e=mc²', 'f(x)', '∞'];
+  setInterval(() => {
+    const particle = document.createElement('div');
+    particle.className = 'math-particle';
+    particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    particle.style.left = Math.random() * 100 + 'vw';
+    particle.style.fontSize = Math.random() * 20 + 14 + 'px';
+    particle.style.setProperty('--rotation', (Math.random() * 360) + 'deg');
+    particle.style.setProperty('--max-opacity', (Math.random() * 0.3 + 0.1).toFixed(2));
+    const duration = Math.random() * 10 + 10; // 10 to 20 seconds
+    particle.style.animationDuration = duration + 's';
+    container.appendChild(particle);
+    setTimeout(() => particle.remove(), duration * 1000);
+  }, 800);
+}
+document.addEventListener('DOMContentLoaded', initMathAnimations);

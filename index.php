@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="math-background-container"></div>
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
@@ -357,7 +358,7 @@
           </div>
         </div>
         <div class="contact-form">
-          <form action="contact.html" method="post">
+          <form id="firebase-contact-form">
             <div class="form-group">
               <input type="text" name="name" placeholder="Your Name" required>
             </div>
@@ -403,6 +404,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
+  <script type="module" src="contact-handler.js"></script>
 </body>
 </html>

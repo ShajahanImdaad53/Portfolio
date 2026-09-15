@@ -10,7 +10,32 @@
 </head>
 <body>
 
+  <!-- Intro Screen (Solar System) -->
+  <div id="intro-screen">
+    <div class="solar-system">
+      <div class="sun-profile">
+        <img src="git.jpg" alt="Imdaad Shajahan">
+      </div>
+      <div class="orbit orbit-1">
+        <div class="planet planet-python"><i class="fab fa-python"></i></div>
+      </div>
+      <div class="orbit orbit-2">
+        <div class="planet planet-js"><i class="fab fa-js"></i></div>
+      </div>
+      <div class="orbit orbit-3">
+        <div class="planet planet-react"><i class="fab fa-react"></i></div>
+      </div>
+      <div class="orbit orbit-4">
+        <div class="planet planet-sql"><i class="fas fa-database"></i></div>
+      </div>
+      <div class="orbit orbit-5">
+        <div class="planet planet-ml"><i class="fas fa-brain"></i></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Custom Cursor -->
+  <div id="math-background-container"></div>
   <div class="cursor-dot" id="cursor-dot"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
 
@@ -47,10 +72,7 @@
         </div>
       </div>
     </div>
-    <div class="scroll-indicator">
-      <div class="scroll-line"></div>
-      <span class="scroll-text">Scroll</span>
-    </div>
+
   </section>
 
   <!-- About Section -->
@@ -67,7 +89,7 @@
             <img src="git.jpg" alt="Imdaad Shajahan">
           </div>
           <h3>Imdaad Shajahan</h3>
-          <p style="color: var(--accent-color); margin-top: 0.25rem; font-size: 0.9rem;">Data Scientist & Developer</p>
+          <p style="color: var(--accent-color); margin-top: 0.25rem; font-size: 0.85rem; line-height: 1.4;">Data Science & AI/ML Engineer | Financial Engineering @UOC | Computing & Information Systems @SUSL | IEEE & CSSL Member</p>
           <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.85rem;">
             <i class="fas fa-map-marker-alt" style="color: var(--accent-color);"></i> Colombo, Sri Lanka
           </p>
@@ -84,16 +106,12 @@
               <span class="stat-number">6 Mos</span>
               <span class="stat-label">Experience</span>
             </div>
-            <div class="stat-card">
-              <span class="stat-number" style="font-size: 1.4rem; line-height: 2.2rem; font-weight: 800;">3rd Year</span>
-              <span class="stat-label">CIS Complete</span>
-            </div>
           </div>
         </div>
         
         <div class="glass-card about-text reveal">
           <p>
-            I'm a dedicated Data Scientist and Quantitative Analyst with a solid background bridging <strong style="color: var(--text-primary);">Computing &amp; Information Systems</strong> and <strong style="color: var(--text-primary);">Financial Engineering</strong>. I have completed the 3rd year of my Computing &amp; Information Systems degree, alongside 6 months of professional experience as a Data Scientist.
+            I'm a dedicated Data Scientist and Quantitative Analyst with a solid background bridging <strong style="color: var(--text-primary);">Computing &amp; Information Systems</strong> and <strong style="color: var(--text-primary);">Financial Engineering</strong>. I am pursuing my Computing &amp; Information Systems degree, alongside 6 months of professional experience as a Data Scientist.
           </p>
           <p>
             On the quantitative side, I hold a Higher National Diploma (HND) in Financial Engineering, having successfully completed Levels 1 and 2, and I am currently reading for Level 3 while pursuing my BSc in Financial Engineering at the University of Colombo.
@@ -167,10 +185,9 @@
           <div class="glass-card timeline-card">
             <div class="timeline-header">
               <h3>BSc (Hons) in Computing &amp; Information Systems</h3>
-              <span class="timeline-badge">3rd Year Completed</span>
             </div>
             <p class="timeline-place"><i class="fas fa-university"></i> Sabaragamuwa University of Sri Lanka</p>
-            <p class="timeline-desc">Completed 3rd year of undergraduate studies. Focused on software development, information systems management, system analytics, databases, and advanced programming.</p>
+            <p class="timeline-desc">Focused on software development, information systems management, system analytics, databases, and advanced programming.</p>
             <div class="timeline-tags">
               <span class="tech-tag">Information Systems</span>
               <span class="tech-tag">Software Engineering</span>
@@ -396,38 +413,58 @@
         <p class="section-subtitle">Feel free to reach out for collaborations or just a friendly hello</p>
       </div>
       
-      <div class="contact-bento reveal">
-        <a href="mailto:shajahanimdaad20@gmail.com" class="glass-card contact-card">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <div class="contact-details">
-            <h3>Email</h3>
-            <p>shajahanimdaad20@gmail.com</p>
-          </div>
-        </a>
-        
-        <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" target="_blank" class="glass-card contact-card">
-          <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-          <div class="contact-details">
-            <h3>LinkedIn</h3>
-            <p>Connect professionally</p>
-          </div>
-        </a>
-        
-        <a href="https://github.com/ShajahanImdaad53" target="_blank" class="glass-card contact-card">
-          <div class="contact-icon"><i class="fab fa-github"></i></div>
-          <div class="contact-details">
-            <h3>GitHub</h3>
-            <p>View my source code</p>
-          </div>
-        </a>
-        
-        <a href="https://Wa.me/+94754738475" target="_blank" class="glass-card contact-card">
-          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-          <div class="contact-details">
-            <h3>WhatsApp</h3>
-            <p>Chat directly</p>
-          </div>
-        </a>
+      <div class="contact-layout reveal">
+        <div class="contact-bento">
+          <a href="mailto:shajahanimdaad20@gmail.com" class="glass-card contact-card">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <p>shajahanimdaad20@gmail.com</p>
+            </div>
+          </a>
+          
+          <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" target="_blank" class="glass-card contact-card">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <div class="contact-details">
+              <h3>LinkedIn</h3>
+              <p>Connect professionally</p>
+            </div>
+          </a>
+          
+          <a href="https://github.com/ShajahanImdaad53" target="_blank" class="glass-card contact-card">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div class="contact-details">
+              <h3>GitHub</h3>
+              <p>View my source code</p>
+            </div>
+          </a>
+          
+          <a href="https://Wa.me/+94754738475" target="_blank" class="glass-card contact-card">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-details">
+              <h3>WhatsApp</h3>
+              <p>Chat directly</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="glass-card contact-form">
+          <form id="firebase-contact-form">
+            <div class="form-group">
+              <label for="form-name">Name</label>
+              <input type="text" id="form-name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -439,6 +476,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
+  <script type="module" src="contact-handler.js"></script>
 </body>
 </html>
