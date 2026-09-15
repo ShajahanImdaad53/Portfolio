@@ -31,13 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
           // Remove from DOM after fade to avoid blocking clicks
           setTimeout(() => {
             introScreen.remove();
-          }, 1200);
+          }, 600);
           
-        }, 2000); // Time to show the profile photo before fading
+        }, 1000); // Time to show the profile photo before fading
         
-      }, 1000); // Time it takes for planets to converge
+      }, 500); // Time it takes for planets to converge
       
-    }, 3000); // Time for the initial orbit phase
+    }, 1500); // Time for the initial orbit phase
   }
 
   // ==========================================
