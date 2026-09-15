@@ -964,6 +964,19 @@ body.light-mode {
   --glass-bg: rgba(255, 255, 255, 0.55);
   --glass-border: rgba(79, 70, 229, 0.15);
   --glass-hover: rgba(255, 255, 255, 0.75);
+  background-image: none;
+}
+
+body.light-mode .hero-title span {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #3730a3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light-mode .section-title {
+  background: linear-gradient(to right, #0f172a, #475569);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 body.light-mode .hero-glow {
