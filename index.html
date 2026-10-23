@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Imdaad Shajahan - Data Scientist, ML Engineer & Full Stack Developer. Portfolio showcasing intelligent systems, data visualization, and modern web applications.">
-  <title>Imdaad Shajahan | Data Scientist & Developer</title>
+  <meta name="description" content="Imdaad Shajahan — Data Scientist, Machine Learning Engineer & Quantitative Analyst. Dual background in Computing & Information Systems and Financial Engineering with 23 professional credentials.">
+  <title>Imdaad Shajahan | Data Scientist, AI Engineer & Quantitative Analyst</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="certificates-data.js"></script>
 </head>
 <body>
 
   <!-- Intro Screen (Solar System) -->
   <div id="intro-screen">
+    <button id="skip-intro-btn" class="skip-intro-btn" title="Skip Intro Animation">
+      <i class="fas fa-forward"></i> Skip Intro
+    </button>
     <div class="solar-system">
       <div class="sun-profile">
         <img src="git.jpg" alt="Imdaad Shajahan">
@@ -34,12 +38,10 @@
     </div>
   </div>
 
-  <!-- Custom Cursor -->
+  <!-- Custom Cursor & Background -->
   <div id="math-background-container"></div>
   <div class="cursor-dot" id="cursor-dot"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
-
-  <!-- Particle Background -->
   <canvas id="particles-canvas"></canvas>
 
   <!-- Floating Navbar -->
@@ -48,9 +50,14 @@
     <a href="#about" class="nav-link">About</a>
     <a href="#skills" class="nav-link">Skills</a>
     <a href="#education" class="nav-link">Education</a>
-    <a href="#certifications" class="nav-link">Certs</a>
+    <a href="#certifications" class="nav-link">
+      Certs <span style="font-size: 0.72rem; padding: 2px 7px; background: rgba(99,102,241,0.25); border: 1px solid rgba(99,102,241,0.4); border-radius: 50px; margin-left: 3px; font-weight: 700; color: #a5b4fc;">23</span>
+    </a>
     <a href="#projects" class="nav-link">Projects</a>
     <a href="#contact" class="nav-link">Contact</a>
+    <a href="Imdaad CV.pdf" target="_blank" class="nav-link" style="color: #38bdf8;" title="View Resume">
+      <i class="fas fa-file-download"></i> CV
+    </a>
     <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" aria-label="Toggle theme">
       <i class="fas fa-moon" id="theme-icon"></i>
     </button>
@@ -61,18 +68,56 @@
     <div class="hero-glow"></div>
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge">&#9679; Available for opportunities</div>
-        <h1 class="hero-title">Building digital <br><span>experiences</span>.</h1>
+        <div class="hero-badge">
+          &#9679; Available for AI &amp; Data Science Roles
+        </div>
+        
+        <h1 class="hero-title">
+          Architecting <span class="gradient-text">Intelligent Systems</span><br>&amp; Quantitative Solutions.
+        </h1>
+
+        <div class="hero-role-wrapper">
+          <span class="hero-role-prefix">Specializing in:</span>
+          <span id="hero-role-text" class="hero-role-dynamic">Data Scientist &amp; ML Engineer</span>
+        </div>
+
         <p class="hero-description">
-          Hi, I'm Imdaad Shajahan — a Data Scientist &amp; Quantitative Analyst specializing in Computing &amp; Information Systems and Financial Engineering.
+          Hi, I'm <strong>Imdaad Shajahan</strong> — combining technical depth in <strong>Computing &amp; Information Systems</strong> (SUSL) with analytical precision in <strong>Financial Engineering</strong> (UOC, Level 3). Applying machine learning, predictive modeling, and quantitative algorithms to transform raw data into high-conviction decisions.
         </p>
+
+        <!-- Quick Stat Badges -->
+        <div class="hero-stats-row">
+          <div class="hero-stat-chip">
+            <i class="fas fa-certificate"></i>
+            <span><strong>23</strong> Verified Credentials</span>
+          </div>
+          <div class="hero-stat-chip">
+            <i class="fas fa-code-branch"></i>
+            <span><strong>10+</strong> AI &amp; Software Projects</span>
+          </div>
+          <div class="hero-stat-chip">
+            <i class="fas fa-briefcase"></i>
+            <span><strong>6 Mos</strong> Applied Data Science</span>
+          </div>
+          <div class="hero-stat-chip">
+            <i class="fas fa-graduation-cap"></i>
+            <span><strong>Dual Track</strong> CIS + Fin. Eng</span>
+          </div>
+        </div>
+
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View Work <i class="fas fa-arrow-right"></i></a>
-          <a href="#contact" class="btn btn-secondary">Get in touch</a>
+          <a href="#projects" class="btn btn-primary">
+            Explore Projects <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#certifications" class="btn btn-secondary">
+            <i class="fas fa-award"></i> View 23 Credentials
+          </a>
+          <a href="Imdaad CV.pdf" target="_blank" class="btn btn-glass">
+            <i class="fas fa-file-pdf"></i> Download CV
+          </a>
         </div>
       </div>
     </div>
-
   </section>
 
   <!-- About Section -->
@@ -80,7 +125,7 @@
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">Get to know the developer behind the pixels</p>
+        <p class="section-subtitle">Bridging computational intelligence with quantitative finance</p>
       </div>
       
       <div class="about-bento">
@@ -89,9 +134,12 @@
             <img src="git.jpg" alt="Imdaad Shajahan">
           </div>
           <h3>Imdaad Shajahan</h3>
-          <p style="color: var(--accent-color); margin-top: 0.25rem; font-size: 0.85rem; line-height: 1.4;">Data Science & AI/ML Engineer | Financial Engineering @UOC | Computing & Information Systems @SUSL | IEEE & CSSL Member</p>
+          <p style="color: var(--accent-color); margin-top: 0.25rem; font-size: 0.85rem; line-height: 1.4;">
+            Data Scientist &bull; AI/ML Engineer &bull; Quantitative Analyst<br>
+            Financial Engineering @UOC &bull; Computing &amp; Information Systems @SUSL
+          </p>
           <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.85rem;">
-            <i class="fas fa-map-marker-alt" style="color: var(--accent-color);"></i> Colombo, Sri Lanka
+            <i class="fas fa-map-marker-alt" style="color: #38bdf8;"></i> Colombo, Sri Lanka &bull; IEEE &amp; CSSL Member
           </p>
           <div class="about-stats">
             <div class="stat-card">
@@ -99,25 +147,72 @@
               <span class="stat-label">Projects</span>
             </div>
             <div class="stat-card">
-              <span class="stat-number" id="cert-count" data-target="19">19</span>
-              <span class="stat-label">Certificates</span>
+              <span class="stat-number" id="cert-count" data-target="23">23</span>
+              <span class="stat-label">Credentials</span>
             </div>
             <div class="stat-card">
               <span class="stat-number">6 Mos</span>
               <span class="stat-label">Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">Level 3</span>
+              <span class="stat-label">Fin. Eng</span>
             </div>
           </div>
         </div>
         
         <div class="glass-card about-text reveal">
           <p>
-            I'm a dedicated Data Scientist and Quantitative Analyst with a solid background bridging <strong style="color: var(--text-primary);">Computing &amp; Information Systems</strong> and <strong style="color: var(--text-primary);">Financial Engineering</strong>. I am pursuing my Computing &amp; Information Systems degree, alongside 6 months of professional experience as a Data Scientist.
+            I am a dedicated Data Scientist and Quantitative Analyst bridging <strong style="color: var(--text-primary);">Computing &amp; Information Systems</strong> and <strong style="color: var(--text-primary);">Financial Engineering</strong>. Currently pursuing my CIS degree alongside 6 months of professional industry experience as a Data Scientist building predictive models, machine learning pipelines, and analytics solutions.
           </p>
           <p>
-            On the quantitative side, I hold a Higher National Diploma (HND) in Financial Engineering, having successfully completed Levels 1 and 2, and I am currently reading for Level 3 while pursuing my BSc in Financial Engineering at the University of Colombo.
+            On the quantitative finance frontier, I hold a Higher National Diploma (HND) in Financial Engineering from the <strong>University of Colombo</strong>, having successfully passed Levels 1 and 2 exams, and currently reading for Level 3 while pursuing my BSc in Financial Engineering.
           </p>
           <p>
-            I specialize in machine learning, statistical modeling, financial analysis, and data visualization. By combining deep technical skills in Python, R, SQL, and Power BI with quantitative finance models, I translate complex data sets into actionable business insights.
+            My work spans deep learning architectures, computer vision (including a novel <em>Sinhala Sign Language Recognition System</em>), autonomous AI agent orchestration, financial econometrics, and executive business intelligence.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 Core Pillars Bento Grid -->
+      <div class="about-pillars-grid reveal">
+        <div class="glass-card pillar-card">
+          <div class="pillar-icon" style="background: rgba(168, 85, 247, 0.12); color: #c084fc;">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h4 class="pillar-title">AI &amp; Autonomous Agents</h4>
+          <p class="pillar-desc">
+            Computer vision, neural network architectures, LLM gateways, token routing, rate-limiting, and autonomous multi-agent swarm control.
+          </p>
+        </div>
+
+        <div class="glass-card pillar-card">
+          <div class="pillar-icon" style="background: rgba(56, 189, 248, 0.12); color: #38bdf8;">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h4 class="pillar-title">Quantitative Finance</h4>
+          <p class="pillar-desc">
+            Level 3 candidate in Financial Engineering at UOC; statistical arbitrage, time-series forecasting, risk modeling, and derivative valuation.
+          </p>
+        </div>
+
+        <div class="glass-card pillar-card">
+          <div class="pillar-icon" style="background: rgba(16, 185, 129, 0.12); color: #34d399;">
+            <i class="fas fa-database"></i>
+          </div>
+          <h4 class="pillar-title">Data Science &amp; BI</h4>
+          <p class="pillar-desc">
+            Full 8-course Google Data Analytics Specialization, complex SQL querying, exploratory data analysis, Tableau, and Power BI executive dashboards.
+          </p>
+        </div>
+
+        <div class="glass-card pillar-card">
+          <div class="pillar-icon" style="background: rgba(245, 158, 11, 0.12); color: #fbbf24;">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h4 class="pillar-title">Cloud &amp; Full-Stack</h4>
+          <p class="pillar-desc">
+            AWS Cloud Practitioner Essentials, scalable compute (EC2, Lambda), Python Flask/FastAPI backends, React interfaces, and secure API architectures.
           </p>
         </div>
       </div>
@@ -129,52 +224,94 @@
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">Tech Stack</h2>
-        <p class="section-subtitle">Tools and technologies I work with daily</p>
+        <p class="section-subtitle">Categorized competencies engineered for scale and precision</p>
       </div>
       
-      <div class="glass-card reveal">
-        <div class="skills-wrapper">
-          <div class="skill-pill"><i class="fab fa-python"></i> Python</div>
-          <div class="skill-pill"><i class="fab fa-js"></i> JavaScript</div>
-          <div class="skill-pill"><i class="fab fa-react"></i> React.js</div>
-          <div class="skill-pill"><i class="fas fa-database"></i> SQL</div>
-          <div class="skill-pill"><i class="fas fa-chart-pie"></i> Power BI</div>
-          <div class="skill-pill"><i class="fas fa-brain"></i> Scikit-learn</div>
-          <div class="skill-pill"><i class="fas fa-network-wired"></i> TensorFlow</div>
-          <div class="skill-pill"><i class="fab fa-html5"></i> HTML / CSS</div>
-          <div class="skill-pill"><i class="fas fa-table"></i> Pandas</div>
-          <div class="skill-pill"><i class="fas fa-square-root-alt"></i> NumPy</div>
-          <div class="skill-pill"><i class="fab fa-php"></i> PHP</div>
-          <div class="skill-pill"><i class="fas fa-leaf"></i> MongoDB</div>
+      <div class="skills-categories-grid reveal">
+        <!-- Category 1: AI & ML -->
+        <div class="glass-card skill-category-card">
+          <div class="skill-category-header">
+            <i class="fas fa-brain" style="color: #a855f7;"></i>
+            <span>Machine Learning &amp; AI</span>
+          </div>
+          <div class="skills-wrapper">
+            <div class="skill-pill"><i class="fab fa-python"></i> Python</div>
+            <div class="skill-pill"><i class="fas fa-network-wired"></i> TensorFlow</div>
+            <div class="skill-pill"><i class="fas fa-brain"></i> Scikit-Learn</div>
+            <div class="skill-pill"><i class="fas fa-robot"></i> Agentic Systems</div>
+            <div class="skill-pill"><i class="fas fa-eye"></i> Computer Vision</div>
+            <div class="skill-pill"><i class="fas fa-project-diagram"></i> Neural Networks</div>
+          </div>
+        </div>
+
+        <!-- Category 2: Data Science & Quant -->
+        <div class="glass-card skill-category-card">
+          <div class="skill-category-header">
+            <i class="fas fa-chart-pie" style="color: #38bdf8;"></i>
+            <span>Data Science &amp; Quantitative Analytics</span>
+          </div>
+          <div class="skills-wrapper">
+            <div class="skill-pill"><i class="fas fa-table"></i> Pandas</div>
+            <div class="skill-pill"><i class="fas fa-square-root-alt"></i> NumPy</div>
+            <div class="skill-pill"><i class="fas fa-code"></i> R Programming</div>
+            <div class="skill-pill"><i class="fas fa-database"></i> SQL / ETL</div>
+            <div class="skill-pill"><i class="fas fa-chart-pie"></i> Power BI</div>
+            <div class="skill-pill"><i class="fas fa-chart-line"></i> Financial Modeling</div>
+            <div class="skill-pill"><i class="fas fa-calculator"></i> Statistics &amp; Probability</div>
+          </div>
+        </div>
+
+        <!-- Category 3: Cloud & Engineering -->
+        <div class="glass-card skill-category-card">
+          <div class="skill-category-header">
+            <i class="fas fa-server" style="color: #10b981;"></i>
+            <span>Cloud, Full-Stack &amp; Engineering</span>
+          </div>
+          <div class="skills-wrapper">
+            <div class="skill-pill"><i class="fab fa-aws"></i> AWS Cloud</div>
+            <div class="skill-pill"><i class="fab fa-js"></i> JavaScript</div>
+            <div class="skill-pill"><i class="fab fa-react"></i> React.js</div>
+            <div class="skill-pill"><i class="fab fa-php"></i> PHP</div>
+            <div class="skill-pill"><i class="fas fa-leaf"></i> MongoDB</div>
+            <div class="skill-pill"><i class="fab fa-git-alt"></i> Git &amp; GitHub</div>
+            <div class="skill-pill"><i class="fab fa-html5"></i> HTML5 / CSS3</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Education Section -->
+  <!-- Education & Experience Timeline -->
   <section id="education" class="education">
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">Experience &amp; Education</h2>
-        <p class="section-subtitle">My professional and academic journey</p>
+        <p class="section-subtitle">Academic foundations and professional trajectory</p>
       </div>
 
       <div class="education-timeline reveal">
 
         <!-- Work Experience -->
         <div class="timeline-item">
-          <div class="timeline-dot" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-dot" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);">
+            <i class="fas fa-briefcase"></i>
+          </div>
           <div class="glass-card timeline-card">
             <div class="timeline-header">
               <h3>Data Scientist</h3>
-              <span class="timeline-badge" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); color: #10b981;">6 Months Experience</span>
+              <span class="timeline-badge" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); color: #10b981;">
+                6 Months Experience
+              </span>
             </div>
             <p class="timeline-place"><i class="fas fa-building"></i> Data Science Industry</p>
-            <p class="timeline-desc">Leveraged machine learning models, statistical analysis, and data analytics tools to solve analytical problems, build predictive systems, and generate actionable business reports.</p>
+            <p class="timeline-desc">
+              Engineered machine learning pipelines, performed statistical analyses, and developed predictive models that resolved high-impact analytical challenges and delivered actionable business intelligence.
+            </p>
             <div class="timeline-tags">
               <span class="tech-tag">Data Science</span>
               <span class="tech-tag">Machine Learning</span>
-              <span class="tech-tag">Predictive Modeling</span>
+              <span class="tech-tag">Predictive Analytics</span>
+              <span class="tech-tag">BI Reporting</span>
             </div>
           </div>
         </div>
@@ -185,31 +322,40 @@
           <div class="glass-card timeline-card">
             <div class="timeline-header">
               <h3>BSc (Hons) in Computing &amp; Information Systems</h3>
+              <span class="timeline-badge">Undergraduate</span>
             </div>
             <p class="timeline-place"><i class="fas fa-university"></i> Sabaragamuwa University of Sri Lanka</p>
-            <p class="timeline-desc">Focused on software development, information systems management, system analytics, databases, and advanced programming.</p>
+            <p class="timeline-desc">
+              Focusing on software engineering, database management systems, system analysis, algorithms, and distributed systems architecture.
+            </p>
             <div class="timeline-tags">
               <span class="tech-tag">Information Systems</span>
               <span class="tech-tag">Software Engineering</span>
-              <span class="tech-tag">Databases</span>
+              <span class="tech-tag">Distributed Databases</span>
             </div>
           </div>
         </div>
 
-        <!-- FE HND & Degree -->
+        <!-- Financial Engineering HND & Degree -->
         <div class="timeline-item">
-          <div class="timeline-dot"><i class="fas fa-chart-line"></i></div>
+          <div class="timeline-dot" style="background: linear-gradient(135deg, #38bdf8, #0284c7); box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);">
+            <i class="fas fa-chart-line"></i>
+          </div>
           <div class="glass-card timeline-card">
             <div class="timeline-header">
               <h3>HND &amp; BSc in Financial Engineering</h3>
-              <span class="timeline-badge">L1 &amp; L2 Completed | Reading L3</span>
+              <span class="timeline-badge" style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); color: #38bdf8;">
+                L1 &amp; L2 Completed | Reading L3
+              </span>
             </div>
             <p class="timeline-place"><i class="fas fa-university"></i> University of Colombo, Sri Lanka</p>
-            <p class="timeline-desc">Completed Higher National Diploma (HND) in Financial Engineering. Successfully passed Level 1 and Level 2 exams; currently reading for Level 3 while pursuing BSc studies in Financial Engineering.</p>
+            <p class="timeline-desc">
+              Completed Higher National Diploma (HND) in Financial Engineering. Successfully passed Level 1 and Level 2 professional examinations; currently reading for Level 3 while pursuing BSc studies in Financial Engineering.
+            </p>
             <div class="timeline-tags">
               <span class="tech-tag">Financial Engineering</span>
               <span class="tech-tag">Quantitative Finance</span>
-              <span class="tech-tag">Risk Analysis</span>
+              <span class="tech-tag">Risk &amp; Derivatives</span>
             </div>
           </div>
         </div>
@@ -223,9 +369,12 @@
               <span class="timeline-badge">Completed 2022</span>
             </div>
             <p class="timeline-place"><i class="fas fa-map-marker-alt"></i> Sri Lanka</p>
-            <p class="timeline-desc">Completed A/Ls in the Physical Science stream, laying a strong analytical foundation for computing and financial engineering degrees.</p>
+            <p class="timeline-desc">
+              Completed A/Ls in the Physical Science stream, establishing the analytical, mathematical, and algorithmic rigor that underpins my dual degree track.
+            </p>
             <div class="timeline-tags">
               <span class="tech-tag">Physical Science Stream</span>
+              <span class="tech-tag">Advanced Mathematics</span>
             </div>
           </div>
         </div>
@@ -234,166 +383,142 @@
     </div>
   </section>
 
-  <!-- Certifications Section -->
+  <!-- Certifications Section (The 23 Credentials Showcase) -->
   <section id="certifications" class="certifications">
     <div class="container">
       <div class="section-header reveal">
-        <h2 class="section-title">Certifications</h2>
-        <p class="section-subtitle">19 professional credentials — click any card to view the certificate</p>
+        <h2 class="section-title">Professional Certifications</h2>
+        <p class="section-subtitle">23 verified credentials across AI, Cloud, Data Science, and Quantitative Systems</p>
       </div>
 
-      <div class="certs-grid reveal">
-
-        <!-- Google Data Analytics (Coursera) -->
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fab fa-google"></i></div>
-          <h3 class="cert-title">Foundations: Data, Data, Everywhere</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> Google — Coursera &nbsp;|&nbsp; Sep 2025</p>
-          <a href="Certificates/Coursera 9QEWM18YATHC.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
+      <!-- Specialization Spotlight: Google Data Analytics & AWS -->
+      <div class="spec-spotlight-card reveal">
+        <div class="spec-header">
+          <div class="spec-badge-group">
+            <span class="spec-pill"><i class="fab fa-google"></i> Google Specialization</span>
+            <span class="spec-pill purple"><i class="fab fa-aws"></i> AWS Certified Training</span>
+            <span class="spec-pill" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">
+              <i class="fas fa-check-circle"></i> 8-Course Track Completed
+            </span>
+          </div>
+          <span style="font-size: 0.85rem; color: #a5b4fc; font-weight: 600;">
+            <i class="fas fa-shield-alt"></i> 100% Industry Verified
+          </span>
         </div>
 
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fab fa-google"></i></div>
-          <h3 class="cert-title">Ask Questions to Make Data-Driven Decisions</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> Google — Coursera &nbsp;|&nbsp; Sep 2025</p>
-          <a href="Certificates/Coursera TJWS4UUXGK89.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
+        <div class="spec-title-group">
+          <h3>Google Data Analytics Professional Certificate (Complete Series)</h3>
+          <p class="spec-desc">
+            Completed all 8 rigorous industry courses covering data preparation, SQL data wrangling, advanced analytics, Tableau visual storytelling, R programming, and comprehensive capstone analysis:
+          </p>
         </div>
 
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fab fa-google"></i></div>
-          <h3 class="cert-title">Prepare Data for Exploration</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> Google — Coursera &nbsp;|&nbsp; Sep 2025</p>
-          <a href="Certificates/Coursera BL4024AW8HI0.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
+        <div class="spec-courses-pills">
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 1. Foundations: Data Everywhere</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 2. Ask Questions for Decisions</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 3. Prepare Data for Exploration</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 4. Process from Dirty to Clean</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 5. Analyze Data to Answer Questions</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 6. Share Through Visualization</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 7. Data Analysis with R</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 8. Capstone Case Study</span>
+        </div>
+      </div>
+
+      <!-- Controls: Search & Category Filters -->
+      <div class="certs-controls reveal">
+        <!-- Search Input -->
+        <div class="certs-search-bar">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="certs-search-input" class="certs-search-input" placeholder="Search 23 credentials by title, issuer, or skill (e.g. AWS, Python, Google, R, SQL)..." aria-label="Search certifications">
+          <button id="clear-search-btn" class="clear-search-btn" title="Clear search">
+            <i class="fas fa-times-circle"></i>
+          </button>
         </div>
 
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fab fa-google"></i></div>
-          <h3 class="cert-title">Process Data from Dirty to Clean</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> Google — Coursera &nbsp;|&nbsp; Sep 2025</p>
-          <a href="Certificates/Coursera JAKAYI98K879.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
+        <!-- Category Filters -->
+        <div class="certs-filter-tabs">
+          <button class="filter-pill active" data-category="all">
+            All <span class="filter-count">23</span>
+          </button>
+          <button class="filter-pill" data-category="ai-ml">
+            <i class="fas fa-brain"></i> AI &amp; Machine Learning <span class="filter-count">5</span>
+          </button>
+          <button class="filter-pill" data-category="data-analytics">
+            <i class="fas fa-chart-line"></i> Data Science &amp; Analytics <span class="filter-count">9</span>
+          </button>
+          <button class="filter-pill" data-category="cloud-devops">
+            <i class="fab fa-aws"></i> Cloud &amp; Security <span class="filter-count">3</span>
+          </button>
+          <button class="filter-pill" data-category="software-dev">
+            <i class="fab fa-python"></i> Software &amp; Web <span class="filter-count">2</span>
+          </button>
+          <button class="filter-pill" data-category="management">
+            <i class="fas fa-tasks"></i> Leadership &amp; Management <span class="filter-count">4</span>
+          </button>
         </div>
+      </div>
 
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fab fa-google"></i></div>
-          <h3 class="cert-title">Analyze Data to Answer Questions</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> Google — Coursera &nbsp;|&nbsp; Sep 2025</p>
-          <a href="Certificates/Coursera CMUPCXRJIMA7.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
+      <!-- Results Info Bar -->
+      <div class="certs-results-bar reveal">
+        <span id="certs-results-count">Showing 23 of 23 credentials</span>
+        <a href="certifications.html" style="color: #818cf8; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <i class="fas fa-th-large"></i> Open Fullscreen Directory &rarr;
+        </a>
+      </div>
 
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fab fa-google"></i></div>
-          <h3 class="cert-title">Share Data Through the Art of Visualization</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> Google — Coursera &nbsp;|&nbsp; Sep 2025</p>
-          <a href="Certificates/Coursera 9VZIGPPKNMI6.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fab fa-google"></i></div>
-          <h3 class="cert-title">Data Analysis with R Programming</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> Google — Coursera &nbsp;|&nbsp; Sep 2025</p>
-          <a href="Certificates/Coursera A0TCABYXFJZV.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fab fa-google"></i></div>
-          <h3 class="cert-title">Google Data Analytics Capstone: Case Study</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> Google — Coursera &nbsp;|&nbsp; Sep 2025</p>
-          <a href="Certificates/Coursera YQEBBPSDM7WJ.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <!-- Python & ML -->
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fab fa-python"></i></div>
-          <h3 class="cert-title">Python Programming</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> University of Moratuwa &nbsp;|&nbsp; Jul 2025</p>
-          <a href="Certificates/Imdaad_python mora.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fas fa-brain"></i></div>
-          <h3 class="cert-title">Machine Learning Using Python</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> Simplilearn &nbsp;|&nbsp; Jul 2025</p>
-          <a href="Certificates/ML using Python.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <!-- HP LIFE -->
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fas fa-robot"></i></div>
-          <h3 class="cert-title">AI for Business Professionals</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> HP LIFE</p>
-          <a href="Certificates/AI for Business Professionals.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fas fa-lightbulb"></i></div>
-          <h3 class="cert-title">Critical Thinking in the AI Era</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> HP LIFE</p>
-          <a href="Certificates/Critical Thinking in the AI Era.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
-          <h3 class="cert-title">Data Science &amp; Analytics</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> HP LIFE</p>
-          <a href="Certificates/Data Science &amp; Analytics.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fas fa-table"></i></div>
-          <h3 class="cert-title">Presenting Data</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> HP LIFE &nbsp;|&nbsp; Feb 2026</p>
-          <a href="Certificates/Presenting Data.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <!-- UoM Open -->
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fas fa-tasks"></i></div>
-          <h3 class="cert-title">Foundations of Project Management</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> University of Moratuwa</p>
-          <a href="Certificates/Foundations_of_Project_Management_E-Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fas fa-project-diagram"></i></div>
-          <h3 class="cert-title">Project Scope and Schedule Management</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> University of Moratuwa</p>
-          <a href="Certificates/Project_Scope_and_Schedule_Management_E-Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fab fa-html5"></i></div>
-          <h3 class="cert-title">Web Design for Beginners</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> University of Moratuwa</p>
-          <a href="Certificates/Web_Design_for_Beginners_E-Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <!-- Others -->
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fas fa-bullhorn"></i></div>
-          <h3 class="cert-title">Introduction to Digital Marketing Fundamentals</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> Simplilearn &nbsp;|&nbsp; Jul 2025</p>
-          <a href="Certificates/Digital Marketing.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
-        <div class="glass-card cert-card">
-          <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3 class="cert-title">Cybersecurity</h3>
-          <p class="cert-issuer"><i class="fas fa-award"></i> ADBI E-Learning</p>
-          <a href="Certificates/Shajahan-Imdaad-Cybersecurity-Cybersecurity-ADBI-E-Learning.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-file-pdf"></i></a>
-        </div>
-
+      <!-- Certifications Grid (Dynamically Populated + Fallback Static Markup) -->
+      <div class="certs-grid reveal" id="certs-container">
+        <!-- Rendered dynamically by script.js using window.CERTIFICATIONS_DATA -->
       </div>
     </div>
   </section>
 
+  <!-- Interactive Certificate Modal / Lightbox -->
+  <div class="cert-modal-backdrop" id="cert-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-cert-title">
+    <div class="cert-modal-dialog">
+      <button class="cert-modal-close" id="cert-modal-close" title="Close dialog" aria-label="Close dialog">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="cert-modal-badge-row">
+        <span class="cert-category-badge" id="modal-cert-category">Category</span>
+        <span class="cert-verified-pill">
+          <span class="verified-dot"></span> Verified Official Credential
+        </span>
+      </div>
+
+      <h3 class="cert-modal-title" id="modal-cert-title">Certificate Title</h3>
+      <p class="cert-modal-issuer" id="modal-cert-issuer">
+        <i class="fas fa-award"></i> Issuing Authority
+      </p>
+
+      <div class="cert-modal-summary" id="modal-cert-summary">
+        Summary description of competency and evaluation metrics.
+      </div>
+
+      <h5 class="cert-modal-skills-heading">Key Competencies &amp; Skills Acquired</h5>
+      <div class="cert-modal-skills-list" id="modal-cert-skills">
+        <!-- Skill tags inserted here -->
+      </div>
+
+      <div class="cert-modal-actions">
+        <a id="modal-pdf-link" href="#" target="_blank" class="btn btn-primary" style="flex: 1;">
+          <i class="fas fa-file-pdf"></i> Open Full Certificate PDF
+        </a>
+        <a id="modal-verify-link" href="#" target="_blank" class="btn btn-secondary" style="flex: 1;">
+          <i class="fas fa-shield-alt"></i> Verify with Issuer
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Projects Section -->
-
   <section id="projects" class="projects">
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">Selected Works</h2>
-        <p class="section-subtitle">A curated collection of my public repositories</p>
+        <p class="section-subtitle">A curated collection of intelligent systems and public repositories</p>
       </div>
       
       <div class="projects-grid" id="github-projects-container">
@@ -410,7 +535,7 @@
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">Let's Connect</h2>
-        <p class="section-subtitle">Feel free to reach out for collaborations or just a friendly hello</p>
+        <p class="section-subtitle">Reach out for machine learning collaborations, quantitative research, or opportunities</p>
       </div>
       
       <div class="contact-layout reveal">
@@ -435,7 +560,7 @@
             <div class="contact-icon"><i class="fab fa-github"></i></div>
             <div class="contact-details">
               <h3>GitHub</h3>
-              <p>View my source code</p>
+              <p>View open source code</p>
             </div>
           </a>
           
@@ -462,7 +587,9 @@
               <label for="form-message">Message</label>
               <textarea id="form-message" name="message" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
           </form>
         </div>
       </div>
@@ -471,12 +598,17 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Imdaad Shajahan. Crafted with precision.</p>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <p>&copy; 2026 Imdaad Shajahan. All rights reserved.</p>
+      <div style="display: flex; gap: 1rem;">
+        <a href="https://github.com/ShajahanImdaad53" target="_blank" style="color: var(--text-secondary);"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" target="_blank" style="color: var(--text-secondary);"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:shajahanimdaad20@gmail.com" style="color: var(--text-secondary);"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
   <script type="module" src="contact-handler.js"></script>
 </body>
 </html>

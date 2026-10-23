@@ -3,319 +3,216 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Imdaad Shajahan | Professional Certifications</title>
+  <meta name="description" content="Imdaad Shajahan — Complete Directory of 23 Professional Certifications in AI, Machine Learning, Data Science, AWS Cloud, and Software Engineering.">
+  <title>Imdaad Shajahan | Professional Certifications Directory</title>
   <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="theme.css"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="certificates-data.js"></script>
 </head>
 <body>
+
+  <!-- Floating Cursor & Particle Background -->
+  <div id="math-background-container"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <canvas id="particles-canvas"></canvas>
+
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <span>Imdaad</span>
-      </div>
-      <div class="nav-menu">
-        <a href="index.html" class="nav-link">← Back to Portfolio</a>
-        <a href="#all-certs" class="nav-link active">All Certificates</a>
-      </div>
-      <div class="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
-        <i class="fas fa-moon"></i>
-      </button>
-    </div>
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">
+      <i class="fas fa-arrow-left"></i> Portfolio
+    </a>
+    <a href="index.html#about" class="nav-link">About</a>
+    <a href="index.html#skills" class="nav-link">Skills</a>
+    <a href="index.html#projects" class="nav-link">Projects</a>
+    <a href="#all-certs" class="nav-link active">
+      Directory <span style="font-size: 0.72rem; padding: 2px 7px; background: rgba(99,102,241,0.25); border: 1px solid rgba(99,102,241,0.4); border-radius: 50px; margin-left: 3px; font-weight: 700; color: #a5b4fc;">23</span>
+    </a>
+    <a href="Imdaad CV.pdf" target="_blank" class="nav-link" style="color: #38bdf8;" title="View Resume">
+      <i class="fas fa-file-download"></i> CV
+    </a>
+    <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" aria-label="Toggle theme">
+      <i class="fas fa-moon" id="theme-icon"></i>
+    </button>
   </nav>
 
   <!-- Certifications Hero Section -->
-  <section class="certifications-hero" style="padding-top: 150px; padding-bottom: 50px; text-align: center;">
+  <section class="certifications-hero" style="padding-top: 140px; padding-bottom: 40px; text-align: center; position: relative;">
+    <div class="hero-glow"></div>
     <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title" style="margin-bottom: 20px;">Professional Certifications</h1>
-        <p class="hero-subtitle">Showcasing my expertise through industry-recognized credentials</p>
+      <div class="hero-content" style="max-width: 850px; margin: 0 auto;">
+        <div class="hero-badge" style="margin-bottom: 1.25rem;">
+          &#9679; 23 Verified Credentials &bull; 6 Global Institutions
+        </div>
+        <h1 class="hero-title" style="margin-bottom: 1rem; font-size: clamp(2.2rem, 5vw, 3.8rem);">
+          Professional <span class="gradient-text">Certifications</span> Directory
+        </h1>
+        <p class="hero-description" style="margin-bottom: 2rem; max-width: 720px;">
+          An accredited catalog of 23 credentials across <strong>AI &amp; Machine Learning</strong>, <strong>Data Science &amp; Quantitative Analytics</strong>, <strong>AWS Cloud Infrastructure</strong>, and <strong>Software Engineering</strong>.
+        </p>
+
+        <!-- Stats Overview Row -->
+        <div class="hero-stats-row" style="margin-bottom: 2rem;">
+          <div class="hero-stat-chip">
+            <i class="fas fa-award"></i>
+            <span><strong>23</strong> Total Certificates</span>
+          </div>
+          <div class="hero-stat-chip">
+            <i class="fab fa-google"></i>
+            <span><strong>Google</strong> 8-Course Track</span>
+          </div>
+          <div class="hero-stat-chip">
+            <i class="fab fa-aws"></i>
+            <span><strong>AWS</strong> Cloud Training</span>
+          </div>
+          <div class="hero-stat-chip">
+            <i class="fas fa-university"></i>
+            <span><strong>Univ. of Moratuwa</strong> Open</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Certifications Detailed -->
-  <section class="certifications-detailed" id="all-certs" style="padding: 50px 0;">
+  <!-- Main Certifications Catalog Section -->
+  <section class="certifications-detailed" id="all-certs" style="padding: 20px 0 100px 0;">
     <div class="container">
-      <div class="certificates-grid">
-                            <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/AI for Business Professionals.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>AI for Business Professionals</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/AI for Business Professionals.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Coursera 9QEWM18YATHC.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Coursera 9QEWM18YATHC</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Coursera 9QEWM18YATHC.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Coursera 9VZIGPPKNMI6.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Coursera 9VZIGPPKNMI6</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Coursera 9VZIGPPKNMI6.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Coursera A0TCABYXFJZV.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Coursera A0TCABYXFJZV</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Coursera A0TCABYXFJZV.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Coursera BL4024AW8HI0.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Coursera BL4024AW8HI0</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Coursera BL4024AW8HI0.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Coursera CMUPCXRJIMA7.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Coursera CMUPCXRJIMA7</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Coursera CMUPCXRJIMA7.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Coursera JAKAYI98K879.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Coursera JAKAYI98K879</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Coursera JAKAYI98K879.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Coursera TJWS4UUXGK89.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Coursera TJWS4UUXGK89</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Coursera TJWS4UUXGK89.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Coursera YQEBBPSDM7WJ.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Coursera YQEBBPSDM7WJ</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Coursera YQEBBPSDM7WJ.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Critical Thinking in the AI Era.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Critical Thinking in the AI Era</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Critical Thinking in the AI Era.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Data Science &amp; Analytics.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Data Science &amp; Analytics</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Data Science &amp; Analytics.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Digital Marketing.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Digital Marketing</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Digital Marketing.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Foundations_of_Project_Management_E-Certificate.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Foundations of Project Management E Certificate</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Foundations_of_Project_Management_E-Certificate.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Imdaad_python mora.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Imdaad python mora</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Imdaad_python mora.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/ML using Python.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>ML using Python</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/ML using Python.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Presenting Data.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Presenting Data</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Presenting Data.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Project_Scope_and_Schedule_Management_E-Certificate.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Project Scope and Schedule Management E Certificate</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Project_Scope_and_Schedule_Management_E-Certificate.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Shajahan-Imdaad–Cybersecurity–Cybersecurity–ADBI-E-Learning.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Shajahan Imdaad–Cybersecurity–Cybersecurity–ADBI E Learning</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Shajahan-Imdaad–Cybersecurity–Cybersecurity–ADBI-E-Learning.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                                        <div class="certificate-glass-card">
-                        <div class="certificate-preview" style="width: 100%; height: 220px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; background: rgba(0,0,0,0.5);">
-                                                            <iframe src="Certificates/Web_Design_for_Beginners_E-Certificate.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" style="width: 100%; height: 100%; border: none;"></iframe>
-                                                    </div>
-                        <div class="certificate-content">
-                            <h4>Web Design for Beginners E Certificate</h4>
-                        </div>
-                        <div class="certificate-action">
-                            <a href="Certificates/Web_Design_for_Beginners_E-Certificate.pdf" target="_blank" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:10px;">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-                    </div>
-                          </div>
+
+      <!-- Specialization Spotlight -->
+      <div class="spec-spotlight-card reveal">
+        <div class="spec-header">
+          <div class="spec-badge-group">
+            <span class="spec-pill"><i class="fab fa-google"></i> Google Specialization</span>
+            <span class="spec-pill purple"><i class="fab fa-aws"></i> AWS Cloud Series</span>
+            <span class="spec-pill" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">
+              <i class="fas fa-shield-alt"></i> 100% Verified
+            </span>
+          </div>
+          <a href="index.html" class="btn btn-glass" style="font-size: 0.82rem; padding: 0.45rem 1rem;">
+            &larr; Back to Main Portfolio
+          </a>
+        </div>
+
+        <div class="spec-title-group">
+          <h3>Google Data Analytics Professional Certificate</h3>
+          <p class="spec-desc">
+            Complete 8-course track covering end-to-end data lifecycle: data foundations, business problem framing, SQL data cleaning, exploratory analysis, Tableau visualization, statistical programming in R, and capstone case study.
+          </p>
+        </div>
+
+        <div class="spec-courses-pills">
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 1. Foundations: Data Everywhere</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 2. Ask Questions for Decisions</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 3. Prepare Data for Exploration</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 4. Process from Dirty to Clean</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 5. Analyze Data to Answer Questions</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 6. Share Through Visualization</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 7. Data Analysis with R</span>
+          <span class="spec-course-chip"><i class="fas fa-check"></i> 8. Capstone Case Study</span>
+        </div>
+      </div>
+
+      <!-- Controls: Search & Category Filters -->
+      <div class="certs-controls reveal">
+        <!-- Search Input -->
+        <div class="certs-search-bar">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="certs-search-input" class="certs-search-input" placeholder="Search 23 credentials by skill, title, or issuer (e.g. AWS, Python, Google, R, SQL)..." aria-label="Search certifications">
+          <button id="clear-search-btn" class="clear-search-btn" title="Clear search">
+            <i class="fas fa-times-circle"></i>
+          </button>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="certs-filter-tabs">
+          <button class="filter-pill active" data-category="all">
+            All <span class="filter-count">23</span>
+          </button>
+          <button class="filter-pill" data-category="ai-ml">
+            <i class="fas fa-brain"></i> AI &amp; Machine Learning <span class="filter-count">5</span>
+          </button>
+          <button class="filter-pill" data-category="data-analytics">
+            <i class="fas fa-chart-line"></i> Data Science &amp; Analytics <span class="filter-count">9</span>
+          </button>
+          <button class="filter-pill" data-category="cloud-devops">
+            <i class="fab fa-aws"></i> Cloud &amp; Security <span class="filter-count">3</span>
+          </button>
+          <button class="filter-pill" data-category="software-dev">
+            <i class="fab fa-python"></i> Software &amp; Web <span class="filter-count">2</span>
+          </button>
+          <button class="filter-pill" data-category="management">
+            <i class="fas fa-tasks"></i> Leadership &amp; Management <span class="filter-count">4</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Count Bar -->
+      <div class="certs-results-bar reveal">
+        <span id="certs-results-count">Showing 23 of 23 credentials</span>
+        <span style="color: var(--text-secondary); font-size: 0.8rem;">
+          Click "Quick Details" on any card to view credential verification &amp; skills
+        </span>
+      </div>
+
+      <!-- Dynamic Cards Grid -->
+      <div class="certs-grid reveal" id="certs-container">
+        <!-- Populated dynamically by script.js -->
+      </div>
     </div>
   </section>
+
+  <!-- Interactive Certificate Modal / Lightbox -->
+  <div class="cert-modal-backdrop" id="cert-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-cert-title">
+    <div class="cert-modal-dialog">
+      <button class="cert-modal-close" id="cert-modal-close" title="Close dialog" aria-label="Close dialog">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="cert-modal-badge-row">
+        <span class="cert-category-badge" id="modal-cert-category">Category</span>
+        <span class="cert-verified-pill">
+          <span class="verified-dot"></span> Verified Official Credential
+        </span>
+      </div>
+
+      <h3 class="cert-modal-title" id="modal-cert-title">Certificate Title</h3>
+      <p class="cert-modal-issuer" id="modal-cert-issuer">
+        <i class="fas fa-award"></i> Issuing Authority
+      </p>
+
+      <div class="cert-modal-summary" id="modal-cert-summary">
+        Summary description of competency and evaluation metrics.
+      </div>
+
+      <h5 class="cert-modal-skills-heading">Key Competencies &amp; Skills Acquired</h5>
+      <div class="cert-modal-skills-list" id="modal-cert-skills">
+        <!-- Skill tags inserted here -->
+      </div>
+
+      <div class="cert-modal-actions">
+        <a id="modal-pdf-link" href="#" target="_blank" class="btn btn-primary" style="flex: 1;">
+          <i class="fas fa-file-pdf"></i> Open Full Certificate PDF
+        </a>
+        <a id="modal-verify-link" href="#" target="_blank" class="btn btn-secondary" style="flex: 1;">
+          <i class="fas fa-shield-alt"></i> Verify with Issuer
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <span>Imdaad</span>
-        </div>
-        <div class="footer-links">
-          <a href="index.html">Portfolio</a>
-          <a href="certifications.html">Certifications</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Imdaad Shajahan. All rights reserved.</p>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <p>&copy; 2026 Imdaad Shajahan. All rights reserved.</p>
+      <div style="display: flex; gap: 1rem;">
+        <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">&larr; Portfolio Home</a>
+        <a href="https://github.com/ShajahanImdaad53" target="_blank" style="color: var(--text-secondary);"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/imdaad-shajahan-75094229a" target="_blank" style="color: var(--text-secondary);"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:shajahanimdaad20@gmail.com" style="color: var(--text-secondary);"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

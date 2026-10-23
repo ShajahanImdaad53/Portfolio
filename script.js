@@ -12,27 +12,38 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const solarSystem = document.querySelector('.solar-system');
     const sunProfile = document.querySelector('.sun-profile');
+    const skipBtn = document.getElementById('skip-intro-btn');
+    let introEnded = false;
+
+    const endIntro = () => {
+      if (introEnded) return;
+      introEnded = true;
+      introScreen.classList.add('hidden');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        introScreen.remove();
+      }, 400);
+    };
+
+    if (skipBtn) {
+      skipBtn.addEventListener('click', endIntro);
+    }
     
     // Timeline
-    // 1. Orbit plays automatically via CSS (for 3 seconds)
+    // 1. Orbit plays automatically via CSS (for 1.5 seconds)
     setTimeout(() => {
+      if (introEnded) return;
       // 2. Converge (planets rush to center)
       solarSystem.classList.add('converge');
       
       setTimeout(() => {
+        if (introEnded) return;
         // 3. Reveal profile photo (explosion)
         sunProfile.classList.add('revealed');
         
         setTimeout(() => {
           // 4. Fade out intro screen and enable scroll
-          introScreen.classList.add('hidden');
-          document.body.style.overflow = '';
-          
-          // Remove from DOM after fade to avoid blocking clicks
-          setTimeout(() => {
-            introScreen.remove();
-          }, 600);
-          
+          endIntro();
         }, 1000); // Time to show the profile photo before fading
         
       }, 500); // Time it takes for planets to converge
@@ -230,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entry.target.classList.contains('profile-card')) {
         const certCountEl = document.getElementById('cert-count');
         if (certCountEl) {
-          animateCounter(certCountEl, 19, 1500);
+          animateCounter(certCountEl, 23, 1500);
         }
 
         const repoCountEl = document.getElementById('repo-count');
@@ -262,7 +273,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 6. Fetch GitHub Projects
+  // 6. Role Cycler & Certifications Engine
+  // ==========================================
+  initHeroRoleCycler();
+  initCertificationsEngine();
+
+  // ==========================================
+  // 7. Fetch GitHub Projects
   // ==========================================
   fetchGitHubProjects();
 });
@@ -437,3 +454,268 @@ function initMathAnimations() {
   }, 800);
 }
 document.addEventListener('DOMContentLoaded', initMathAnimations);
+
+// ==========================================
+// Hero Dynamic Role Cycler
+// ==========================================
+function initHeroRoleCycler() {
+  const el = document.getElementById('hero-role-text');
+  if (!el) return;
+
+  const roles = [
+    "Data Scientist & ML Engineer",
+    "Quantitative Analyst (Fin. Eng)",
+    "Autonomous AI Agent Developer",
+    "Computer Vision & Deep Learning"
+  ];
+  let roleIdx = 0;
+  let charIdx = 0;
+  let isDeleting = false;
+  let delay = 90;
+
+  function typeRole() {
+    const current = roles[roleIdx];
+    if (isDeleting) {
+      el.textContent = current.substring(0, charIdx - 1);
+      charIdx--;
+      delay = 40;
+    } else {
+      el.textContent = current.substring(0, charIdx + 1);
+      charIdx++;
+      delay = 90;
+    }
+
+    if (!isDeleting && charIdx === current.length) {
+      isDeleting = true;
+      delay = 2400; // Pause at end of word
+    } else if (isDeleting && charIdx === 0) {
+      isDeleting = false;
+      roleIdx = (roleIdx + 1) % roles.length;
+      delay = 400; // Pause before typing new word
+    }
+
+    setTimeout(typeRole, delay);
+  }
+
+  typeRole();
+}
+
+// ==========================================
+// Certifications Engine (Search, Filter, Modal)
+// ==========================================
+function initCertificationsEngine() {
+  const container = document.getElementById('certs-container');
+  const searchInput = document.getElementById('certs-search-input');
+  const clearBtn = document.getElementById('clear-search-btn');
+  const filterBtns = document.querySelectorAll('.certs-filter-tabs .filter-pill');
+  const resultsCountEl = document.getElementById('certs-results-count');
+  const modalBackdrop = document.getElementById('cert-modal-backdrop');
+  const modalClose = document.getElementById('cert-modal-close');
+
+  if (!container || !window.CERTIFICATIONS_DATA) return;
+
+  let activeCategory = 'all';
+  let searchQuery = '';
+
+  function renderCertificates() {
+    const query = searchQuery.toLowerCase().trim();
+
+    const filtered = window.CERTIFICATIONS_DATA.filter(cert => {
+      const matchCat = (activeCategory === 'all') || (cert.category === activeCategory);
+      const matchSearch = !query ||
+        cert.title.toLowerCase().includes(query) ||
+        cert.issuer.toLowerCase().includes(query) ||
+        cert.skills.some(s => s.toLowerCase().includes(query)) ||
+        (cert.credentialId && cert.credentialId.toLowerCase().includes(query));
+      return matchCat && matchSearch;
+    });
+
+    if (resultsCountEl) {
+      resultsCountEl.textContent = `Showing ${filtered.length} of ${window.CERTIFICATIONS_DATA.length} credentials`;
+    }
+
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div class="glass-card" style="grid-column: 1 / -1; text-align: center; padding: 3.5rem 1.5rem;">
+          <i class="fas fa-search" style="font-size: 2.2rem; color: #818cf8; margin-bottom: 1rem; opacity: 0.6;"></i>
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-primary);">No credentials matched your search</h4>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Try adjusting your keywords or clearing the category filter.</p>
+          <button id="reset-search-btn" class="btn btn-secondary" style="margin-top: 1.25rem; font-size: 0.85rem; padding: 0.6rem 1.4rem;">Reset Filters</button>
+        </div>
+      `;
+      const resetBtn = document.getElementById('reset-search-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          activeCategory = 'all';
+          searchQuery = '';
+          if (searchInput) searchInput.value = '';
+          if (clearBtn) clearBtn.style.display = 'none';
+          filterBtns.forEach(b => b.classList.toggle('active', b.dataset.category === 'all'));
+          renderCertificates();
+        });
+      }
+      return;
+    }
+
+    container.innerHTML = filtered.map(cert => {
+      const skillsHtml = cert.skills.map(s => `<span class="cert-skill-tag">${s}</span>`).join('');
+      return `
+        <div class="glass-card cert-card reveal active" style="--card-accent: ${cert.categoryBadgeColor || '#818cf8'};">
+          <div class="cert-top-row">
+            <div class="cert-icon-box">
+              <i class="${cert.issuerIcon || 'fas fa-award'}"></i>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="cert-category-badge">${cert.categoryLabel}</span>
+              <span class="cert-verified-pill" title="Verified Credential">
+                <span class="verified-dot"></span>
+              </span>
+            </div>
+          </div>
+          <h3 class="cert-title">${cert.title}</h3>
+          <p class="cert-issuer-meta">
+            <i class="fas fa-certificate"></i> ${cert.issuer} &bull; ${cert.date}
+          </p>
+          <div class="cert-skills-pills">
+            ${skillsHtml}
+          </div>
+          <div class="cert-card-actions">
+            <button class="btn-inspect" data-cert-id="${cert.id}">
+              <i class="fas fa-eye"></i> Quick Details
+            </button>
+            <a href="${cert.file}" target="_blank" class="btn-pdf-link" title="Open PDF in new tab">
+              <i class="fas fa-file-pdf"></i> PDF
+            </a>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Attach inspect click handlers
+    container.querySelectorAll('.btn-inspect').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const certId = btn.dataset.certId;
+        const cert = window.CERTIFICATIONS_DATA.find(c => c.id === certId);
+        if (cert) openModal(cert);
+      });
+    });
+
+    // Reattach hover effect to custom cursor
+    container.querySelectorAll('.cert-card, .btn-inspect, .btn-pdf-link').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        document.getElementById('cursor-dot')?.classList.add('hovering');
+        document.getElementById('cursor-ring')?.classList.add('hovering');
+      });
+      el.addEventListener('mouseleave', () => {
+        document.getElementById('cursor-dot')?.classList.remove('hovering');
+        document.getElementById('cursor-ring')?.classList.remove('hovering');
+      });
+    });
+  }
+
+  // Filter pills click
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.dataset.category || 'all';
+      renderCertificates();
+    });
+  });
+
+  // Search input
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      if (clearBtn) {
+        clearBtn.style.display = searchQuery ? 'block' : 'none';
+      }
+      renderCertificates();
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      searchQuery = '';
+      if (searchInput) searchInput.value = '';
+      clearBtn.style.display = 'none';
+      renderCertificates();
+      searchInput.focus();
+    });
+  }
+
+  // Modal logic
+  function openModal(cert) {
+    if (!modalBackdrop) return;
+    const titleEl = document.getElementById('modal-cert-title');
+    const issuerEl = document.getElementById('modal-cert-issuer');
+    const catEl = document.getElementById('modal-cert-category');
+    const sumEl = document.getElementById('modal-cert-summary');
+    const skillsContainer = document.getElementById('modal-cert-skills');
+    const verifyBtn = document.getElementById('modal-verify-link');
+    const pdfBtn = document.getElementById('modal-pdf-link');
+
+    if (titleEl) titleEl.textContent = cert.title;
+    if (issuerEl) issuerEl.innerHTML = `<i class="${cert.issuerIcon || 'fas fa-award'}"></i> ${cert.issuer} &bull; ${cert.date}`;
+    if (catEl) {
+      catEl.textContent = cert.categoryLabel;
+      catEl.style.borderColor = cert.categoryBadgeColor || '#818cf8';
+      catEl.style.color = cert.categoryBadgeColor || '#818cf8';
+    }
+    if (sumEl) {
+      sumEl.textContent = cert.summary || "Comprehensive competency verified through rigorous assessment and real-world project deliverables.";
+    }
+
+    if (skillsContainer) {
+      skillsContainer.innerHTML = cert.skills.map(s => `<span class="tech-tag" style="background: rgba(129, 140, 248, 0.12); color: #fff;">${s}</span>`).join('');
+    }
+
+    if (verifyBtn) {
+      if (cert.verifyUrl) {
+        verifyBtn.href = cert.verifyUrl;
+        verifyBtn.target = "_blank";
+        verifyBtn.style.display = 'inline-flex';
+        verifyBtn.innerHTML = `<i class="fas fa-shield-alt"></i> Verify Online`;
+      } else if (cert.credentialId) {
+        verifyBtn.removeAttribute('href');
+        verifyBtn.removeAttribute('target');
+        verifyBtn.style.display = 'inline-flex';
+        verifyBtn.innerHTML = `<i class="fas fa-fingerprint"></i> ${cert.credentialId}`;
+      } else {
+        verifyBtn.style.display = 'none';
+      }
+    }
+
+    if (pdfBtn) {
+      pdfBtn.href = cert.file;
+    }
+
+    modalBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!modalBackdrop) return;
+    modalBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
+
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener('click', (e) => {
+      if (e.target === modalBackdrop) closeModal();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalBackdrop && modalBackdrop.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  // Initial render
+  renderCertificates();
+}
