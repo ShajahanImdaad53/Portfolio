@@ -180,11 +180,32 @@ document.addEventListener('DOMContentLoaded', () => {
   animateParticles();
 
   // ==========================================
-  // 3. Navigation: Active state + scroll effect
+  // 3. Navigation: Active state + scroll effect + Mobile Menu Toggle
   // ==========================================
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-link');
   const navbar = document.getElementById('navbar');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const navLinksContainer = document.getElementById('nav-links');
+
+  // Mobile Menu Toggle
+  if (mobileMenuBtn && navLinksContainer) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navLinksContainer.classList.toggle('mobile-open');
+      mobileMenuBtn.classList.toggle('active', isOpen);
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close mobile menu when clicking outside navbar
+    document.addEventListener('click', (e) => {
+      if (navbar && !navbar.contains(e.target)) {
+        navLinksContainer.classList.remove('mobile-open');
+        mobileMenuBtn.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
   window.addEventListener('scroll', () => {
     // Active section tracking
@@ -197,17 +218,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').includes(current)) {
-        link.classList.add('active');
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        link.classList.remove('active');
+        if (href.slice(1) === current) {
+          link.classList.add('active');
+        }
       }
     });
 
     // Navbar scroll effect
     if (window.scrollY > 100) {
-      navbar.classList.add('scrolled');
+      navbar?.classList.add('scrolled');
     } else {
-      navbar.classList.remove('scrolled');
+      navbar?.classList.remove('scrolled');
     }
   });
 
@@ -259,15 +283,23 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
   // ==========================================
-  // 5. Smooth Scroll for nav links
+  // 5. Smooth Scroll for nav links & mobile menu close
   // ==========================================
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
       const targetId = link.getAttribute('href');
-      const targetEl = document.querySelector(targetId);
-      if (targetEl) {
-        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (targetId && targetId.startsWith('#')) {
+        e.preventDefault();
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      // Auto close mobile drawer on click
+      if (mobileMenuBtn && navLinksContainer) {
+        navLinksContainer.classList.remove('mobile-open');
+        mobileMenuBtn.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
       }
     });
   });
@@ -517,11 +549,36 @@ function initCertificationsEngine() {
   let activeCategory = 'all';
   let searchQuery = '';
 
+  // Dynamically compute and display count on filter pills
+  filterBtns.forEach(btn => {
+    const cat = btn.dataset.category;
+    const countBadge = btn.querySelector('.filter-count');
+    if (!countBadge) return;
+    if (cat === 'all') {
+      countBadge.textContent = window.CERTIFICATIONS_DATA.length;
+    } else if (cat === 'google') {
+      const gCount = window.CERTIFICATIONS_DATA.filter(c =>
+        c.issuer.toLowerCase().includes('google') || c.title.toLowerCase().includes('google')
+      ).length;
+      countBadge.textContent = gCount;
+    } else {
+      const catCount = window.CERTIFICATIONS_DATA.filter(c => c.category === cat).length;
+      countBadge.textContent = catCount;
+    }
+  });
+
   function renderCertificates() {
     const query = searchQuery.toLowerCase().trim();
 
     const filtered = window.CERTIFICATIONS_DATA.filter(cert => {
-      const matchCat = (activeCategory === 'all') || (cert.category === activeCategory);
+      let matchCat = false;
+      if (activeCategory === 'all') {
+        matchCat = true;
+      } else if (activeCategory === 'google') {
+        matchCat = cert.issuer.toLowerCase().includes('google') || cert.title.toLowerCase().includes('google');
+      } else {
+        matchCat = (cert.category === activeCategory);
+      }
       const matchSearch = !query ||
         cert.title.toLowerCase().includes(query) ||
         cert.issuer.toLowerCase().includes(query) ||
@@ -620,6 +677,14 @@ function initCertificationsEngine() {
       btn.classList.add('active');
       activeCategory = btn.dataset.category || 'all';
       renderCertificates();
+
+      // On mobile viewports, smoothly scroll to results if clicked
+      if (window.innerWidth <= 820) {
+        const resultsBar = document.getElementById('certs-results-count') || container;
+        if (resultsBar) {
+          resultsBar.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
     });
   });
 
@@ -715,6 +780,15 @@ function initCertificationsEngine() {
       closeModal();
     }
   });
+
+  // Support deep-linking to category via hash (#google, #ai-ml, etc.) or URL query parameter (?cat=google)
+  const hash = window.location.hash.toLowerCase().replace('#', '');
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramCat = urlParams.get('cat') || hash;
+  if (paramCat && ['google', 'ai-ml', 'data-analytics', 'cloud-devops', 'software-dev', 'management'].includes(paramCat)) {
+    activeCategory = paramCat;
+    filterBtns.forEach(b => b.classList.toggle('active', b.dataset.category === paramCat));
+  }
 
   // Initial render
   renderCertificates();

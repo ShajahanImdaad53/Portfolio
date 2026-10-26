@@ -46,21 +46,38 @@
 
   <!-- Floating Navbar -->
   <nav class="navbar" id="navbar">
-    <a href="#hero" class="nav-link active">Home</a>
-    <a href="#about" class="nav-link">About</a>
-    <a href="#skills" class="nav-link">Skills</a>
-    <a href="#education" class="nav-link">Education</a>
-    <a href="#certifications" class="nav-link">
-      Certs <span style="font-size: 0.72rem; padding: 2px 7px; background: rgba(99,102,241,0.25); border: 1px solid rgba(99,102,241,0.4); border-radius: 50px; margin-left: 3px; font-weight: 700; color: #a5b4fc;">23</span>
-    </a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="#contact" class="nav-link">Contact</a>
-    <a href="Imdaad CV.pdf" target="_blank" class="nav-link" style="color: #38bdf8;" title="View Resume">
-      <i class="fas fa-file-download"></i> CV
-    </a>
-    <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" aria-label="Toggle theme">
-      <i class="fas fa-moon" id="theme-icon"></i>
-    </button>
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" title="Imdaad Shajahan">
+        <img src="git.jpg" alt="Imdaad Shajahan" class="nav-avatar">
+        <span>Imdaad</span>
+      </a>
+      
+      <div class="nav-links" id="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#certifications" class="nav-link">
+          Certs <span class="nav-badge">23</span>
+        </a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="Imdaad CV.pdf" target="_blank" class="nav-link" style="color: #38bdf8;" title="View Resume">
+          <i class="fas fa-file-download"></i> CV
+        </a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" aria-label="Toggle theme">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
   </nav>
 
   <!-- Hero Section -->
@@ -441,11 +458,14 @@
           <button class="filter-pill active" data-category="all">
             All <span class="filter-count">23</span>
           </button>
+          <button class="filter-pill google-pill" data-category="google">
+            <i class="fab fa-google" style="color: #4285F4;"></i> Google Data Analytics <span class="filter-count">8</span>
+          </button>
           <button class="filter-pill" data-category="ai-ml">
             <i class="fas fa-brain"></i> AI &amp; Machine Learning <span class="filter-count">5</span>
           </button>
           <button class="filter-pill" data-category="data-analytics">
-            <i class="fas fa-chart-line"></i> Data Science &amp; Analytics <span class="filter-count">9</span>
+            <i class="fas fa-chart-line"></i> Data Science &amp; Analytics <span class="filter-count">10</span>
           </button>
           <button class="filter-pill" data-category="cloud-devops">
             <i class="fab fa-aws"></i> Cloud &amp; Security <span class="filter-count">3</span>
@@ -454,7 +474,7 @@
             <i class="fab fa-python"></i> Software &amp; Web <span class="filter-count">2</span>
           </button>
           <button class="filter-pill" data-category="management">
-            <i class="fas fa-tasks"></i> Leadership &amp; Management <span class="filter-count">4</span>
+            <i class="fas fa-tasks"></i> Leadership &amp; Management <span class="filter-count">3</span>
           </button>
         </div>
       </div>
