@@ -677,14 +677,6 @@ function initCertificationsEngine() {
       btn.classList.add('active');
       activeCategory = btn.dataset.category || 'all';
       renderCertificates();
-
-      // On mobile viewports, smoothly scroll to results if clicked
-      if (window.innerWidth <= 820) {
-        const resultsBar = document.getElementById('certs-results-count') || container;
-        if (resultsBar) {
-          resultsBar.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-      }
     });
   });
 
